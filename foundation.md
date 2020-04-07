@@ -1,10 +1,70 @@
 # euler~Foundation Aragon Ceremony
 
-### TL:DR
+## TL:DR
 The guide will walk you through the setup process of an Aragon-based DAO, by another existing Aragon DAO, using the setup process of cyber~Foundation, the community governing DAO behind [cyber](https://cyber.page/). As a result, you will setup a decentralized community-governed DAO, that can distribute shares to its holders via the use of 2 apps, the vesting and the auction app. 
 
 ### Content
+- [Introduction](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#introduction)
+ * [What for and for whom is this guide?](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#what-for-and-for-whom-is-this-guide)
+ * [About euler&cyber~Foundation(s)]()
+ * [](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#about-eulercyberfoundations)
+ * [Process flow](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#process-flow)
+ * [The process in numbers](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#the-process-in-numbers)
+ * [Prepare your setup background](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#prepare-your-setup-background)
 
+- [cyber~Congress DAO](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#cybercongress-dao)
+  * [Configuration](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#configuration)
+  * [The process](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#the-process)
+  * [Agent](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#agent)
+ * [Grant Permission to Agent to transfer their own tokens](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#grant-permission-to-agent-to-transfer-their-own-tokens)
+ 
+- [Deploy Aragon Company Template](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#deploy-aragon-company-template)
+ * [Changes](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#changes)
+ * [Deploy](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#deploy)
+ * [Verify on Etherscan](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#verify-on-etherscan)
+ 
+- [Vesting & Auction Aragon applications](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#vesting--auction-aragon-applications)
+ * [Vesting application](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#vesting-application)
+ * [Auction application](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#auction-application)
+ * [Deploy to Aragon Package Manager (APM)](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#deploy-to-aragon-package-manager-apm)
+ * [Propagate application to IPFS](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#propagate-application-to-ipfs)
+ 
+- [Cyber Foundation DAO](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#cyber-foundation-dao)
+ * [Create a proposal to deploy a token by the Congress Agent](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#create-a-proposal-to-deploy-a-token-by-the-congress-agent)
+ * [Create a proposal to deploy the DAO by the Congress Agent](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#create-a-proposal-to-deploy-the-dao-by-the-congress-agent)
+ * [Vote for token and DAO deployment by Cyber Congressmen](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#vote-for-token-and-dao-deployment-by-cyber-congressmen)
+ * [Votes for foundation deployemnt]()https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#votes-for-foundation-deployemnt
+ * [Check the Foundation DAO](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#check-the-foundation-dao)
+ * [Voting by the Congress Agent in the Foundation](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#voting-by-the-congress-agent-in-the-foundation)
+ 
+ - [Install the Vesting application for the Foundation DAO](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#install-the-vesting-application-for-the-foundation-dao)
+ * [Parameters](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#parameters)
+ * [Install the application](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#install-the-application)
+ * [Initialize Proof/Pause Roles](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#initialize-proofpause-roles)
+ * [Grant permission to Issue/Assign/Burn as Token Manager](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#grant-permission-to-issueassignburn-as-token-manager)
+ 
+- [Installing the Auction application for the Foundation DAO](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#installing-the-auction-application-for-the-foundation-dao)
+ * [Parameters](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#parameters-1)
+ * [Install](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#install)
+ * [Initialize the Creator Role](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#initialize-the-creator-role)
+ * [Grant permission for Burn rights as Token Manager](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#grant-permission-for-burn-rights-as-token-manager)
+ * [Set the congress agent as app manager in the Foundation DAO](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#set-the-congress-agent-as-app-manager-in-the-foundation-dao)
+ * [Burn service account token in the Foundation DAO](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#burn-service-account-token-in-the-foundation-dao)
+ * [Transfer tokens from the Congress Agent to the Auction contract](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#transfer-tokens-from-the-congress-agent-to-the-auction-contract)
+ * [Load the Auction](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#load-the-auction)
+ * [Deploy and verify `AuctionUtils`](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#deploy-and-verify-auction-utils)
+ * [Add `AuctionUtils` address to the Auction](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#add-auctionutils-address-to-the-auction)
+ 
+- [Distribute tokens](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#distribute-tokens)
+ * [Inventors](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#inventors)
+ * [Initial donors](Initial donors)
+ 
+- [Final state](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#final-state)
+ * [Foundation DAO](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#foundation-dao)
+ * [Vesting application](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#vesting-application-1)
+ * [Auction application](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#auction-application-1)
+ * [Final thoughts](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#final-thoughts)
+ 
 ### Introduction
 cyber is a decentralized google. Its mission is to decentralize the services and the infrastructure of the internet via the use of blockchain technology and cyberlinks. In other words, cyber is an innovative search protocol. Such a protocol should not be owed by one company, but rather be governed by its stakeholders, that can decide on its development via simple governance mechanisms. The current guide covers the particular case of setting up euler~Foundation. You may substitute the word `euler` to use it as a workflow guide for your own setup.
 
@@ -18,18 +78,18 @@ To overcome this restriction we create a two-level structure. The zero-level her
  
 Detailed information about the tasks of both DAOs can be found in either our [WP](https://ipfs.io/ipfs/QmceNpj6HfS81PcCaQXrFMQf7LR5FTLkdG9sbSRNy3UXoZ)or our [homestead documentation](https://github.com/cybercongress/congress/blob/master/ecosystem/Cyber%20Homestead%20doc.md).
 
-### What for and for whom is this guide?
+#### What for and for whom is this guide?
 1. For Cyber community, for whom we provide a fully transparent workflow 
 2. As part of the documentation of the work of cyber~Congress 
 3. For open-source Aragon developers who are trying to find answers to their questions about DAO setup
 4. For Aragon community, that wishes to discover the endless possibilities of the Aragon project
 5. For anyone wishing to set up a DAO in a decentralized manner
 
-### About euler&cyber~Foundation(s)
-- euler~Foundation: is the testing of cyber~Foundation. It is deployed to ETH's mainnet during GoL (gamified part of cybers distribution process). Its main purpose is to test everything before the launch of the mainnet  
-- cyber~Foundation: is the community governing DAO behind cyber. It will consist of stakeholders that wish to be part of the governing process. cyber~Foundation, apart from everything, will be in charge of the ETH pot donated to the foundation during cyber ~Auction (part of cybers distribution process). Making it is a fully Decentralized Autonomous Organisation in charge of its own funding
+#### About euler&cyber~Foundation(s)
+- euler~Foundation: is the testing of cyber ~Foundation. It is deployed to ETH's mainnet during GoL (gamified part of cybers distribution process). Its main purpose is to test everything before the launch of the mainnet  
+- cyber~Foundation: is the community governing DAO behind cyber. It will consist of stakeholders that wish to be part of the governing process. cyber ~Foundation, apart from everything, will be in charge of the ETH pot donated to the foundation during cyber ~Auction (part of cybers distribution process). Making it is a fully Decentralized Autonomous Organisation in charge of its own funding
 
-### Process flow
+#### Process flow
 0. Prepare your setup
 1. Cyber Congress DAO
     1. Configuration
@@ -76,7 +136,7 @@ Detailed information about the tasks of both DAOs can be found in either our [WP
     3. Auction application
 9. Final thoughts
 
-### The process in numbers
+#### The process in numbers
 *Total transactions:*
 70 transactions
 
@@ -85,7 +145,7 @@ Detailed information about the tasks of both DAOs can be found in either our [WP
 
 *Note:* this only includes the setup of the Foundation and the distribution (does not include the preparation of the Congress Agent and publishing the applications in APM)
 
-### Prepare your setup background
+#### Prepare your setup background
 - Recommended NodeJS v.10.18.0
 - Recommended Aragon / CLI v.7.0.3/6.4.4
 - A local IPFS node and a dedicated IPFS cluster (for propagating the content of the application)
@@ -584,7 +644,6 @@ ____________
 ### Install the Vesting application for the Foundation DAO
 
 #### Parameters
-Parameters:
 
 ```
 address _tokenManager,
@@ -894,7 +953,6 @@ ____________
 ### Installing the Auction application for the Foundation DAO
 
 #### Parameters
-Parameters:
 
 ```
 uint256 _numberOfDays,

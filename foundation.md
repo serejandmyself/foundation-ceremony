@@ -1,6 +1,6 @@
 # euler~Foundation Aragon Ceremony
 
-## TL:DR
+## TL;DR
 The guide will walk you through the setup process of an Aragon-based DAO, by another existing Aragon DAO, using the setup process of cyber~Foundation, the community governing DAO behind [cyber](https://cyber.page/). As a result, you will setup a decentralized community-governed DAO, that can distribute shares to its holders via the use of 2 apps, the vesting and the auction app. 
 
 ### Content

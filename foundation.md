@@ -1,7 +1,7 @@
 # euler~Foundation Aragon Ceremony
 
 ## TL:DR
-The guide will walk you through the setup process of an Aragon-based DAO, by another existing Aragon DAO, using the setup process of cyber~Foundation, the community governing DAO behind [cyber](https://cyber.page/). As a result, you will setup a decentralized community-governed DAO, that can distribute shares to its holders via the use of 2 apps, the vesting and the auction app. 
+The guide will walk you through the setup process of an Aragon-based DAO, by another existing Aragon DAO, using the setup process of cyber~Foundation, the community governing DAO behind [cyber](https://cyber.page/). As a result, you will setup a decentralized community-governed DAO, that can distribute shares to its holders via the use of 2 apps, the vesting and the auction app. The foundation DAO also has a third app, cyber~Evangelism, for project ambassadors. 
 
 ### Content
 - [Introduction](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#introduction)
@@ -84,6 +84,7 @@ Detailed information about the tasks of both DAOs can be found in either our [WP
 3. For open-source Aragon developers who are trying to find answers to their questions about DAO setup
 4. For Aragon community, that wishes to discover the endless possibilities of the Aragon project
 5. For anyone wishing to set up a DAO in a decentralized manner
+6. For projects evangelists
 
 #### About euler&cyber~Foundation(s)
 - euler~Foundation: is the testing of cyber ~Foundation. It is deployed to ETH's mainnet during GoL (gamified part of cybers distribution process). Its main purpose is to test everything before the launch of the mainnet  
@@ -179,7 +180,7 @@ cyber~Congressman (CC)
 
 #### The process
 The whole process of the setup is fairly simple and can be outlined by the following:
--  Setup a DAO and an agent
+- Setup a DAO and an agent
 - Set correct permissions and rights
 - Install the required apps and rights
 - Distribute tokens to addresses 
@@ -362,7 +363,7 @@ Features:
 - Claim tokens
 - Collect ETH for foundation
 
-If someone acquired THC tokens during the auction but didn't claim them after some time had passed, those THC tokens will be **send to the balance of the agent and controlled via governance**.
+If someone acquired THC tokens during the auction but didn't claim them after some time had passed (7 days), those THC tokens will be burned from the auction balance.
 
 Under the hood the process is also fairly simple:
 - The auction has a start time and

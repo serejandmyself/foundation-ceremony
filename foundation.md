@@ -99,23 +99,29 @@ Detailed information about the tasks of both DAOs can be found in either our [WP
     1. Changes
     2. Deployment
     3. Verification
-3. Vesting & Auction Aragon applications
-    1. About Vesting application
-    2. About Auction application
-    3. Deploy to Aragon Package Manager (APM)
-    4. Propagate application to IPFS
+3. Evangelism, Vesting & Auction Aragon applications
+    1. About Evangelism application
+    3. About Vesting application
+    4. About Auction application
+    4. Deploy to Aragon Package Manager (APM)
+    5. Grant permissions to update packages to additional accounts
+    6. Propagate applications to IPFS
 4. Cyber Foundation DAO
     1. Create a proposal to deploy a token by the Congress Agent
     2. Create a proposal to deploy DAO by the Congress Agent
     3. Vote for token and DAO deployment by Cyber Congress
     4. Check Foundation DAO
     5. Voting by the Congress Agent in Foundation DAO
-5. Install Vesting application to Foundation
+5. Install Evangelism application to Foundation
+    1. Parameters
+    2. Install application
+    3. Initialize Founder Role
+6. Install Vesting application to Foundation
     1. Parameters
     2. Install application
     3. Initialize Proof/Pause Roles
     4. Grant permissions to Issue/Assign/Burn as Token Manager
-6. Install the Auction application to Foundation DAO
+7. Install the Auction application to Foundation DAO
     1. Parameters
     2. Install
     3. Initialize Creator Role
@@ -127,14 +133,14 @@ Detailed information about the tasks of both DAOs can be found in either our [WP
     9. Load Auction
     10. Deploy and verify AuctionUtils
     11. Add AuctionUtils address to the Auction
-7. Distribute tokens
+8. Distribute tokens
     1. Inventors
     2. Initial donors
-8. Final State
+9. Final State
     1. Foundation DAO
     2. Vesting application
     3. Auction application
-9. Final thoughts
+10. Final thoughts
 
 #### The process in numbers
 *Total transactions:*
@@ -201,11 +207,11 @@ Part of the donors will also continue to hold the tokens following the distribut
 
 All of this requires us to create a new proposal from the permisisons tab of the Congress DAO and vote for it. After the voting is over, go to the permissions tab and makes sure that in the Agents permisisons tab, under `Transfer Agent’s tokens` a new entity (the Agent) appears:
 
-![congress-agent-token-create-permisson](./screens/congress-agent-token-create-permission.png)
-![congress-agent-token-create-permisson-tx](./screens/congress-agent-token-create-permission-tx.png)
-![congress-agent-token-create-permisson-voting](./screens/congress-agent-token-created-permission-voting.png)
-![congress-agent-token-create-permisson-voting-passed](./screens/congress-agent-token-created-permission-voting-passed.png)
-![congress-agent-token-created-permission](./screens/congress-agent-token-created-permission.png)
+![congress-agent-token-create-permisson](./screens2/congress-agent-token-create-permission.png)
+![congress-agent-token-create-permisson-tx](./screens2/congress-agent-token-create-permission-request.png)
+![congress-agent-token-create-permisson-voting](./screens2/congress-agent-token-created-permission-voting.png)
+![congress-agent-token-create-permisson-voting-passed](./screens2/congress-agent-token-created-permission-voting-passed.png)
+![congress-agent-token-created-permission](./screens2/congress-agent-token-created-permission.png)
 
 _________
 
@@ -275,11 +281,23 @@ Diff of CompanyTemplate.sol:
      * @param _useAgentAsVault Boolean to tell whether to use an Agent app as a more advanced form of Vault app
 ```
 
+Before deploy:
+adjust truffle deployment gas litit and gas price settings:
+```
+# dao-templates/shared/truffle.js
+
+const gasLimit = 4e6 - 1
+const gasPrice = 10e9
+
+config.networks.rpc.gas = gasLimit
+config.networks.rpc.gasPrice = gasPrice
+```
+
 #### Deploy
 Command (cast tx):
 
 ```
-npm run deploy:<network>
+npm run deploy:mainnet
 ```
 
 Output:
@@ -287,15 +305,17 @@ Output:
 ```
 =========
 # CompanyTemplate:
-Address: 0x47a5f974312b254395d329d6de5b264e0579bbb1
-Transaction hash: 0x7286d11d2276268c24b620f245b78e0e1c2bebe3d82e83ab55d6d1386684fb29
+Address: 0xfab68585ee1e31cd2b936c71b1868c9eb00b3477
+Transaction hash: 0x1f701d4c549c1f93b3498549d60d0db4852fee13fde9dd0bedb0c08a87ea3204
 Compiler: solc@0.4.24+commit.e67f0147.Emscripten.clang (Optimizer: 10000 runs)
-Compiled at: 2020-01-19T11:38:01.984Z
+Compiled at: 2020-04-10T09:46:24.047Z
 =========
 ```
 
+Transaction [details](https://etherscan.io/tx/0x1f701d4c549c1f93b3498549d60d0db4852fee13fde9dd0bedb0c08a87ea3204) of deployment of Company Template
+
 #### Verify on Etherscan
-Using [ethscan](https://etherscan.io/), make sure that your code is good to go. Prepare a single file with the required code for verification:
+Using [etherscan](https://etherscan.io/), make sure that your code is good to go. Prepare a single file with the required code for verification:
 
 ```
 truffle-flattener CompanyTemplate.sol > CompanyTemplateFull.sol
@@ -303,16 +323,20 @@ truffle-flattener CompanyTemplate.sol > CompanyTemplateFull.sol
 
 And then, use Etherscan Verification service to verify the contract. Set optimization to enabled with __10000 runs__.
 
-Link to a verified template [contract](https://rinkeby.etherscan.io/address/0x47a5f974312b254395d329d6de5b264e0579bbb1#code) on Etherscan
+Link to a verified Company Template [contract](https://etherscan.io/address/0xfab68585ee1e31cd2b936c71b1868c9eb00b3477#code) on Etherscan
 
 __________
 
-### Vesting & Auction Aragon applications
-The vesting and the Auction applications are created and used by cyber as part of its distribution process. You are welcome to clone the repositories and use the applications for your own needs:
+### Evangelism, Vesting & Auction Aragon applications
+The Evangelism, Vesting and the Auction applications are created and used by cyber as part of its distribution process. You are welcome to clone the repositories and use the applications for your own needs:
 
 Repositories:
-- [Vesting application](https://github.com/cybercongress/aragon-vesting-app)
-- [Auction application](https://github.com/cybercongress/aragon-auction-app)
+- [Evangelism application repository](https://github.com/cybercongress/aragon-evangelism-app)
+- [Vesting application repository](https://github.com/cybercongress/aragon-vesting-app)
+- [Auction application repository](https://github.com/cybercongress/aragon-auction-app)
+
+#### Evangelism application
+TODO
 
 #### Vesting application
 The Vesting app is used to vest your cyber~Foundation tokens (GOL, THC)  until the end of cyber ~Auction. It is also used to claim an equivalent, 1-to-1, amount of tokens in the Cyber blockchain (if the Foundation tokens are vested).
@@ -341,8 +365,6 @@ Under the hood, we need proof that the tokens go to the desired destination. The
 - A hot wallet tracks claim events
 - It sends tokens to a cyber address
 - It then takes the hash of a successful transfer, which you can see it the app
-
-[Vesting contract exmaple](https://github.com/cybercongress/aragon-vesting-app/blob/master/contracts/Vesting.sol)
 
 #### Auction application
 By using the Auction application, users may acquire tokens that are allocated for distribution within the Foundation.
@@ -384,9 +406,77 @@ In other words, APM allows setting rights to certain people to manage the packet
 
 This is done from the projects root directory and will publish packages to APM:
 
-```
-aragon apm publish major --environment aragon:rinkeby --files dist --use-frame
+#### Evangelism deploy
 
+```
+aragon apm publish major --environment aragon:mainnet --files dist --use-frame --gas-price 10
+
+  ↓ Start IPFS [skipped]
+  ✔ Applying version bump (major)
+  ✔ Building frontend
+  ✔ Deploy contract
+  ✔ Determine contract address for version
+  ✔ Prepare files for publishing
+  ↓ Generate application artifact [skipped]
+    → Using existing artifact
+  ✔ Publish intent
+
+ The following information will be published: 
+ Contract address: 0x983dEa8751424De1cD9482e1012eAd2821525E73 
+ Content (ipfs): QmPWQ9akBrcMJUD8XFvkeDh7UzayC6cSdKUCtwbMdmoC1s 
+
+? Publish to cyberevangelism.open.aragonpm.eth repo Yes
+
+  ✔ Publish cyberevangelism.open.aragonpm.eth
+
+ Successfully published cyberevangelism.open.aragonpm.eth v1.0.0 : 
+
+Transaction hash: 0x03377a1d10df315f75de20215c3a981be4cc8cad21b0cdbe67ff5bc77d536458 
+
+? Propagate content No
+```
+
+Transaction [details](https://etherscan.io/tx/0x9aa50c7ad5b1ea9b2575048ad80155c93f0891a00f714ba51542578977eec717) on deploying Evangelism Contract
+
+Transaction [details](https://etherscan.io/tx/0x673b7317d2b6b1ddf449bb72ef91c5caee711fa865d6d7c53fa779e3402690a8) on publishing Evangelism application to cyberevangelism.open.aragonpm.eth
+
+#### Vesting deploy
+```
+aragon apm publish major --environment aragon:mainnet --files dist --use-frame --gas-price 10
+  ↓ Start IPFS [skipped]
+  ✔ Applying version bump (major)
+  ✔ Building frontend
+  ✔ Deploy contract
+  ✔ Determine contract address for version
+  ✔ Prepare files for publishing
+  ↓ Generate application artifact [skipped]
+    → Using existing artifact
+  ✔ Publish intent
+
+ The following information will be published: 
+ Contract address: 0xEF324F84F6bC310E40f75E8bC8E1a0f4627FC720 
+ Content (ipfs): QmaDRwwdvPnntWtvJJ6YCrcL4dwic8NJYArcP1Lp4r5xzx 
+
+? Publish to cybervesting.open.aragonpm.eth repo Yes
+
+  ✔ Publish cybervesting.open.aragonpm.eth
+
+ Successfully published cybervesting.open.aragonpm.eth v1.0.0 : 
+
+Transaction hash: 0x6603fb53ca663af3c47e623dba9c45ce03cb3b4f4bd60dbd392de21e47112e6a 
+
+? Propagate content No
+```
+
+Transaction [details](https://etherscan.io/tx/0xafea462de0b094022ed2a58428a46ad6a3b9a1c498d196b70c6e0c8ba078a2d7) on deploying Vesting Contract
+
+Transaction [details](https://etherscan.io/tx/0xafea462de0b094022ed2a58428a46ad6a3b9a1c498d196b70c6e0c8ba078a2d7) on publishing Evangelism application to cybervesting.open.aragonpm.eth
+
+
+#### Auction deploy
+
+```
+aragon apm publish major --environment aragon:mainnet --files dist --use-frame --gas-price 10
   ↓ Start IPFS [skipped]
   ✔ Applying version bump (major)
   ✔ Building frontend
@@ -396,39 +486,55 @@ aragon apm publish major --environment aragon:rinkeby --files dist --use-frame
   ✔ Generate application artifact
   ✔ Publish intent
 
- The following information will be published:
- Contract address: 0xa0e62B76E624DA3eD06f398A7dA9976Ac4ce045D
- Content (ipfs): QmcVdvhYsEaknbL3HWeqRZxfPh3YZjPMceY4VXdEKdN3Q4
+ The following information will be published: 
+ Contract address: 0x72E939335D38048a61cd7DcE5e957B16B7EC7a74 
+ Content (ipfs): QmZ2pdpBzzLiYXB9cktW6FnUaQUHLAcXkenMnX5nYAPJuo 
 
 ? Publish to cyberauction.open.aragonpm.eth repo Yes
 
   ✔ Publish cyberauction.open.aragonpm.eth
 
- Successfully published cyberauction.open.aragonpm.eth v7.0.0 :
+ Successfully published cyberauction.open.aragonpm.eth v1.0.0 : 
 
-Transaction hash: 0x8e06e6fc5ec22c32821327abaa7616f18ec42a2a3c08c3d44456156b6c2fe62c
+Transaction hash: 0x70d065d834117e871b15b4e27504989d7e090178202f7e62176fdade5622cc98 
 
 ? Propagate content No
 ```
 
-Auction Deployment Information:
+Transaction [details](https://etherscan.io/tx/0xa1057efb6c78c0fff0a5d20aac9eb779ec70528f9f16c0819105fb781e1479bd) on deploying Auction Contract
+
+Transaction [details](https://etherscan.io/tx/0x70d065d834117e871b15b4e27504989d7e090178202f7e62176fdade5622cc98) on publishing Auction application to cyberauction.open.aragonpm.eth
+
+#### Deployment Information
+
+Evangelism Deployment Information:
 
 ```
-commitHash: f09e88a11ae788a0924997aa3e80cdb5b70baed3
-contractAddress: 0xa0e62B76E624DA3eD06f398A7dA9976Ac4ce045Dg
-date:
-ipfsHash: QmcVdvhYsEaknbL3HWeqRZxfPh3YZjPMceY4VXdEKdN3Q4
-txHash: 0x8e06e6fc5ec22c32821327abaa7616f18ec42a2a3c08c3d44456156b6c2fe62c
+commitHash: af620af248288f2a7e5e3dcd312026042896ba8e
+contractAddress: 0x983dEa8751424De1cD9482e1012eAd2821525E73
+date: Apr-10-2020 11:04:50 AM +UTC
+ipfsHash: QmPWQ9akBrcMJUD8XFvkeDh7UzayC6cSdKUCtwbMdmoC1s
+txHash: 0x03377a1d10df315f75de20215c3a981be4cc8cad21b0cdbe67ff5bc77d536458
 ```
 
 Vesting Deployment Information:
 
 ```
-commitHash: 03feb4ead6c01421cb35524d43428bffc18ea86e
-contractAddress:
-date:
-ipfsHash: Qmcz48Le7ZKYE4zX1e5eDc2ntyxKj294qG6NcUyBXMDLto
-txHash:
+commitHash: 601560b054f32bafc393b19067f8c8324e7466e3
+contractAddress: 0xEF324F84F6bC310E40f75E8bC8E1a0f4627FC720
+date: Apr-10-2020 11:19:52 AM +UTC
+ipfsHash: QmaDRwwdvPnntWtvJJ6YCrcL4dwic8NJYArcP1Lp4r5xzx
+txHash: 0x6603fb53ca663af3c47e623dba9c45ce03cb3b4f4bd60dbd392de21e47112e6a
+```
+
+Auction Deployment Information:
+
+```
+commitHash: 95a393f91546ecfd20df4265dda4080e6d588ce1
+contractAddress: 0x72E939335D38048a61cd7DcE5e957B16B7EC7a74
+date: Apr-10-2020 11:08:55 AM +UTC
+ipfsHash: QmZ2pdpBzzLiYXB9cktW6FnUaQUHLAcXkenMnX5nYAPJuo
+txHash: 0x70d065d834117e871b15b4e27504989d7e090178202f7e62176fdade5622cc98
 ```
 
 #### Propagate application to IPFS
@@ -438,6 +544,45 @@ npx aragon ipfs propagate <CID>
 ```
 
 It is best to repeat the propagation procedure a couple of times.
+
+#### Propagate Evangelism
+```
+aragon ipfs propagate QmPWQ9akBrcMJUD8XFvkeDh7UzayC6cSdKUCtwbMdmoC1s
+  ✔ Check IPFS
+  ✔ Connect to IPFS
+  ✔ Fetch the links
+  ✔ Query gateways
+
+ Queried 32 CIDs at 7 gateways 
+ Requests succeeded: 146 
+ Requests failed: 78 
+```
+
+##### Propagate Vesting
+```
+aragon ipfs propagate QmaDRwwdvPnntWtvJJ6YCrcL4dwic8NJYArcP1Lp4r5xzx
+  ✔ Check IPFS
+  ✔ Connect to IPFS
+  ✔ Fetch the links
+  ✔ Query gateways
+
+ Queried 42 CIDs at 7 gateways 
+ Requests succeeded: 185 
+ Requests failed: 109
+```
+
+##### Propagate Auction
+```
+npx aragon ipfs propagate QmZ2pdpBzzLiYXB9cktW6FnUaQUHLAcXkenMnX5nYAPJuo
+  ✔ Check IPFS
+  ✔ Connect to IPFS
+  ✔ Fetch the links
+  ✔ Query gateways
+
+ Queried 36 CIDs at 7 gateways 
+ Requests succeeded: 150 
+ Requests failed: 102
+```
 
 ```
 aragon ipfs propagate Qme7yuXPU8ev3kx7jaH32ph4V9bTWm46V27bJju4QEviBa
@@ -468,7 +613,16 @@ And Auction will be avaliable from:
 
  __cyberauction.open.aragonpm.eth__
 
+And Evangelism will be avaliable from:
+
+__cyberevangelism.open.aragonpm.eth__
+
 *Note:* If you fail on this step, then try using Aragon / CLI v7.0.2 for publishing and v6.4.4 for propagation.
+
+Check package information using this command:
+```
+aragon apm info <package>.open.aragonpm.eth --environment aragon:mainnet
+```
 
 You may also pin content for better discovery throughout IPFS with this command:
 

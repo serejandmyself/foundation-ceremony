@@ -68,27 +68,27 @@ The guide will walk you through the setup process of an Aragon-based DAO, by ano
 ### Introduction
 cyber is a decentralized google. Its mission is to decentralize the services and the infrastructure of the internet via the use of blockchain technology and cyberlinks. In other words, cyber is an innovative search protocol. Such a protocol should not be owed by one company, but rather be governed by its stakeholders, that can decide on its development via simple governance mechanisms. The current guide covers the particular case of setting up euler~Foundation. You may substitute the word `euler` to use it as a workflow guide for your own setup.
 
-We are really concerned about following the principles of decentralization and believe that DAOs are the way to achieve it. We use Aragon bread DAOs for governance within our project. 
+We are really concerned about following the principles of decentralization and believe that DAOs are a vital ingridient in achieving it. We use Aragon-bred DAOs for governance within our project. 
 
-If we think about DAO from a technical perspective we see smart contracts and accounts as technical tools to create the DAO. The account that creates the DAO gets extra power and is not fully compliant with trustless principles. 
+If we think about DAO from a technical perspective, we see smart contracts and accounts as technical tools that shape the DAO. The account that creates the DAO gets extra power and is not fully compliant with trustless principles. 
  
 It’s obvious that a limited number of people can start a DAO, but put into consideration, decentralization is the main principle of our project and this situation should be changed. Another important point is the take-off of the project. It’s not a moment, it is a time-consuming process. Both points bring us to the realization of the `point zero` problem.
  
-To overcome this restriction we create a two-level structure. The zero-level here is the cyber~Congress DAO and the first-level is the cyber ~Foundation DAO. The Foundation DAO is an entity created to manage and develop the Cyber project. The Congress DAO is an organization with one simple aim - to launch the project itself and to work on it as one of the shareholders, including the setup of the Foundation DAO. 
+To overcome this restriction we create the community foundation DAO via a two-level step. The zero-step here is the cyber~Congress DAO and the second-step is the cyber ~Foundation DAO. The Foundation DAO is an entity created to manage and develop the Cyber project. The Congress DAO is an organization with one simple aim - to launch the project itself and to work on it as one of the shareholders, including the setup of the Foundation DAO. 
  
 Detailed information about the tasks of both DAOs can be found in either our [WP](https://ipfs.io/ipfs/QmceNpj6HfS81PcCaQXrFMQf7LR5FTLkdG9sbSRNy3UXoZ)or our [homestead documentation](https://github.com/cybercongress/congress/blob/master/ecosystem/Cyber%20Homestead%20doc.md).
 
 #### What for and for whom is this guide?
 1. For Cyber community, for whom we provide a fully transparent workflow 
 2. As part of the documentation of the work of cyber~Congress 
-3. For open-source Aragon developers who are trying to find answers to their questions about DAO setup
+3. For open-source Aragon developers that are trying to find answers to their questions about DAO setup
 4. For Aragon community, that wishes to discover the endless possibilities of the Aragon project
 5. For anyone wishing to set up a DAO in a decentralized manner
-6. For projects evangelists
+6. For project evangelists (ambassadors)
 
 #### About euler&cyber~Foundation(s)
-- euler~Foundation: is the testing of cyber ~Foundation. It is deployed to ETH's mainnet during GoL (gamified part of cybers distribution process). Its main purpose is to test everything before the launch of the mainnet  
-- cyber~Foundation: is the community governing DAO behind cyber. It will consist of stakeholders that wish to be part of the governing process. cyber ~Foundation, apart from everything, will be in charge of the ETH pot donated to the foundation during cyber ~Auction (part of cybers distribution process). Making it is a fully Decentralized Autonomous Organisation in charge of its own funding
+- euler~Foundation: is the testing of the Foundation. It is deployed to ETH's mainnet during GoL (gamified part of cybers distribution process). Its main purpose is to test everything, that can be tested, before the launch of the mainnet  
+- cyber~Foundation: is the community governing DAO behind cyber. It will consist of stakeholders that wish to be part of the governing process. The Foundation, apart from everything, will be in charge of the ETH pot donated to it during cyber ~Auction (part of cybers distribution process). Making it is a true Decentralized Autonomous Organisation in charge of its own funds and decisions via reaching consensus 
 
 #### Process flow
 0. Prepare your setup
@@ -100,11 +100,12 @@ Detailed information about the tasks of both DAOs can be found in either our [WP
     1. Changes
     2. Deployment
     3. Verification
-3. Vesting & Auction Aragon applications
+3. Vesting, Auction and Evangelist Aragon applications
     1. About Vesting application
     2. About Auction application
-    3. Deploy to Aragon Package Manager (APM)
-    4. Propagate application to IPFS
+    3. About Evangelist application
+    4. Deploy to Aragon Package Manager (APM)
+    5. Propagate application to IPFS
 4. Cyber Foundation DAO
     1. Create a proposal to deploy a token by the Congress Agent
     2. Create a proposal to deploy DAO by the Congress Agent
@@ -185,7 +186,7 @@ The whole process of the setup is fairly simple and can be outlined by the follo
 - Install the required apps and rights
 - Distribute tokens to addresses 
 
-But, this requires a step by step setup with explanations and guidance, described below.
+This requires a step-by-step setup with explanations and guidance, described in this document.
 
 #### Agent
 The Agent app (or Aragon Agent) is an Aragon app that can be installed in any Aragon DAO. Its main feature is its ability to perform arbitrary calls to contracts. This means it can be thought of as the external interface of a DAO. In other words, it is a multi-signature ETH account owed by the DAO and represents the will of its shareholders. It allows the DAO to interact with contracts, manage names, buy digital land, make transactions, etc, without having to implement a custom application for each use case. 
@@ -308,12 +309,13 @@ Link to a verified template [contract](https://rinkeby.etherscan.io/address/0x47
 
 __________
 
-### Vesting & Auction Aragon applications
+### Vesting, Auction and Evangelism Aragon applications
 The vesting and the Auction applications are created and used by cyber as part of its distribution process. You are welcome to clone the repositories and use the applications for your own needs:
 
 Repositories:
 - [Vesting application](https://github.com/cybercongress/aragon-vesting-app)
 - [Auction application](https://github.com/cybercongress/aragon-auction-app)
+- [Evangelism application](https://github.com/cybercongress/aragon-evangelism-app)
 
 #### Vesting application
 The Vesting app is used to vest your cyber~Foundation tokens (GOL, THC)  until the end of cyber ~Auction. It is also used to claim an equivalent, 1-to-1, amount of tokens in the Cyber blockchain (if the Foundation tokens are vested).
@@ -354,7 +356,7 @@ Donors may send ETH to the auction and choose the round or the rounds they want 
 
 Each round a certain amount of THC tokens is auctioned. The amount of THC the donors receive is proportional to the donated amount in that round. I.E. if 10 tokens are available for auction at round 5, and 10 ETH from 10 people were donated, each person will receive 1 token after the end of the round. 
 
-Window 0 or Game of Thrones is a 21-day round in the mainnet. During testing, the round will last for 10 days. Subsequent rounds of the auction, in both testnets and mainnet, will last for 23 hours + 1 hour for calculation. Overall, there are 479 rounds in the mainnet (and 20 fo the testing). Which totals to just over 500 days of the auction with round 0 in the mainnet. We strongly recommend reading more information about the auction and the distribution games [here](https://github.com/cybercongress/congress/blob/master/ecosystem/Cyber%20Homestead%20doc.md#the-distribution-games-in-detail).
+Window 0 or Game of Thrones is a 21-day round in the mainnet. During testing, the round will last for 10 days. Subsequent rounds of the auction, in both testnets and mainnet, will last for 23 hours + 1 second. Overall, there are 479 rounds in the mainnet (and 20 fo the testing). Which totals to just over ~480 days of the auction with round 0 in the mainnet. We strongly recommend reading more information about the auction and the distribution games [here](https://github.com/cybercongress/congress/blob/master/ecosystem/Cyber%20Homestead%20doc.md#the-distribution-games-in-detail).
 
 The accumulated ETH is available for transfer at any time to the Foundations DAO agent by any participant of the auction (not a front end function for now). Of course, from this point onwards, those ETH’s are controlled via the governance mechanisms of cyber~Foundation.
 
@@ -373,6 +375,32 @@ Under the hood the process is also fairly simple:
 - After the claim, the user may use the vesting app to vest the received THC until the end of the auction and receive CYB. They may also transfer their THC and use them
 
 The Agent can initialize the auction and stop it. The app needs permissions to interact with other apps.
+
+#### Evangelism application
+An application for cyber~Evangelists. This app lets anyone apply to be blessed to become an evangelist and make the web great again! 
+
+The evangelists in cyber are the ambassadors of the project. They spread the love about cyber to the masses and get rewarded for it.
+
+Acknowledged takeoff Evangelists will be eligible to 10% of all donations in ATOMs, which they have generated during the Game of Links and Game of Thrones and other perks like CYB rewards for certain actions. 
+
+The perks in project tokens are rewarded to participants from the community pool of the project which is governed by cyber~Foundation. 
+
+Please note, the initial decision to reward up to 1 TCYB from the community pool to evangelists, was made by the cyber~Congress DAO, as part of the projects initial distribution. 
+
+The Evangelist will empower the project and involve some bright minds into the bootstrap of the Superintelligence. 
+
+Read more information [here](https://github.com/cybercongress/congress/blob/master/ecosystem/donations/obep.md)
+
+Features:
+- Ability to apply for the program
+- Ability to accept/reject applications
+
+The process under the hood:
+- A person applies to become evangelist (clicks on `believe`)
+- Fills in form 
+- cyber~Congess DAO members "bless" (approve) the application or reject it with a 2/3 threshold
+- Applicants become ambassadors with personal cabinet on cyber.page and can start fulfiling tasks
+
 
 #### Deploy to Aragon Package Manager (APM)
 APM is a DAO that can deploy packets. It has different rights, for example, it lets you configure who can start, update or use the application.

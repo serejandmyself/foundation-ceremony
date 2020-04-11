@@ -1948,29 +1948,33 @@ To be done in mainnet only
 
 ### Final state
 
-#### Foundation DAO
-1. The foundation DAO is deployed by the agent of cyber~Congress Aragon DAO 
-2. The foundation Aragon DAO name is TGOL26
-3. Supply of TGOL26 is 700000000000000
+#### euler~Foundation DAO
+1. The euler~Foundation DAO is deployed by the agent of cyber~Congress Aragon DAO 
+2. The euler~Foundation Aragon DAO name is GOL
+3. Supply of GOL is 15000000000000
+3. An installed and prepared Evangelism Aragon application developed by cyber~Congress
 4. An installed and prepared Auction Aragon application developed by cyber~Congress
 5. An installed and prepared Vesting Aragon application developed by cyber~Congress
 6. The permission manager on issuing tokens as Token Manager is set to Foundations Voting application
 7. The permission manager on assigning tokens as Token Manager is set to Foundations Voting application
 8. The Congress Agent has permission to manage apps in Kernel in a case when applications will require upgrades due to bugs
 
+#### cyber~Evangelism application
+TODO
 
-#### Vesting application
-1. Vesting end period is set to Wednesday, April 1, 2020 1:00:00 AM GMT (1585702800)
+
+#### cyber~Vesting application
+1. Vesting end period is set to 1592650849 Saturday, June 20, 2020 11:00:49 AM GMT
 2. The Vesting application PAUSE_ROLE is set to the Congress Agent. The role manager is the Congress Agent
 3. The Vesting application PROOF_ROLE is set to the Congress Vesting, Companion Proofer external address. The role manager is the Congress Agent
 4. The vesting app has permission to issue tokens as Foundations Token Manager
 5. The vesting app has permission to assign tokens as Foundations Token Manager
 6. The vesting app has permission to burn tokens as Foundations Token Manager
 
-#### Auction application
-1. Round zero of the Auction zero (Ethereum's Game of Thrones) is set to 1585245600 Thursday, March 26, 2020 6:00:00 PM GMT
-2. Auction rounds start on 1585591200 Monday, March 30, 2020 6:00:00 PM GMT
-3. Amount of rounds is set to 20+1 (window zero)
+#### cyber~Auction application
+1. Round zero of the Auction zero (Ethereum's Game of Thrones) is set to 11586865600 Tuesday, April 14, 2020 12:00:00 PM GMT
+2. Auction rounds start on 1587729600 Friday, April 24, 2020 12:00:00 PM
+3. Amount of rounds is set to 49+1 (window zero)
 4. The duration of a round is 23 hours + 1 sec
 5. The collector of funds is the Foundation DAO (Foundations Agent address)
 6. The vesting app has permission to burn tokens as Foundations Token Manager

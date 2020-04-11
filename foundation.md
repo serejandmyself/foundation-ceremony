@@ -167,9 +167,9 @@ _________
 The cyber~Congress DAO is an Aragon-based DAO, bootstrapped using the official [membership Aragon template](https://github.com/aragon/dao-templates/tree/master/templates/membership) with an installed Agent. It uses a non-transferable token to represent membership. Decisions are made based on one-member-one-vote governance.
 
 *Signers:*
-- 0x47452dd11238f8db91e42d0b579d3fFF046Af499
-- 0xC41394F95FDd40193a2bf7Cb035f800CE1Edd908
-- 0xAc75629E936d6611F8f06d821cd26cCAEE9d43b8
+- 0x97975Ed1aAb49b8C5d30E6856DdFE20b4896490f
+- 0xD0Db9E03fDE19cb4C3ad1cF0f1faF86caf911058
+- 0x49337f144B2C901801A53DB347aa2b76a2ffd5f1
 
 *Voting parameters:*
 - Support: 51%
@@ -402,7 +402,7 @@ In our example: Bob has deployed the application from his own account. The Congr
 
 In other words, APM allows setting rights to certain people to manage the packets. As described by Aragon, it is a decentralized package manager based on aragonOS that handles upgradeability of smart contracts and arbitrary data blobs, such as webapps.
 
-*Note:* deployer to APM and owner of deployed repositories in APM is done from account [0x5eB63fC9837EAB21192eEB5250BE3EFd239b87f0](https://rinkeby.etherscan.io/address/0x5eB63fC9837EAB21192eEB5250BE3EFd239b87f0)
+*Note:* deployer to APM and owner of deployed repositories in APM is done from account [0x97975Ed1aAb49b8C5d30E6856DdFE20b4896490f](https://etherscan.io/address/0x97975Ed1aAb49b8C5d30E6856DdFE20b4896490f)
 
 This is done from the projects root directory and will publish packages to APM:
 
@@ -537,6 +537,20 @@ ipfsHash: QmZ2pdpBzzLiYXB9cktW6FnUaQUHLAcXkenMnX5nYAPJuo
 txHash: 0x70d065d834117e871b15b4e27504989d7e090178202f7e62176fdade5622cc98
 ```
 
+### Grant permissions to update packages to additional accounts [TODO]
+
+Due to security concerns we grant permission to update packages versions to extra account:
+
+```
+aragon apm grant "<account>" --environment aragon:mainnet --use-frame --gas-price 10
+```
+
+Transaction [details]() on granting access to 0xD0Db9E03fDE19cb4C3ad1cF0f1faF86caf911058 to update Evangelism package
+
+Transaction [details]() on granting access to 0xD0Db9E03fDE19cb4C3ad1cF0f1faF86caf911058 to update Vesting package
+
+Transaction [details]() on granting access to 0xD0Db9E03fDE19cb4C3ad1cF0f1faF86caf911058 to update Auction package
+
 #### Propagate application to IPFS
 
 ```
@@ -650,25 +664,25 @@ The awesome thing here is that the DAO will be created by an extra actor, the Ag
 Command template (cast tx):
 
 ```
-npx dao act <agentCongressAddress> <companyTemplateAddress> "newToken(string,string)" "<name>" "<ticker>" --environment aragon:<network>
+dao act <agentCongressAddress> <companyTemplateAddress> "newToken(string,string)" "<name>" "<ticker>" --environment aragon:<network>
 ```
 
 Command (cast tx):
 
 ```
-npx dao act 0x988fbf6ee7219c0672351605ccc16060ed31d703  0x47a5f974312b254395d329d6de5b264e0579bbb1 "newToken(string,string)" "tgol26" "TGOL26" --environment aragon:rinkeby --use-frame
+dao act 0x3a1f860046249646e508c417a840755571bc4680 0xfab68585ee1e31cd2b936c71b1868c9eb00b3477 "newToken(string,string)" "GOL" "GOL" --environment aragon:mainnet --use-frame --gas-price 10
 ```
 
 Output:
 
 ```
-  ⠙ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
-  ✔ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
+  ⠋ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
+  ✔ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
 
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-[Transaction detail of Foundations Token Deployment proposal in Congress](https://rinkeby.etherscan.io/tx/0xdbe285b341a9088ce66b2125bc07d59fc5c0f14a2170eca62493ee3dae3636d2)
+Transaction [details](https://etherscan.io/tx/0xb2708c8ce9050081ab2303d660fac4b9b7ce961eb2a73a56f309e0158881a5ba) of Euler Foundation's Token Deployment proposal in cyber~Congress Aragon DAO
 
 #### Create a proposal to deploy the DAO by the Congress Agent
 *Notes:*
@@ -688,11 +702,11 @@ dao act <agentCongressAddress> <companyTemplateAddress> "newInstance(string,addr
 *Note* on Voting params values:
 
 ```
-TODO
+TODO 
 ```
 
 Proposed parameters:
-- Supply: 700T TGOL22 + 1 TGOL22 (for proposals of the service account, will be burned later)
+- Supply: 15TGOL + 1 GOL (for proposals of the service account, will be burned later)
 - Support: 51% (500000000000000000)
 - Approval: 20% (200000000000000000)
 - Voting time: 2 weeks (1209600)
@@ -706,36 +720,36 @@ Our solution is to not over complicate the setup and use a service account for e
 Command (cast tx):
 
 ```
-dao act 0x988fbf6ee7219c0672351605ccc16060ed31d703 0x47a5f974312b254395d329d6de5b264e0579bbb1 "newInstance(string,address[],uint256[],uint64[3],uint64,bool)" "tgol26" "[\"64a69701D6b52422150F4E373B86Fb334477ec7a\",\"988fbf6ee7219c0672351605ccc16060ed31d703\"]" "[\"1\",\"700000000000000\"]" "[\"500000000000000000\",\"200000000000000000\",\"1209600\"]" 0 true --environment aragon:rinkeby --use-frame
+dao act 0x3a1f860046249646e508c417a840755571bc4680 0xfab68585ee1e31cd2b936c71b1868c9eb00b3477 "newInstance(string,address[],uint256[],uint64[3],uint64,bool)" "eulerfoundation" "[\"58f252FE80D37cC3Ae1D60BFDD684d6a313CF600\",\"3a1f860046249646e508c417a840755571bc4680\"]" "[\"1\",\"15000000000000\"]" "[\"500000000000000000\",\"200000000000000000\",\"1209600\"]" 0 true --environment aragon:mainnet --use-frame --gas-price 10
 ```
 
 Output:
 
 ```
-  ⠙ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
-  ✔ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
+  ⠼ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
+  ✔ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
 
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-[Transaction details of Foundation DAO deployment proposal in the Congress](https://rinkeby.etherscan.io/tx/0xb1a9411af333b97b8fe86075f635db62a83079f85e6eb95df24841537a5d2f03)
+Transaction [details](https://etherscan.io/tx/0x10a71dbd401008e5da1eb71ae19b3d496731ffc592222c3df332682b29fb0b3c) of euler~Foundation DAO deployment proposal in the cyber~Congress Aragon DAO
 
 #### Vote for token and DAO deployment by Cyber Congressmen
-![congress-create-foundation-voting](./screens/congress-create-foundation-voting.png)
+![congress-create-foundation-voting](./screens2/congress-create-foundation-voting.png)
 
 #### Votes for token deployemnt
-[Vote #1](https://rinkeby.etherscan.io/tx/0x7ed48928db5c2a26643a627526be2b2d36f58f34d78371c0bb33f938c53dcba3) and [Vote #2](https://rinkeby.etherscan.io/tx/0x88788f46bded31c8469dd41edc68395f4cafe17292490e62efcca78dbd7913dd)
+[Vote #1](https://etherscan.io/tx/0xe97866d789f9fd37807d6e015c685dda67be14de7a58b7319149bacca655213e) and [Vote #2](https://etherscan.io/tx/0x5e990fa43ea5d4e82fcf6f3445abb3efcc3903a3700e894d6a2edad51b9c15ce)
 
-![congress-create-foundation-token-vote](./screens/congress-create-foundation-token-vote.png)
+![congress-create-foundation-token-vote](./screens2/congress-create-foundation-token-vote.png)
 
 #### Votes for foundation deployemnt
 [Vote #1](https://rinkeby.etherscan.io/tx/0xd2b8b5ecc123fd5c01fba0ca9d6c70c8db096d60cf84d79092fca77828d51064) and [Vote #2](https://rinkeby.etherscan.io/tx/0x46351e06a03b33f257b2f01592e5b9ff67ccd457e8720fd6261c3ffab086f618)
 
-![congress-create-foundation-dao-vote](./screens/congress-create-foundation-dao-vote.png)
-![congress-create-foundation-voting-passed](./screens/congress-create-foundation-voting-passed.png)
+![congress-create-foundation-dao-vote](./screens2/congress-create-foundation-dao-vote.png)
+![congress-create-foundation-voting-passed](./screens2/congress-create-foundation-voting-passed.png)
 
-After the proposal has passed, the new DAO becomes [available](https://rinkeby.aragon.org/#/tgol26)
-![foundation-created](./screens/foundation-created.png)
+After the proposal has passed, the new DAO becomes [available](https://mainnet.aragon.org/#/eulerfoundation/organization/)
+![foundation-created](./screens2/foundation-created.png)
 
 The initial and the major token holder here is the Congress Agent and the second one is a service account which was described previously.
 
@@ -751,33 +765,33 @@ npx dao apps <kernelFoundationAddress> --all --environment aragon:<network>
 Command (no tx cast):
 
 ```
-npx dao apps 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8  --all --environment aragon:rinkeby
+npx dao apps 0xC45417092c7ba66052c92A4AD871fC60bdbC7009  --all --environment aragon:mainnet
 ```
 
 Output:
 
 ```
-  ⠙ Inspecting DAO
+  ⠹ Inspecting DAO
   ✔ Inspecting DAO
   ✔ Fetching permissionless apps
 
-✔ Successfully fetched DAO apps for 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8
+✔ Successfully fetched DAO apps for 0xC45417092c7ba66052c92A4AD871fC60bdbC7009
 ┌──────────────────────┬────────────────────────────────────────────┬─────────────────────────────────────────────────────┐
 │ App                  │ Proxy address                              │ Content                                             │
 ├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ kernel               │ 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8 │ (No UI available)                                   │
+│ kernel               │ 0xC45417092c7ba66052c92A4AD871fC60bdbC7009 │ (No UI available)                                   │
 ├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ acl                  │ 0x3c81424a236b8105ad089425552a5c5dc16f9bad │ (No UI available)                                   │
+│ acl                  │ 0xf2c7820014ac0041d179c692089d828ba0848cfd │ (No UI available)                                   │
 ├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ evmreg               │ 0x7009e48641fb1f246639b60e859612192ee29384 │ (No UI available)                                   │
+│ evmreg               │ 0xec79beef13966c5f240678ff23701cc6e99889fd │ (No UI available)                                   │
 ├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ token-manager@v2.1.7 │ 0xc53914fddba1357da7ccc09d193f3b72d5e652a6 │ ipfs:QmdLEDDfiH3RGjbgU5hqJwwALbNreMWupqTQCRGfNrMPiP │
+│ token-manager@v2.1.7 │ 0x0b14bcfdf5e162e734cbf01d020ca49bc060efd5 │ ipfs:Qmev9Q7g4DEDHjqWt4QSdFy3dpzZmeF5AnPozhtjdboZG3 │
 ├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ agent@v5.0.1         │ 0x53b892babeb4a7044ec23d0b0c7c53eeb0d0ecae │ ipfs:QmXBnAn37C813nLSHtLL3EcCsYSJS6k5kK15QcmD6DvHNZ │
+│ agent@v5.0.2         │ 0x34291feae53ad4e155a20de02585eb115ef5d373 │ ipfs:QmX3wpYcYF7W8YDJgUBfvDu95mxRAYoaG4cZVir9yTuq4C │
 ├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ finance@v2.1.9       │ 0x63f83cee5f74f9439ac9dc11b58dd85fd7ca24b0 │ ipfs:QmbnhuLvvvcqEpRXd6VtnqZYAFZJdvAnhUrBAwqE1rfeRP │
+│ finance@v2.1.8       │ 0x6ea838ca600e05164b7e7c053b4cf570cda9d352 │ ipfs:QmeVsMqxYfnSShsC5KKob43KxfE95vtDzc4WRMx1DqBnm3 │
 ├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ voting@v2.1.7        │ 0x7c2e8bec18dbe0d0fb1ba2920824444c164aaf7f │ ipfs:QmUvWBZqpKepDwS5WUsTTURwiBRvhoGRTjwJG7Em5TU2UJ │
+│ voting@v2.1.7        │ 0x47cab484d85ff17c7849d0c198b5313db672f4ce │ ipfs:QmWjc1HgaZ9PvE1W52DvHTyqwYf3GEAZmnV7ABptwToEhE │
 └──────────────────────┴────────────────────────────────────────────┴─────────────────────────────────────────────────────┘
 ```
 
@@ -795,6 +809,179 @@ Creating in the congresses voting application an instance of another DAO and a p
 It is also worth noting, that until we reach the burning stage of the balance of the service account, we will be applying the same process to every stage. 
 ____________
 
+### Install the Evangelism application for the Foundation DAO
+``` 
+address _foundation
+```
+
+Parameters:
+- Foundation: 0x34291feae53ad4e155a20de02585eb115ef5d373
+
+Small fees collected on each believe effort accumalates on Evangelist contract and any time can be transffered by any account to euler~Foundation.
+
+#### Install the application
+*Note:* this action is done by the service account (at this stage the Congress personal accounts cannot vote for the proposal anymore, so it is done with the agent)
+
+Command template (cast tx):
+
+```
+dao install <kernelFoundationAddress> cyberevangelism.open.aragonpm.eth latest --app-init-args <agentFoundationAddress> --environment aragon:mainnet --use-frame 
+```
+
+Command (cast tx):
+
+```
+dao install 0xC45417092c7ba66052c92A4AD871fC60bdbC7009 cyberevangelism.open.aragonpm.eth latest --app-init-args 0x34291feae53ad4e155a20de02585eb115ef5d373 --environment aragon:mainnet --use-frame
+```
+
+Output:
+
+```
+  ✔ Fetching cyberevangelism.open.aragonpm.eth@latest
+  ✔ Fetching cyberevangelism.open.aragonpm.eth@latest
+  ↓ Checking installed version [skipped]
+    → Installing the first instance of cyberevangelism.open.aragonpm.eth in DAO
+  ✔ Deploying app instance
+  ↓ Fetching deployed app [skipped]
+    → App wasn't deployed in transaction.
+
+ℹ Successfully executed: "Execute desired action as a token holder"
+
+⚠ After the app instance is created, you will need to assign permissions to it for it appear as an app in the DAO
+```
+Transaction [details](https://etherscan.io/tx/0x38d8f7528df483df272b51f8165c2a5d4f712af6613437080ada9d84d6f4b55c) on proposal to install Evangelism application to euler~Foundation
+
+Proposal to install the Evangelism application, created in the euler~Foundation DAO:
+![foundation-install-evangelism-voting](./screens2/foundation-install-evangelism-voting.png)
+
+We now need to vote for this proposal with the agent of the Congress. Anyone from the Cogress DAO creates a proposal and votes `yes` for this proposal of the Foundation DAO, in the Congress DAO.
+
+Command template (cast tx):
+
+```
+dao act <agentCongressAddress> <foundationVotingAddress>  "vote(uint256,bool,bool)" <id> <vote> <enact>  --environment aragon:<network>
+```
+
+Command (cast tx):
+
+```
+dao act 0x3A1F860046249646E508C417a840755571bC4680 0x47cab484d85ff17c7849d0c198b5313db672f4ce "vote(uint256,bool,bool)" 0 true true  --environment aragon:mainnet --use-frame --gas-price 10
+```
+
+Output:
+
+```
+  ⠦ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
+  ✔ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
+
+✔ Successfully executed: "Execute desired action as a token holder"
+```
+
+Transaction [details](https://etherscan.io/tx/0xb3a1a31e0deee3202b62f620d4caf4366a59fff3bf7afc71937644c7dbc2f662) on creating proposal in cyber~Congress DAO to vote YES on proposal to install Evangelism application in euler~Foundation.
+
+Created proposal in cyber~Congress DAO:
+![congress-install-evangelism-foundation-voting](./screens2/congress-install-evangelism-foundation-voting.png)
+
+![congress-install-evangelism-foundation-voting-passed](./screens2/congress-install-evangelism-foundation-voting-passed.png)
+
+Vote #1 transaction [details](https://etherscan.io/tx/0xac3001eaf48be6706394a46ebb945b123fe49f5c30eb6d15c36bcd52ec3c0750) and Vote #2 transaction [details](https://etherscan.io/tx/0x9601b7970f8f2bf24e3243a5661eeca7744bb56c00424cf7ff602739b97c076a)
+
+Proposal passed in the euler~Foundation DAO:
+![foundation-install-evangelism-voting-passed](./screens2/foundation-install-evangelism-voting-passed.png)
+
+*Note:* The Evangelism application is still permissionless at this stage. To complete the installation process, we need to assign permissions for the Evangelism application.
+
+```
+  ⠏ Inspecting DAO
+  ✔ Inspecting DAO
+  ✔ Fetching permissionless apps
+
+✔ Successfully fetched DAO apps for 0xC45417092c7ba66052c92A4AD871fC60bdbC7009
+┌──────────────────────┬────────────────────────────────────────────┬─────────────────────────────────────────────────────┐
+│ App                  │ Proxy address                              │ Content                                             │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ kernel               │ 0xC45417092c7ba66052c92A4AD871fC60bdbC7009 │ (No UI available)                                   │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ acl                  │ 0xf2c7820014ac0041d179c692089d828ba0848cfd │ (No UI available)                                   │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ evmreg               │ 0xec79beef13966c5f240678ff23701cc6e99889fd │ (No UI available)                                   │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ token-manager@v2.1.7 │ 0x0b14bcfdf5e162e734cbf01d020ca49bc060efd5 │ ipfs:Qmev9Q7g4DEDHjqWt4QSdFy3dpzZmeF5AnPozhtjdboZG3 │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ agent@v5.0.2         │ 0x34291feae53ad4e155a20de02585eb115ef5d373 │ ipfs:QmX3wpYcYF7W8YDJgUBfvDu95mxRAYoaG4cZVir9yTuq4C │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ finance@v2.1.8       │ 0x6ea838ca600e05164b7e7c053b4cf570cda9d352 │ ipfs:QmeVsMqxYfnSShsC5KKob43KxfE95vtDzc4WRMx1DqBnm3 │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ voting@v2.1.7        │ 0x47cab484d85ff17c7849d0c198b5313db672f4ce │ ipfs:QmWjc1HgaZ9PvE1W52DvHTyqwYf3GEAZmnV7ABptwToEhE │
+└──────────────────────┴────────────────────────────────────────────┴─────────────────────────────────────────────────────┘
+┌──────────────────────┬────────────────────────────────────────────┐
+│ Permissionless app   │ Proxy address                              │
+├──────────────────────┼────────────────────────────────────────────┤
+│ cyberevangelism.open │ 0xfc3849b9711f69ddb677FAcfF0CD6755A981a1F0 │
+└──────────────────────┴────────────────────────────────────────────┘
+```
+
+#### Initialize Founder Role
+
+__FOUNDER_ROLE__: TODO
+
+Command template (cast tx):
+
+```
+npx dao acl create <kernelFoundationAddress> <evangelismApplicationAddress> FOUNDER_ROLE <agentCongressAddress> <agentCongressAddress> --environment aragon:<network>
+```
+
+Command (cast tx):
+
+```
+dao acl create 0xC45417092c7ba66052c92A4AD871fC60bdbC7009 0xfc3849b9711f69ddb677FAcfF0CD6755A981a1F0 FOUNDER_ROLE 0x3a1f860046249646e508c417a840755571bc4680 0x3a1f860046249646e508c417a840755571bc4680 --environment aragon:mainnet --use-frame
+```
+
+Output:
+
+```
+  ⠇ Executing createPermission on 0xC45417092c7ba66052c92A4AD871fC60bdbC7009
+  ✔ Executing createPermission on 0xC45417092c7ba66052c92A4AD871fC60bdbC7009
+
+✔ Successfully executed: "Execute desired action as a token holder"
+```
+
+Transaction [details](https://etherscan.io/tx/0x8081014ed5c7c3b2cc76b532017a38a812b7f34bb0f227c441c68fd478418ce0) on proposal in euler~Foundation to install FOUNDER_ROLE on the Evangelism application
+
+Created proposal in euler~Foundation DAO:
+![foundation-install-founder-evangelism-proposal](./screens2/foundation-install-founder-evangelism-proposal.png)
+
+Create proposal in cyber~Congress DAO to vote on:
+
+Command (cast tx):
+```
+dao act 0x3A1F860046249646E508C417a840755571bC4680 0x47cab484d85ff17c7849d0c198b5313db672f4ce "vote(uint256,bool,bool)" 1 true true  --environment aragon:mainnet --use-frame --gas-price 10
+```
+
+Output:
+
+```
+  ⠦ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
+  ✔ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
+
+✔ Successfully executed: "Execute desired action as a token holder"
+```
+
+Transaction [details](https://etherscan.io/tx/0x625b579bc657cdc232fd079dbcec632d3b92eace67514f3744a20cecdbf32cb1) on creating proposal to vote YES in cyber~Congress DAO on proposal to assign FOUNDER_ROLE to congress' agent on Evangelism appication in euler~Foundation DAO
+
+Created proposal:
+![congress-vote-install-founder-evangelism-foundation-proposal](./screens2/congress-vote-install-founder-evangelism-foundation-voting.png)
+
+Vote #1 transaction [details](https://etherscan.io/tx/0x542d57a72c24c54b663ceff66045d8d87eb6db1ae4fe926628e42946bba21880) and Vote #2 transaction [details](https://etherscan.io/tx/0x53adfe0acddbe7745d592dec121a837681906860888bfa19c8ae4adb5526362f)
+
+Passed proposal in cyber~Congress:
+![congress-vote-install-founder-evangelism-foundation-proposal-passed](./screens2/congress-vote-install-founder-evangelism-foundation-proposal-passed.png)
+
+Passed proposal in euler~Foundation DAO:
+![foundation-install-founder-evangelism-proposal-passed](./screens2/foundation-install-founder-evangelism-proposal-passed.png)
+
+Deployment of Evangelism application in euler~Foundation finished.
+
 ### Install the Vesting application for the Foundation DAO
 
 #### Parameters
@@ -806,8 +993,8 @@ uint64 _vestingEnd
 
 Parameters:
 
-- Token Manager: 0xc53914fddba1357da7ccc09d193f3b72d5e652a6
-- Vesting End: Wednesday, April 1, 2020 1:00:00 AM GMT (1585702800)
+- Token Manager: 0x0b14bcfdf5e162e734cbf01d020ca49bc060efd5
+- Vesting End: 1592650849 - Saturday, June 20, 2020 11:00:49 AM
 
 *Note:* The Vesting application needs the token managers' address of the Foundation DAO because it creates vesting (which is the token managers' functionality) and calls on issue, assing and burn operations as the token manager (you can see which accounts are set as manager, and other rights, when we click on the proposal itself).
 
@@ -822,13 +1009,13 @@ We strongly recommend you read Aragon's guides [about manager isntance](https://
 Command template (cast tx):
 
 ```
-npx dao install <kernelFoundationAddress> cyberclaim.open.aragonpm.eth latest --app-init-args <tokenManagerFoundationAddress> <vestingEnd> --environment aragon:rinkeby
+npx dao install <kernelFoundationAddress> cyberclaim.open.aragonpm.eth latest --app-init-args <tokenManagerFoundationAddress> <vestingEnd> --environment aragon:<network>
 ```
 
 Command (cast tx):
 
 ```
-npx dao install 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8 cybervesting.open.aragonpm.eth latest --app-init-args 0xc53914fddba1357da7ccc09d193f3b72d5e652a6 1585702800 --environment aragon:rinkeby --use-frame
+dao install 0xC45417092c7ba66052c92A4AD871fC60bdbC7009 cybervesting.open.aragonpm.eth latest --app-init-args 0x0b14bcfdf5e162e734cbf01d020ca49bc060efd5 1592650849 --environment aragon:mainnet --use-frame
 ```
 
 Output:
@@ -847,10 +1034,10 @@ Output:
 ⚠ After the app instance is created, you will need to assign permissions to it for it appear as an app in the DAO
 ```
 
-[Transaction detail of the proposal to install the Vesting application in the Foundation](https://rinkeby.etherscan.io/tx/0x64eebe72bbafcbb863af13d5b635d82d404ebe9b36d96a93cd82891da6450dd1)
+Transaction [details](https://etherscan.io/tx/0xbe5a64296d7a3b8f1f039a0809df8263b51b8a7c62e5f2001e9e8553428ca7a7) of the proposal to install the Vesting application in the Foundation
 
 Proposal to install the Vesting application, created in the Foundation DAO:
-![foundation-install-vesting-voting](./screens/foundation-install-vesting-voting.png)
+![foundation-install-vesting-proposal](./screens2/foundation-install-vesting-proposal.png)
 
 We now need to vote for this proposal with the agent of the Congress. Anyone from the Cogress DAO creates a proposal and votes `yes` for this proposal of the Foundation DAO, in the Congress DAO.
 
@@ -863,55 +1050,62 @@ dao act <agentCongressAddress> <foundationVotingAddress>  "vote(uint256,bool,boo
 Command (cast tx):
 
 ```
-dao act 0x988fbf6ee7219c0672351605ccc16060ed31d703 0x7c2e8bec18dbe0d0fb1ba2920824444c164aaf7f "vote(uint256,bool,bool)" 0 true true  --environment aragon:rinkeby --use-frame
+dao act 0x3A1F860046249646E508C417a840755571bC4680 0x47cab484d85ff17c7849d0c198b5313db672f4ce "vote(uint256,bool,bool)" 2 true true  --environment aragon:mainnet --use-frame --gas-price 10
 ```
 
 Output:
 
 ```
-  ⠙ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
-  ✔ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
+  ⠏ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
+  ✔ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
 
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
+Transaction [details](https://etherscan.io/tx/0xb357de4d61514bf0e1a22c077b321bb2dfd7d6948e9f68948a67cd4cbdde2cb0) on creating proposal in cyber~Congress DAO to vote on installing Vesting application in euler~Foundation DAO.
+
 Here, any of the congressmen vote `yes` to the proposal in the cyber~Congress DAO for the vesting app to be installed in the Foundation DAO:
-![congress-install-vesting-foundation-voting](./screens/congress-install-vesting-foundation-voting.png)
+![congress-install-vesting-foundation-voting](./screens2/congress-install-vesting-foundation-voting.png)
 
-[Vote #1 Tx](https://rinkeby.etherscan.io/tx/0xc75f1096758c0dd37b033f623afc9321c568ec36e82f8b2186b1081e6d988dfa) and [Vote #2 Tx](https://rinkeby.etherscan.io/tx/0xf6accd0cf47b67415ae54ed486471cb55188335f505bf355abf0c9d3acdf6a00)
+Vote #1 transaction [details](https://etherscan.io/tx/0x3cf2bd68d0d1a2e79ba2ad464b258a095a81eb9f11c2199d0ab591161ca1057e) and Vote #2 transaction [details](https://etherscan.io/tx/0x5533c392491c9bc0ed2d7ecc90b9104f89f6059b9e8b3bfeebd49d23f89d599f)
 
-Proposal passed in the Foundation DAO:
-![foundation-install-vesting-voting-passed](./screens/foundation-install-vesting-voting-passed.png)
+Proposal passed in the cyber~Foundation DAO:
+![congress-install-vesting-foundation-voting-passed](./screens2/congress-install-vesting-foundation-voting-passed.png)
+
+Proposal passed in the euler~Foundation DAO:
+![foundation-install-vesting-proposal-passed](./screens2/foundation-install-vesting-proposal-passed.png)
 
 *Note:* The Vesting application is still permissionless at this stage. To complete the installation process, we need to assign permissions for the Vesting application.
 
 ```
-  ⠙ Inspecting DAO
+  ⠋ Inspecting DAO
   ✔ Inspecting DAO
   ✔ Fetching permissionless apps
 
-✔ Successfully fetched DAO apps for 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8
-┌──────────────────────┬────────────────────────────────────────────┬─────────────────────────────────────────────────────┐
-│ App                  │ Proxy address                              │ Content                                             │
-├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ kernel               │ 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8 │ (No UI available)                                   │
-├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ acl                  │ 0x3c81424a236b8105ad089425552a5c5dc16f9bad │ (No UI available)                                   │
-├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ evmreg               │ 0x7009e48641fb1f246639b60e859612192ee29384 │ (No UI available)                                   │
-├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ token-manager@v2.1.7 │ 0xc53914fddba1357da7ccc09d193f3b72d5e652a6 │ ipfs:QmdLEDDfiH3RGjbgU5hqJwwALbNreMWupqTQCRGfNrMPiP │
-├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ agent@v5.0.1         │ 0x53b892babeb4a7044ec23d0b0c7c53eeb0d0ecae │ ipfs:QmXBnAn37C813nLSHtLL3EcCsYSJS6k5kK15QcmD6DvHNZ │
-├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ finance@v2.1.9       │ 0x63f83cee5f74f9439ac9dc11b58dd85fd7ca24b0 │ ipfs:QmbnhuLvvvcqEpRXd6VtnqZYAFZJdvAnhUrBAwqE1rfeRP │
-├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ voting@v2.1.7        │ 0x7c2e8bec18dbe0d0fb1ba2920824444c164aaf7f │ ipfs:QmUvWBZqpKepDwS5WUsTTURwiBRvhoGRTjwJG7Em5TU2UJ │
-└──────────────────────┴────────────────────────────────────────────┴─────────────────────────────────────────────────────┘
+✔ Successfully fetched DAO apps for 0xC45417092c7ba66052c92A4AD871fC60bdbC7009
+┌─────────────────────────────┬────────────────────────────────────────────┬─────────────────────────────────────────────────────┐
+│ App                         │ Proxy address                              │ Content                                             │
+├─────────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ kernel                      │ 0xC45417092c7ba66052c92A4AD871fC60bdbC7009 │ (No UI available)                                   │
+├─────────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ acl                         │ 0xf2c7820014ac0041d179c692089d828ba0848cfd │ (No UI available)                                   │
+├─────────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ evmreg                      │ 0xec79beef13966c5f240678ff23701cc6e99889fd │ (No UI available)                                   │
+├─────────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ token-manager@v2.1.7        │ 0x0b14bcfdf5e162e734cbf01d020ca49bc060efd5 │ ipfs:Qmev9Q7g4DEDHjqWt4QSdFy3dpzZmeF5AnPozhtjdboZG3 │
+├─────────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ agent@v5.0.2                │ 0x34291feae53ad4e155a20de02585eb115ef5d373 │ ipfs:QmX3wpYcYF7W8YDJgUBfvDu95mxRAYoaG4cZVir9yTuq4C │
+├─────────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ finance@v2.1.8              │ 0x6ea838ca600e05164b7e7c053b4cf570cda9d352 │ ipfs:QmeVsMqxYfnSShsC5KKob43KxfE95vtDzc4WRMx1DqBnm3 │
+├─────────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ voting@v2.1.7               │ 0x47cab484d85ff17c7849d0c198b5313db672f4ce │ ipfs:QmWjc1HgaZ9PvE1W52DvHTyqwYf3GEAZmnV7ABptwToEhE │
+├─────────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ cyberevangelism.open@v1.0.0 │ 0xfc3849b9711f69ddb677facff0cd6755a981a1f0 │ ipfs:QmPWQ9akBrcMJUD8XFvkeDh7UzayC6cSdKUCtwbMdmoC1s │
+└─────────────────────────────┴────────────────────────────────────────────┴─────────────────────────────────────────────────────┘
 ┌────────────────────────────────────────────────────────────────────┬────────────────────────────────────────────┐
 │ Permissionless app                                                 │ Proxy address                              │
 ├────────────────────────────────────────────────────────────────────┼────────────────────────────────────────────┤
-│ 0xb3898b383ac8a6bae742b41163ced5666086e3e367be1b3de9251c2dbc45d412 │ 0x7C2a661daC04aaE4381b810c3228cCaB1d11Deec │
+│ 0xb3898b383ac8a6bae742b41163ced5666086e3e367be1b3de9251c2dbc45d412 │ 0xd84469eCd96825C956d7Ae8B072209cA89AE37E2 │
 └────────────────────────────────────────────────────────────────────┴────────────────────────────────────────────┘
 ```
 
@@ -935,19 +1129,19 @@ npx dao acl create <kernelFoundationAddress> <vestingApplicationAddress> PAUSE_R
 Command (cast tx):
 
 ```
-dao acl create 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8 0x7C2a661daC04aaE4381b810c3228cCaB1d11Deec PAUSE_ROLE 0x988fbf6ee7219c0672351605ccc16060ed31d703 0x988fbf6ee7219c0672351605ccc16060ed31d703 --environment aragon:rinkeby --use-frame
+dao acl create 0xC45417092c7ba66052c92A4AD871fC60bdbC7009 0xd84469eCd96825C956d7Ae8B072209cA89AE37E2 PAUSE_ROLE 0x3a1f860046249646e508c417a840755571bc4680 0x3a1f860046249646e508c417a840755571bc4680 --environment aragon:mainnet --use-frame
 ```
 
 Output:
 
 ```
-  ⠙ Executing createPermission on 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8
-  ✔ Executing createPermission on 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8
+  ⠇ Executing createPermission on 0xC45417092c7ba66052c92A4AD871fC60bdbC7009
+  ✔ Executing createPermission on 0xC45417092c7ba66052c92A4AD871fC60bdbC7009
 
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-[Transaction detail on install PAUSE_ROLE on the Vesting application](https://rinkeby.etherscan.io/tx/0x9da2131301429862a12f510806ef8f262f07035cd5b68888a3a5802bdfa050df)
+Transaction [details](https://etherscan.io/tx/0xef5aa27d0e1249eaaf555292df35c6a1697bff7a6d66a9b14bfe1c303fe4b085) on creating proposal to install PAUSE_ROLE on the Vesting application in euler~Foundation 
 
 Command template (cast tx):
 
@@ -958,71 +1152,74 @@ dao acl create <kernelFoundationAddress> <claimAppAddress> PROOF_ROLE <prooferAd
 Command (cast tx):
 
 ```
-dao acl create 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8 0x7C2a661daC04aaE4381b810c3228cCaB1d11Deec PROOF_ROLE 0x31c3F97575B7515a7e967f73Cb26c5BFD7898951 0x988fbf6ee7219c0672351605ccc16060ed31d703 --environment aragon:rinkeby --use-frame
+dao acl create 0xC45417092c7ba66052c92A4AD871fC60bdbC7009 0xd84469eCd96825C956d7Ae8B072209cA89AE37E2 PROOF_ROLE 0x31c3F97575B7515a7e967f73Cb26c5BFD7898951 0x3a1f860046249646e508c417a840755571bc4680 --environment aragon:mainnet --use-frame --gas-price 10
 ```
 
 Output:
 
 ```
-  ⠼ Executing createPermission on 0x7eFA8E568a5fE91741f72A39b96f42EEdB67C419
-  ✔ Executing createPermission on 0x7eFA8E568a5fE91741f72A39b96f42EEdB67C419
+  ⠇ Executing createPermission on 0xC45417092c7ba66052c92A4AD871fC60bdbC7009
+  ✔ Executing createPermission on 0xC45417092c7ba66052c92A4AD871fC60bdbC7009
 
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-[Transaction detail of installing the PROOF_ROLE for the Vesting application](https://rinkeby.etherscan.io/tx/0xa6a085437705033b3fdbd181870edfff5081acfc81ac73c6f682f1fdcf21fcb8)
+Transaction [details](https://etherscan.io/tx/0xf14543dbb21ebad7680caea0146188cdcf7f58301c46e86b5533b7589c74c63b) on creating proposal to install PROOF_ROLE on the Vesting application in euler~Foundation 
+
 
 The created proposals in the Foundation DAO:
-![foundaiton-vesting-permissions-voting](./screens/foundaiton-vesting-permissions-voting.png)
+![foundaiton-vesting-permissions-proposals](./screens2/foundaiton-vesting-permissions-proposals.png)
 
 Create a proposal to vote on:
 
 ```
-dao act 0x988fbf6ee7219c0672351605ccc16060ed31d703 0x7c2e8bec18dbe0d0fb1ba2920824444c164aaf7f "vote(uint256,bool,bool)" 1 true true  --environment aragon:rinkeby
+dao act 0x3A1F860046249646E508C417a840755571bC4680 0x47cab484d85ff17c7849d0c198b5313db672f4ce "vote(uint256,bool,bool)" 3 true true  --environment aragon:mainnet --use-frame --gas-price 10
 ```
 
 ```
-  ⠙ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
-  ✔ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
+  ⠧ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
+  ✔ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
 
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-[Transaction detail of the creation of the voting in the Congress for setting up the PAUSE_ROLE for Vesting](https://rinkeby.etherscan.io/tx/0x3c56d2efe4888e581726fa583a679779860d7cc983b90620c865bc945faaf652)
+Transaction [details](https://etherscan.io/tx/0xd9187609f1c56fb432752665e1a0ffc70499582fcbd7aab6490f60e6816e7ad0) on creating proposal in cyber~Congress DAO to vote on setting the PAUSE_ROLE on Vesting application in euler~Foundation DAO
 
 Create a proposal to vote on:
 
 ```
-dao act 0x988fbf6ee7219c0672351605ccc16060ed31d703 0x7c2e8bec18dbe0d0fb1ba2920824444c164aaf7f "vote(uint256,bool,bool)" 2 true true  --environment aragon:rinkeby
+dao act 0x3A1F860046249646E508C417a840755571bC4680 0x47cab484d85ff17c7849d0c198b5313db672f4ce "vote(uint256,bool,bool)" 4 true true  --environment aragon:mainnet --use-frame --gas-price 10
 ```
 
 ```
-  ⠙ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
-  ✔ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
+  ⠧ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
+  ✔ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
 
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-[Transaction detail of the creation of voting in Congress, for setting the PROOF_ROLE for Vesting](https://rinkeby.etherscan.io/tx/0x3ca7290ab854b41da1f44f3bc2e0c5060532f3b759c24efc752d7032a83f0bb6)
+Transaction [details](https://etherscan.io/tx/0x7bc1e658dd4810ee2eef8349363a9853d23fe5c9db091573a0e2d9beb20fc3c2) on creating proposal in cyber~Congress DAO to vote on setting the PROOF_ROLE on Vesting application in euler~Foundation DAO
+
 
 The created proposals in the Congress DAO:
-![congress-install-vesting-permissions-foundation-voting](./screens/congress-install-vesting-permissions-foundation-voting.png)
+![congress-install-vesting-permissions-foundation-voting](./screens2/congress-install-vesting-permissions-foundation-voting.png)
 
 The passed proposals, which forward the `yes` votes to the Fondation DAO:
-![congress-install-vesting-permissions-foundation-passed-1](./screens/congress-install-vesting-permissions-foundation-passed-1.png)
+![congress-install-pause-vesting-foundation-passed](./screens2/congress-install-pause-vesting-foundation-passed.png)
 
-[Vote #1](https://rinkeby.etherscan.io/tx/0xaaf59921ab7c4e2b7663f0c6a3f7817dfcf04dd7bb514d94c7c10384bbcef2c6) and [Vote #2](https://rinkeby.etherscan.io/tx/0xe471ca20104850284f61e56f5781a3d527b41f1640edafc4fcbf8501338e7bfa)
+Vote #1 transaction [details](https://etherscan.io/tx/0xe9d2443154523200643f33ed2744eff8097c2f8a082a318e64141e8fe484f52d) and Vote #2 transaction [details](https://etherscan.io/tx/0x7bd934f94876c93ba24b733daaaa8cef6df226eb219c47be495543e12747ab9a)
 
-![congress-install-vesting-permissions-foundation-passed-2](./screens/congress-install-vesting-permissions-foundation-passed-2.png)
+![congress-install-proof-vesting-foundation-passed](./screens2/congress-install-proof-vesting-foundation-passed.png)
 
-[Vote #1](https://rinkeby.etherscan.io/tx/0x7e570798f37d9b3b4a85f33960058923d84358b3603042f33277ec7ef9ed80a2) and [Vote #2](https://rinkeby.etherscan.io/tx/0x1f9ff63ced2a86fac2cc0c3e2d8940ef1ea1ed16e33e6bae01442a5d705d9849)
+Vote #1 transaction [details](https://etherscan.io/tx/0x4682c60699a5eb6129ce326bf58f78286fd2d9e105deb7669d9c1516f2908244) and Vote #2 transaction [details](https://etherscan.io/tx/0x63751a5ebb5feab2d125e6ccb1b352206a48e7343405bd39d3105f27f8edd2d4)
 
 The passed proposals in the Foundation DAO:
 (we now see that the cyber~Vesting application is available)
-![foundation-install-vesting-permission-voting-passed](./screens/foundation-install-vesting-permission-voting-passed.png)
+![foundation-install-pause-vesting-permission-proposal-passed](./screens2/foundation-install-pause-vesting-permission-proposal-passed.png)
+![foundation-install-pause-vesting-permission-proposal-passed](./screens2/foundation-install-proof-vesting-permission-proposal-passed.png)
 
 Permissions for the Auction in the Foundation DAO, are now installed:
-![foundation-vesting-permissions-list](./screens/foundation-vesting-permissions-list.png)
+![foundation-vesting-permissions-list](./screens2/foundation-vesting-permissions-list.png)
 
 #### Grant permission to Issue/Assign/Burn as Token Manager
 We need to grant the needed permissions to the Vesting application so it can perform the needed functions as Token Manager in the Foundation DAO (you may view different roles in `token permissions`).
@@ -1037,18 +1234,19 @@ We need to grant the needed permissions to the Vesting application so it can per
 
 When someone wants to lock the tokens (vest them), under the hood, we must first burn thee tokens and then release the same amount in the token manager. And only then, give him those tokens with a vesting key. 
 
-![foundation-tokens-permissions-list](./screens/foundation-tokens-permissions-list.png)
+![foundation-tokens-manager-permissions-list](./screens2/foundation-tokens-manager-permissions-list.png)
 
-![foundation-token-manager-issue-add-vesting](./screens/foundation-token-manager-issue-add-vesting.png)
-- [Transaction details](https://rinkeby.etherscan.io/tx/0xd8e1003152602e8bcccc006de2568d44f34e37951fe4f3a6ac70c65ab56d2ace)
+![foundation-token-manager-issue-add-vesting](./screens2/foundation-token-manager-issue-add-vesting.png)
+- Transaction [details](https://etherscan.io/tx/0xe6f56461c3a18f456242db3a4d8bb29ba4b732183c0c7617d97f2bacd703437a) on creating proposal in euler~Foundation to grant Issue Tokens to Vesting application
 
-![foundation-token-manager-assign-add-vesting](./screens/foundation-token-manager-assign-add-vesting.png)
-- [Transaction details](https://rinkeby.etherscan.io/tx/0x25344d300fb4477717be1d9523780a3a50b8457245a3bd348883433c6e269be5)
+![foundation-token-manager-assign-add-vesting](./screens2/foundation-token-manager-assign-add-vesting.png)
+- Transaction [details](https://etherscan.io/tx/0x5c821278156b41a55029fc95896db7670b31d7f92c2386338394c7ff92e7b1c5) on creating proposal in euler~Foundation to grant Assig Tokens to Vesting application
 
-![foundation-token-manager-burn-add-vesting](./screens/foundation-token-manager-burn-add-vesting.png)
-- [Transaction details](https://rinkeby.etherscan.io/tx/0x7385f2bdaaa52650b54f8b7f390e31c76ba65a36005aafc8d4826aea06e91cf2)
+![foundation-token-manager-burn-add-vesting](./screens2/foundation-token-manager-burn-add-vesting.png)
+- Transaction [details](https://etherscan.io/tx/0x2ca183cb9413c5cffee40d10005243c92d197dc2d0cd1f0da63e4e18ed00f99e) on creating proposal in euler~Foundation to grant Burn Tokens to Vesting application
 
-![foundation-token-manager-vestings-proposals](./screens/foundation-token-manager-vestings-proposals.png)
+![foundation-token-manager-vestings-proposals](./screens2/foundation-token-manager-vestings-proposals.png)
+
 
 After this, create 3 votes:
 
@@ -1057,52 +1255,60 @@ dao act <agentCongressAddress> <foundationVotingAddress>  "vote(uint256,bool,boo
 ```
 
 ```
-dao act 0x988fbf6ee7219c0672351605ccc16060ed31d703 0x7c2e8bec18dbe0d0fb1ba2920824444c164aaf7f "vote(uint256,bool,bool)" 3 true true  --environment aragon:rinkeby --use-frame
+dao act 0x3A1F860046249646E508C417a840755571bC4680 0x47cab484d85ff17c7849d0c198b5313db672f4ce "vote(uint256,bool,bool)" 5 true true  --environment aragon:mainnet --use-frame --gas-price 10
 ```
 
-- [Transaction detail of creating the proposal on issuing token permissions](https://rinkeby.etherscan.io/tx/0xd3c9ed31d992fac397d9efb5b07691ebc563f4138f7c3361a3bbb7366b9a39fb)
+- Transaction [details](https://etherscan.io/tx/0x96e7866d1380694a48a820e14f0c9774ba9913d9e44389d7fd5126137dc32a97) on creating proposal in cyber~Congress DAO to vote on proposal on granting Issue permission on Token Manager to Vesting application in euler~Foundation DAO
 
 ```
-dao act 0x988fbf6ee7219c0672351605ccc16060ed31d703 0x7c2e8bec18dbe0d0fb1ba2920824444c164aaf7f "vote(uint256,bool,bool)" 4 true true  --environment aragon:rinkeby --use-frame
+dao act 0x3A1F860046249646E508C417a840755571bC4680 0x47cab484d85ff17c7849d0c198b5313db672f4ce "vote(uint256,bool,bool)" 6 true true  --environment aragon:mainnet --use-frame --gas-price 10
 ```
 
-- [Transaction detail of creating a proposal to assign tokens permissions](https://rinkeby.etherscan.io/tx/0xf09d530f2b76a59eeceb949ca63c94fe2abe6111b8dbe8d6be4dc66c9adf34fc)
+- Transaction [details](https://etherscan.io/tx/0x7a722efe4710ee953f7868774166a4aaf631194f48e1bc1266c6d5530c311da1) on creating proposal in cyber~Congress DAO to vote on proposal on granting Assign permission on Token Manager to Vesting application in euler~Foundation DAO
 
 ```
-dao act 0x988fbf6ee7219c0672351605ccc16060ed31d703 0x7c2e8bec18dbe0d0fb1ba2920824444c164aaf7f "vote(uint256,bool,bool)" 5 true true  --environment aragon:rinkeby --use-frame
+dao act 0x3A1F860046249646E508C417a840755571bC4680 0x47cab484d85ff17c7849d0c198b5313db672f4ce "vote(uint256,bool,bool)" 6 true true  --environment aragon:mainnet --use-frame --gas-price 10
 ```
-- [Transaction detail of creating a proposal on Burn tokens permissions](https://rinkeby.etherscan.io/tx/0xee1015799d6b0cc13b0212399d130b78c7619b2590daa0a13589a18398a0dc6e)
+- Transaction [details](https://etherscan.io/tx/0x55969023e3914d8c9a715a5fd51ca3bc58c740ef9eadbcc39d91f4d940389518) on creating proposal in cyber~Congress DAO to vote on proposal on granting Burn permission on Token Manager to Vesting application in euler~Foundation DAO
 
 Output:
 
 ```
-  ⠸ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
-  ✔ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
+  ⠇ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
+  ✔ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
 
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-![congress-token-manager-vesting-proposals](./screens/congress-token-manager-vesting-proposals.png)
+![congress-install-vesting-permission-token-manager-foundation-voting](./screens2/congress-install-vesting-permission-token-manager-foundation-voting.png)
 
 Members of the Congress DAO vote for these proposals and this forwards the `yes` votes to proposals, which then set permissions as Token Manager in the Foundation DAO, granting the required permissions for the Vesting application.
 
-![congress-token-manager-foundation-vesting-vote-issue](./screens/congress-token-manager-foundation-vesting-vote-issue.png)
-[Vote #1](https://rinkeby.etherscan.io/tx/0x2679df561fd4e4a0246a0e0173390d7d4f12fe122086a4cfe8ed629c452a798f) and [Vote #2](https://rinkeby.etherscan.io/tx/0x38b128d01e16e06fe60c841ddc3a16e21e351ead7129613e55842a76f1d3e613)
+![congress-install-vesting-token-manager-foundation-issue-voting](./screens2/congress-install-vesting-token-manager-foundation-issue-voting.png)
 
-![congress-token-manager-foundation-vesting-vote-assign](./screens/congress-token-manager-foundation-vesting-vote-assign.png)
-[Vote #1](https://rinkeby.etherscan.io/tx/0x51df69437bba518ddd93914919dc6666d7aac784a74c257d60392bb4a12c3896) and  [Vote #2](https://rinkeby.etherscan.io/tx/0xc172ecb9492189919df6f5ad3b2a973ceca8e4b1625a30165340d81cede8e142)
+Vote #1 transaction [details](https://etherscan.io/tx/0x480a235cca844530cb8ef6cc34dfc51266f2e52026a6b04f3491214dce2be829) and Vote #2 transaction [details](https://etherscan.io/tx/0x3a815c4f0cb91dc6b59943fa78d0b7b8c4750cbef2c6166097c5e836b3f72706)
 
-![congress-token-manager-foundation-vesting-vote-burn](./screens/congress-token-manager-foundation-vesting-vote-burn.png)
-[Vote #1](https://rinkeby.etherscan.io/tx/0xd1bf9e7f063f7da9139143b9487bc572f4686d32730d80c9707b797c56572f15) and   [Vote #2](https://rinkeby.etherscan.io/tx/0xf234d5fb27d48413ecd78d0969765e22ba3337b54de712511d40bd9879f8058b)
+![congress-install-vesting-token-manager-foundation-assign-voting](./screens2/congress-install-vesting-token-manager-foundation-assign-voting.png)
+
+Vote #1 transaction [details](https://etherscan.io/tx/0x223cbe7c0d75d061e88dff5ce8f0ae9747e59ed3922d3c7eda23111c31e71917s) and Vote #2 transaction [details](https://etherscan.io/tx/0xeb057716a14216a642cba588d333e1fb72e5730f1255367ca0d1021d753ff25d)
+
+![congress-install-vesting-token-manager-foundation-burn-voting](./screens2/congress-install-vesting-token-manager-foundation-burn-voting.png)
+
+Vote #1 transaction [details](https://etherscan.io/tx/0xfed3cf6adc11b0d6e525b5d0fcda9628cd46c8326f311a0f4c841d39ccd84ec5) and Vote #2 transaction [details](https://etherscan.io/tx/0x502b67642c8e173a5649bc0108bba8cbccfb6de935143bc60a5d3b8b629ceec8)
 
 The passed proposals in the Foundation DAO:
-![foundation-token-mananger-vesting-proposals-passed](./screens/foundation-token-mananger-vesting-proposals-passed.png)
+![foundation-install-vesting-token-manager-issue-proposal-passed](./screens2/foundation-install-vesting-token-manager-issue-proposal-passed.png)
+![foundation-install-vesting-token-manager-assign-proposal-passed](./screens2/foundation-install-vesting-token-manager-assign-proposal-passed.png)
+![foundation-install-vesting-token-manager-burn-proposal-passed](./screens2/foundation-install-vesting-token-manager-issue-proposal-passed.png)
 
 New permissions as Token Manager in the Foundation DAO:
-![foundation-token-manager-permissions-list](./screens/foundation-token-manager-permissions-list.png)
+![foundation-token-manager-permissions-list-vesting](./screens2/foundation-token-manager-permissions-list-vesting.png)
 
 Well done! The installation of the Vesting application for the Foundation DAO is completed! This application is now fully operational.
 ____________
+
+
+
 
 ### Installing the Auction application for the Foundation DAO
 
@@ -1123,11 +1329,11 @@ address _tokenManager
 - The foundation address is the address to which the donated ETH will be transferred (Foundations DAO agent)
 
 ```
-- numberOfDays - 20
-- openTime -  1585245600 Thursday, March 26, 2020 6:00:00 PM GMT
-- startTime - 1585591200 Monday, March 30, 2020 6:00:00 PM GMT
-- token - Foundation token TGOL26 (0xf6e8E6730d8E3F48519f150215013d654d43a53B)
-- foundation - Agent of Foundation (0x53b892babeb4a7044ec23d0b0c7c53eeb0d0ecae)
+- numberOfDays - 49
+- openTime -  1586865600 Tuesday, April 14, 2020 12:00:00 PM GMT
+- startTime - 1587729600 Friday, April 24, 2020 12:00:00 PM
+- token - 0xF4ecdBa8ba4144Ff3a2d8792Cad9051431Aa4F64 (GOL)
+- foundation - 0x34291feae53ad4e155a20de02585eb115ef5d373 (Agent of euler~Foundation)
 ```
 
 #### Install
@@ -1136,13 +1342,13 @@ We use the service account to create the proposal to install the app
 Command template (cast tx):
 
 ```
-dao install <kernel> cyberauction.open.aragonpm.eth latest --app-init-args <windows> <open> <start> <token> <agentFoundationAddress> <tokenManagerAddress> --environment aragon:rinkeby
+dao install <kernelFoundation> cyberauction.open.aragonpm.eth latest --app-init-args <windows> <openTime> <startTime> <tokenFoundationAddress> <agentFoundationAddress> <tokenManagerFoundationAddress> --environment aragon:<network>
 ```
 
 Command (cast tx):
 
 ```
-dao install 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8 cyberauction.open.aragonpm.eth latest --app-init-args 20 1585245600 1585591200 0xf6e8E6730d8E3F48519f150215013d654d43a53B 0x53b892babeb4a7044ec23d0b0c7c53eeb0d0ecae  0xc53914fddba1357da7ccc09d193f3b72d5e652a6 --environment aragon:rinkeby --use-frame
+dao install 0xC45417092c7ba66052c92A4AD871fC60bdbC7009 cyberauction.open.aragonpm.eth latest --app-init-args 49 1586865600 1587729600 0xF4ecdBa8ba4144Ff3a2d8792Cad9051431Aa4F64 0x34291feae53ad4e155a20de02585eb115ef5d373 0x0b14bcfdf5e162e734cbf01d020ca49bc060efd5 --environment aragon:mainnet --use-frame
 ```
 
 Output:
@@ -1161,17 +1367,17 @@ Output:
 ⚠ After the app instance is created, you will need to assign permissions to it for it appear as an app in the DAO
 ```
 
-[Transaction detail of creating a proposal in the Foundation DAO for installing the Auction application](https://rinkeby.etherscan.io/tx/0xe89535503a65ed5f3d9ec56510c1799c9b63f5eabdfeef1b1dffd5b0e282ab5c)
+Transaction [detail](https://etherscan.io/tx/0xc53ffb4d42aee02f4554c01888fe1d18d390970e9d02937e6d4713b2ce407d1b) of creating a proposal in the euler~Foundation DAO for installing the Auction application
 
 A proposal to install the Auction app is created in the Foundation DAO:
-![foundation-install-auction-voting](./screens/foundation-install-auction-voting.png)
+![foundation-install-auction-proposal](./screens2/foundation-install-auction-proposal.png)
 
 Now, we can create the voting with the agent of the Congress and vote `yes` in the Congress DAO:
 
 Command (cast tx):
 
 ```
-dao act 0x2d0970da60f36be926f78fbe8d6ef035eeaaf09f 0x519bc4f0b24f9bf5c093f7cfdaf962a3bd15f414 "vote(uint256,bool,bool)" 6 true true  --environment aragon:rinkeby
+dao act 0x3A1F860046249646E508C417a840755571bC4680 0x47cab484d85ff17c7849d0c198b5313db672f4ce "vote(uint256,bool,bool)" 8 true true  --environment aragon:mainnet --use-frame --gas-price 10
 ```
 
 ```
@@ -1181,49 +1387,56 @@ dao act 0x2d0970da60f36be926f78fbe8d6ef035eeaaf09f 0x519bc4f0b24f9bf5c093f7cfdaf
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-[Transaction detail of creating a proposal in Congress to vote on the proposal in the Foundation, for installing the Auction application](https://rinkeby.etherscan.io/tx/0xb9d077e50861c457d9aae51033116f6a88b92717e9b9d5c44798fc7003e07298)
+Transaction [details](https://etherscan.io/tx/0xbe859e2d33fa2eda6cf60e98f876d6e5daf62471fbf363d8f0307c71f752462b) of creating a proposal in Congress to vote on the proposal in the Foundation, for installing the Auction application
 
-A created proposal to vote `yes` in Congress DAO:
-![congress-install-auction-foundation-proposal](./screens/congress-install-auction-foundation-proposal.png)
+A created proposal in cyber~Congress DAO:
+![congress-install-auction-foundation-voting](./screens2/congress-install-auction-foundation-voting.png)
+
+
+
+
+
+
 
 A passed proposal in the Congress DAO:
-![congress-install-auction-foundation-proposal-passed](./screens/congress-install-auction-foundation-proposal-passed.png)
+![congress-install-auction-foundation-voting-passed](./screens2/congress-install-auction-foundation-voting-passed.png)
 
-[Vote 1](https://rinkeby.etherscan.io/tx/0xa78f1e393d0ad1dc1f951995b15ffada45605e6fad5d6cccf26f6f72d5dbfbaf) and [Vote 2](https://rinkeby.etherscan.io/tx/0x46ef0e1313b5a1529e09723cee2142842d9e64660256061106fabe9d08f09dd5)
+Vote #1 transaction [details](https://etherscan.io/tx/0x38267871ebb764534458a2247be66390722c30604fad8a8ecd0744e6c5645409) and Vote #2 transaction [details](https://etherscan.io/tx/0xa202e891b2dac5418a76604cc8af52745651c15867def1b76672f6008db3c414)
 
 A passed proposal in the Foundation DAO, for installing the Auction application:
-![foundation-install-auction-voting-passed](./screens/foundation-install-auction-voting-passed.png)
+![foundation-install-auction-proposal-passed](./screens2/foundation-install-auction-proposal-passed.png)
 
 ```
 ➜  ~ npx dao apps 0x7eFA8E568a5fE91741f72A39b96f42EEdB67C419 --all --environment aragon:rinkeby
-  ⠙ Inspecting DAO
-  ✔ Inspecting DAO
+  ⠋ Inspecting DAO  ✔ Inspecting DAO
   ✔ Fetching permissionless apps
 
-✔ Successfully fetched DAO apps for 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8
-┌──────────────────────────┬────────────────────────────────────────────┬─────────────────────────────────────────────────────┐
-│ App                      │ Proxy address                              │ Content                                             │
-├──────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ kernel                   │ 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8 │ (No UI available)                                   │
-├──────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ acl                      │ 0x3c81424a236b8105ad089425552a5c5dc16f9bad │ (No UI available)                                   │
-├──────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ evmreg                   │ 0x7009e48641fb1f246639b60e859612192ee29384 │ (No UI available)                                   │
-├──────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ token-manager@v2.1.7     │ 0xc53914fddba1357da7ccc09d193f3b72d5e652a6 │ ipfs:QmdLEDDfiH3RGjbgU5hqJwwALbNreMWupqTQCRGfNrMPiP │
-├──────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ agent@v5.0.1             │ 0x53b892babeb4a7044ec23d0b0c7c53eeb0d0ecae │ ipfs:QmXBnAn37C813nLSHtLL3EcCsYSJS6k5kK15QcmD6DvHNZ │
-├──────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ finance@v2.1.9           │ 0x63f83cee5f74f9439ac9dc11b58dd85fd7ca24b0 │ ipfs:QmbnhuLvvvcqEpRXd6VtnqZYAFZJdvAnhUrBAwqE1rfeRP │
-├──────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ voting@v2.1.7            │ 0x7c2e8bec18dbe0d0fb1ba2920824444c164aaf7f │ ipfs:QmUvWBZqpKepDwS5WUsTTURwiBRvhoGRTjwJG7Em5TU2UJ │
-├──────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
-│ cybervesting.open@v5.0.0 │ 0x7c2a661dac04aae4381b810c3228ccab1d11deec │ ipfs:Qmcz48Le7ZKYE4zX1e5eDc2ntyxKj294qG6NcUyBXMDLto │
-└──────────────────────────┴────────────────────────────────────────────┴─────────────────────────────────────────────────────┘
+✔ Successfully fetched DAO apps for 0xC45417092c7ba66052c92A4AD871fC60bdbC7009
+┌─────────────────────────────┬────────────────────────────────────────────┬─────────────────────────────────────────────────────┐
+│ App                         │ Proxy address                              │ Content                                             │
+├─────────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ kernel                      │ 0xC45417092c7ba66052c92A4AD871fC60bdbC7009 │ (No UI available)                                   │
+├─────────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ acl                         │ 0xf2c7820014ac0041d179c692089d828ba0848cfd │ (No UI available)                                   │
+├─────────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ evmreg                      │ 0xec79beef13966c5f240678ff23701cc6e99889fd │ (No UI available)                                   │
+├─────────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ token-manager@v2.1.7        │ 0x0b14bcfdf5e162e734cbf01d020ca49bc060efd5 │ ipfs:Qmev9Q7g4DEDHjqWt4QSdFy3dpzZmeF5AnPozhtjdboZG3 │
+├─────────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ agent@v5.0.2                │ 0x34291feae53ad4e155a20de02585eb115ef5d373 │ ipfs:QmX3wpYcYF7W8YDJgUBfvDu95mxRAYoaG4cZVir9yTuq4C │
+├─────────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ finance@v2.1.8              │ 0x6ea838ca600e05164b7e7c053b4cf570cda9d352 │ ipfs:QmeVsMqxYfnSShsC5KKob43KxfE95vtDzc4WRMx1DqBnm3 │
+├─────────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ voting@v2.1.7               │ 0x47cab484d85ff17c7849d0c198b5313db672f4ce │ ipfs:QmWjc1HgaZ9PvE1W52DvHTyqwYf3GEAZmnV7ABptwToEhE │
+├─────────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ cyberevangelism.open@v1.0.0 │ 0xfc3849b9711f69ddb677facff0cd6755a981a1f0 │ ipfs:QmPWQ9akBrcMJUD8XFvkeDh7UzayC6cSdKUCtwbMdmoC1s │
+├─────────────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ cybervesting.open@v1.0.0    │ 0xd84469ecd96825c956d7ae8b072209ca89ae37e2 │ ipfs:QmaDRwwdvPnntWtvJJ6YCrcL4dwic8NJYArcP1Lp4r5xzx │
+└─────────────────────────────┴────────────────────────────────────────────┴─────────────────────────────────────────────────────┘
 ┌────────────────────────────────────────────────────────────────────┬────────────────────────────────────────────┐
 │ Permissionless app                                                 │ Proxy address                              │
 ├────────────────────────────────────────────────────────────────────┼────────────────────────────────────────────┤
-│ 0x7d9a0e9523a9f617c1b16588b4c2365cd331ca2e83ba785d79136358163c18a0 │ 0xc13926630C1aFa229a0C4df8Df2ACbfF03C4681e │
+│ 0x7d9a0e9523a9f617c1b16588b4c2365cd331ca2e83ba785d79136358163c18a0 │ 0x0b1f54Be915E77D9BF14268F94F8A26AfaB11296 │
 └────────────────────────────────────────────────────────────────────┴────────────────────────────────────────────┘
 ```
 
@@ -1237,27 +1450,27 @@ cyber functions with very large numbers and non-divisible tokens, by dust we ref
 Command template (cast tx):
 
 ```
-dao acl create <kernelFoundationAddress> <auctionApplicationAddress> CREATOR_ROLE <agentCongress> <agentCongress> --environment aragon:rinkeby
+dao acl create <kernelFoundationAddress> <auctionApplicationAddress> CREATOR_ROLE <agentCongress> <agentCongress> --environment aragon:<network>
 ```
 
 Command (cast tx):
 
 ```
-dao acl create 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8 0xc13926630C1aFa229a0C4df8Df2ACbfF03C4681e CREATOR_ROLE 0x988fbf6ee7219c0672351605ccc16060ed31d703 0x988fbf6ee7219c0672351605ccc16060ed31d703 --environment aragon:rinkeby --use-frame
+dao acl create 0xC45417092c7ba66052c92A4AD871fC60bdbC7009 0x0b1f54Be915E77D9BF14268F94F8A26AfaB11296 CREATOR_ROLE 0x3a1f860046249646e508c417a840755571bc4680 0x3a1f860046249646e508c417a840755571bc4680 --environment aragon:mainnet --use-frame
 ```
 
 Output:
 
 ```
-  ⠼ Executing createPermission on 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8
-  ✔ Executing createPermission on 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8
+  ⠇ Executing createPermission on 0xC45417092c7ba66052c92A4AD871fC60bdbC7009
+  ✔ Executing createPermission on 0xC45417092c7ba66052c92A4AD871fC60bdbC7009
 
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-![foundation-vesting-permission-creator-proposal](./screens/foundation-vesting-permission-creator-proposal.png)
+![foundation-install-creator-permission-auction-proposal](./screens2/foundation-install-creator-permission-auction-proposal.png)
 
-[Transaction detail of the creation of the Creator role for the Auction in the Foundation DAO](https://rinkeby.etherscan.io/tx/0x3a380855f5a2ceae6898a8697295b5f9f9d952a1862deaf14e6b804297ae7fe9)
+Transaction [details](https://etherscan.io/tx/0x130c930e5d259266fddf9d412b88a36933f0178fb8d86e5f43afc062bf559413) on creating proposal to install CREATOR_ROLE for the Auction application in the euler~Foundation DAO
 
 #### Initialize Burner Role
 We need to assign a Burner Role (which will burn dust tokens after auction end) to the Congress Agent.
@@ -1265,95 +1478,98 @@ We need to assign a Burner Role (which will burn dust tokens after auction end) 
 Command template (cast tx):
 
 ```
-dao acl create <kernelFoundationAddress> <auctionApplicationAddress> BURNER_ROLE <agentCongress> <agentCongress> --environment aragon:rinkeby
+dao acl create <kernelFoundationAddress> <auctionApplicationAddress> BURNER_ROLE <agentCongress> <agentCongress> --environment aragon:<network>
 ```
 
 Command (cast tx):
 
 ```
-dao acl create 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8 0xc13926630C1aFa229a0C4df8Df2ACbfF03C4681e BURNER_ROLE 0x988fbf6ee7219c0672351605ccc16060ed31d703 0x988fbf6ee7219c0672351605ccc16060ed31d703 --environment aragon:rinkeby --use-frame
-
+dao acl create 0xC45417092c7ba66052c92A4AD871fC60bdbC7009 0x0b1f54Be915E77D9BF14268F94F8A26AfaB11296 BURNER_ROLE 0x3a1f860046249646e508c417a840755571bc4680 0x3a1f860046249646e508c417a840755571bc4680 --environment aragon:mainnet --use-frame
 ```
 
 Output:
 
 ```
-  ⠼ Executing createPermission on 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8
-  ✔ Executing createPermission on 0x7961b06c10B41A99eF574f2372D279a48C1D0Ff8
+  ⠇ Executing createPermission on 0xC45417092c7ba66052c92A4AD871fC60bdbC7009
+  ✔ Executing createPermission on 0xC45417092c7ba66052c92A4AD871fC60bdbC7009
 
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-![foundation-vesting-permission-burner-proposal](./screens/foundation-vesting-permission-burner-proposal.png)
+![foundation-install-burner-permission-auction-proposal](./screens2/foundation-install-burner-permission-auction-proposal.png)
 
-[Transaction detail of the creation of the Burner role for the Auction, in the Foundation DAO](https://rinkeby.etherscan.io/tx/0x389a6d1df1154fb3cc4df7be71639a90b5d76e29a5ee9c0646b4b09856a0d155)
+Transaction [details](https://etherscan.io/tx/0x8df438c38b179fbef7ab6d6ac518a2ee9358d106ac1d0577fa7d6ed33f89c452) on creating proposal to install BURNER_ROLE for the Auction application in the euler~Foundation DAO
 
 Now, we can create the voting with the agent of the Congress and vote `yes` in the Congress DAO:
 
 Command (cast tx):
 
 ```
-dao act 0x988fbf6ee7219c0672351605ccc16060ed31d703 0x7c2e8bec18dbe0d0fb1ba2920824444c164aaf7f "vote(uint256,bool,bool)" 7 true true  --environment aragon:rinkeby
+dao act 0x3A1F860046249646E508C417a840755571bC4680 0x47cab484d85ff17c7849d0c198b5313db672f4ce "vote(uint256,bool,bool)" 9 true true  --environment aragon:mainnet --use-frame
 ```
+
+Transaction [details](https://etherscan.io/tx/0xd8a01b819e78a26ff21a8a52dceb98b3e74f977cf63b15605b86a9c299c2ec0f) of creating the proposal in the cyber~Congress DAO to vote on installing the CREATOR_ROLE on the Auction application in the euler~Foundation DAO
 
 Command (cast tx):
 
 ```
-dao act 0x988fbf6ee7219c0672351605ccc16060ed31d703 0x7c2e8bec18dbe0d0fb1ba2920824444c164aaf7f "vote(uint256,bool,bool)" 8 true true  --environment aragon:rinkeby
+dao act 0x3A1F860046249646E508C417a840755571bC4680 0x47cab484d85ff17c7849d0c198b5313db672f4ce "vote(uint256,bool,bool)" 10 true true  --environment aragon:mainnet --use-frame --gas-price 10
 ```
 
 Output:
 
 ```
-  ⠙ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
-  ✔ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
+  ⠦ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
+  ✔ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
 
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-The created proposal in the Congress DAO:
-![congerss-voting-auction-foundation-roles-proposals](./screens/congerss-voting-auction-foundation-roles-proposals.png)
+Transaction [details](https://etherscan.io/tx/0x444fc667e29f954286d5efe7d1d17cb6c9b8505e9ffe5c8c3871c015ecb0d77d) of creating the proposal in the cyber~Congress DAO to vote on installing the BURNER_ROLE on the Auction application in the euler~Foundation DAO
 
-[Transaction detail of creating the proposal in Congress to vote on, for installing the Creator role for auction in the Foundation](https://rinkeby.etherscan.io/tx/0xf231a2520158f83aaa78317a5be731c4d5417b5879b32182f82fe450d3065976)
+The created proposals in the Congress DAO:
+![congress-voting-auction-foundation-roles-proposals](./screens2/congress-voting-auction-foundation-roles-proposals.png)
 
-[Transaction detail of creating the proposal in the Congress to vote on, installing the Burner role for the auction in the Foundation](https://rinkeby.etherscan.io/tx/0xaaa91fe2f54142036a2efb3eaa4e0f8196dad2952b18a63284841f6b2f2e2557)
+
+
+
+
 
 The passed proposal in the Congress DAO:
-![congress-install-auction-burner-permission-voting-passed](./screens/congress-install-auction-burner-permission-voting-passed.png)
+![congress-install-auction-creator-permission-foundation-voting-passed](./screens2/congress-install-auction-creator-permission-foundation-voting-passed.png)
 
-[Vote 1](https://rinkeby.etherscan.io/tx/0x353eba9a2aaa39d7d598f8f4f63404b83dfc681ec0a2fed2457a97d3ddbbeb87) and
-[Vote 2](https://rinkeby.etherscan.io/tx/0x0d0cd99e7dc27673315fa09930c7a96f3f655d8c97a9b76c4f29a713fd51387b)
+Vote #1 transaction [details](https://etherscan.io/tx/0x542faf0a605fe15da3ecbfe8ab75a67ad91b4a4206257ebe75a56574df00f36e) and Vote #2 transaction [details](https://etherscan.io/tx/0x4864894b262959e3a89d6c391d744915c002acb911053ca9a3cc6b810d922518)
 
-![congress-install-auction-creator-permission-voting-passed](./screens/congress-install-auction-creator-permission-voting-passed.png)
+![congress-install-auction-creator-permission-foundation-voting-passed](./screens2/congress-install-auction-burner-permission-foundation-voting-passed.png)
 
-[Vote 1](https://rinkeby.etherscan.io/tx/0xef99551646fe8cb6c67ebee81f6387776b03aa39ade63dcabf528def1cfcf53a) and
-[Vote 2](https://rinkeby.etherscan.io/tx/0xe9e9c8ee609bb2b54127e0f1b0aa68eb1a8837db1c6f1cd9714f69b3d909e4f0)
+Vote #1 transaction [details](https://etherscan.io/tx/0x3273617c3368d3c919e7d01b3e36637be9083b70f6c05bd64cfaad2f35a1a509) and Vote #2 transaction [details](https://etherscan.io/tx/0xd301bc3833de8f4f187ffb1ef540307a411ef0035994e4932e480236f1ed9a3b)
 
-The passed proposal and the Auction app installed in the Foundation DAO:
-![foundation-install-auction-permissions-voting-passed](./screens/foundation-install-auction-permissions-voting-passed.png)
+The passed proposals and the Auction application installed in the euler~Foundation DAO:
+![foundation-install-auction-creator-permission-proposal-passed](./screens2/foundation-install-auction-creator-permission-proposal-passed.png)
+![foundation-install-auction-burner-permission-proposal-passed](./screens2/foundation-install-auction-burner-permission-proposal-passed.png)
 
 Permissions of the Auction in the Foundation DAO:
-![foundation-auction-permissions-list](./screens/foundation-auction-permissions-list.png)
+![foundation-auction-permissions-list](./screens2/foundation-auction-permissions-list.png)
+
 
 #### Grant permission for Burn rights as Token Manager
 The auction should be able to burn tokens (dust) after the end. This role is assigned to the Congress Agent, but we need to grant permission as the Token Manager for the Auction.
 
 Grant permission for Burn rights as Token Manager for the Auction application in the Foundation DAO:
-![foundation-token-manager-auction-burn-permission](./screens/foundation-token-manager-auction-burn-permission.png)
+![foundation-token-manager-auction-burn-permission](./screens2/foundation-token-manager-auction-burn-permission.png)
 
-[Transaction detail of creating the proposal to assign burn permission as the token manager, to the auction application in the Foundation](https://rinkeby.etherscan.io/tx/0xd50f085a0675157e9af14ec15ee6c358d1673b0ce6db6af0e1dacedfff49a8c1)
+Transaction [details](https://etherscan.io/tx/0x9dcda75d339b17df545471d2a04c82ae6fc9c4a96ab14c072faad543a72400fd) of creating the proposal to assign burn permission as the Token Manager to the Auction application in the euler~Foundation
 
 The created proposal to grant burn permission as the Token Manager for the Auction, in the Foundation DAO:
-![foundation-token-manager-burn-permission-auction-proposal ](./screens/foundation-token-manager-burn-permission-auction-proposal.png)
+![foundation-token-manager-burn-permission-auction-proposal ](./screens2/foundation-token-manager-burn-permission-auction-proposal.png)
 
-[Transaction detail of creating the proposal in Congress to vote on the proposal, to assign burn permissions as the Token Manager for the Auction](https://rinkeby.etherscan.io/tx/0xc3ff1d7dd12a719e0a4a3a69377fcff8fab93dd51cbe9dc7da2096eea97f8ad4)
 
 We need to create a proposal in the Congress DAO to vote `yes` on, following the proposal in the Foundation DAO:
 
 Command (cast tx):
 
 ```
-dao act 0x988fbf6ee7219c0672351605ccc16060ed31d703 0x7c2e8bec18dbe0d0fb1ba2920824444c164aaf7f "vote(uint256,bool,bool)" 9 true true  --environment aragon:rinkeby --use-frame
+dao act 0x3A1F860046249646E508C417a840755571bC4680 0x47cab484d85ff17c7849d0c198b5313db672f4ce "vote(uint256,bool,bool)" 11 true true  --environment aragon:mainnet --use-frame --gas-price 10
 ```
 
 Output:
@@ -1365,20 +1581,24 @@ Output:
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
+Transaction [details](https://etherscan.io/tx/0x2343c4d1f3f6d79e1a821f3eb65ee2c69f2b54309f8e55d040490e3424ab11e5) of creating the proposal in cyber~Congress DAO to vote on the proposal, to assign burn permissions as the Token Manager for the Auction Application in euler~Foundation
+
+
+
 The created proposal in the Congress DAO:
-![congress-install-token-manager-burn-permission-auction-proposal](./screens/congress-install-token-manager-burn-permission-auction-proposal.png)
+![congress-install-auction-token-manager-burn-permission-foundation-voting](./screens2/congress-install-auction-token-manager-burn-permission-foundation-voting.png)
 
 The proposal passed in the Congress DAO, and forwarded it to the Foundation DAO:
-![congress-install-token-manager-burn-permission-auction-proposal-passed](./screens/congress-install-token-manager-burn-permission-auction-proposal-passed.png)
+![congress-install-auction-token-manager-burn-permission-foundation-voting-passed](./screens2/congress-install-auction-token-manager-burn-permission-foundation-voting-passed.png)
 
-[Vote 1](https://rinkeby.etherscan.io/tx/0x7f7a88464e7748475714bf3153ff6ed5f8afb748b21daa6d4916cc8ce117db6b) and
-[Vote 2](https://rinkeby.etherscan.io/tx/0x03c57c5a8b462b69a0e89f7a4ea536780f5dbd8b271562c22f8b6111d39cc66e)
+Vote #1 transaction [details](https://etherscan.io/tx/0xf8d51ddd7a4d51cbdfab227af518e2a252097e436c876e2b6b8df8d55d7dd026) and Vote #2 transaction [details](https://etherscan.io/tx/0x77a77614ea68b53fbd1fdbd6c461f2004939af842d80c70fc079f89e6b85e517)
 
 The passed proposal in the Foundation DAO:
-![foundation-install-burn-token-manager-auction-proposal-passed](./screens/foundation-install-burn-token-manager-auction-proposal-passed.png)
+![foundation-install-auction-burn-token-manager-permission-proposal-passed](./screens2/foundation-install-auction-burn-token-manager-permission-proposal-passed.png)
 
 The auction has permissions to burn tokens as Token Manager in the Foundation DAO:
-![foundation-token-manager-permission-list-2](./screens/foundation-token-manager-permission-list-2.png)
+![foundation-token-manager-permission-list-auction](./screens2/foundation-token-manager-permission-list-auction.png)
+
 
 #### Set the congress agent as app manager in the Foundation DAO
 We need to assign a manager role to the Foundations kernel app. This is because the governance threshold will not allow us to pass any proposals for a long time because of the long-term distribution process. There may be bugs in contracts and it will be not possible for anyone to upgrade the applications.
@@ -1388,142 +1608,144 @@ This will allow the Congress to update the Auction or/and the Vesting applicatio
 We are aware that this is a point of failure for a decentralized setup, however, we do not wish to risk the possibility of having a contract failure which will lead to loss of users funds or the foundations' funds. 
 
 Creating a proposal to add permissions to manage the app in Foundations kernel:
-![foundation-congress-kernel-app-manager-tx](./screens/foundation-congress-kernel-app-manager-tx.png)
-![foundation-congress-kernel-app-manager-tx-info](./screens/foundation-congress-kernel-app-manager-tx-info.png)
+![foundation-congress-agent-kernel-app-manager-proposal](./screens2/foundation-congress-agent-kernel-app-manager-permission.png)
 
-[Transaction detail of allowing the Congress Agent to manage the app in the Foundation DAO](https://rinkeby.etherscan.io/tx/0xbc78af2195a8f0a025bc254afe801b9b25ca886caf9e7fbcf38326747aa37f74)
+Transaction [details](https://etherscan.io/tx/0xcd4560363cbc803e9e434c1511f9126d1133ebeffe0ac9e72e8364a169efc400) of allowing the Congress Agent to manage the app in the euler~Foundation DAO
 
-The created voting in the Foundation DAO:
-![foundation-congress-kernel-app-manager-voting](./screens/foundation-congress-kernel-app-manager-voting.png)
+The created voting in the euler~Foundation DAO:
+![foundation-congress-agent-kernel-app-manager-proposal](./screens/foundation-congress-agent-kernel-app-manager-proposal.png)
 
 We need to create a proposal in the Congress DAO, that we will vote `yes` on, set the Cogress Agent as the app mananger in the Foundation DAO:
 
 Command (cast tx):
 
 ```
-dao act 0x988fbf6ee7219c0672351605ccc16060ed31d703 0x7c2e8bec18dbe0d0fb1ba2920824444c164aaf7f "vote(uint256,bool,bool)" 11 true true  --environment aragon:rinkeby --use-frame
+dao act 0x3A1F860046249646E508C417a840755571bC4680 0x47cab484d85ff17c7849d0c198b5313db672f4ce "vote(uint256,bool,bool)" 12 true true  --environment aragon:mainnet --use-frame --gas-price 10
 ```
 
 Output:
 
 ```
-  ⠸ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
-  ✔ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
+  ⠧ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
+  ✔ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
 
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-[Transaction detail of the proposal in the Congress which allows the Congerss Agent to manage apps in the Foundation DAO](https://rinkeby.etherscan.io/tx/0x5f2671a403c7f48029810e7bff4742496468045d67d12df7c9697ca7b44810ab)
+Transaction [details](https://etherscan.io/tx/0x7725061feb407dd00b86512b848eeb851e9744010758e66b47e55d118124c62b) on creating proposal in the cyber~Congress to vote on granting app manager permission on Kernel in euler~Foundation DAO
 
-The created proposal in the Congress DAO:
-![congress-kernle-foundation-agent-manager-proposal](./screens/congress-kernle-foundation-agent-manager-proposal.png)
+The created proposal in the cyber~Congress DAO:
+![congress-kernle-foundation-agent-manager-proposal](./screens2/congress-kernel-foundation-agent-apps-manager-proposal.png)
 
-The passed proposal in the Congress DAO:
-![congress-kernel-foundation-agent-manager-proposal-passed](./screens/congress-kernel-foundation-agent-manager-proposal-passed.png)
+The passed proposal in the cyber~Congress DAO:
+![congress-kernel-foundation-agent-manager-proposal-passed](./screens2/congress-kernel-foundation-agent-apps-manager-proposal-passed.png)
 
-[Vote 1](https://rinkeby.etherscan.io/tx/0x5ee147c4c7cbef5d6f9e46e230adfd2fd352bb04df9f31ae262f8d61bf09d903) and
-[Vote 2](https://rinkeby.etherscan.io/tx/0xc88b440451738c7b6e3eb19d584bd572ae8644a5e3e64948401edc3e2008d2c1)
+Vote #1 transaction [details](https://etherscan.io/tx/0x7bfe2d1e0f9f0cc642cc153d12fee7c67126ab1ce26e7b896675c69de7859f00) and Vote #2 transaction [details](https://etherscan.io/tx/0x328f54e066ffea1cb8f5df7110894c2d2fed5a217fe2bdf9120b42a2324caa45)
 
-The passed proposal in the Foundation DAO:
-![foundation-kernel-manager-agent-proposal-passed](./screens/foundation-kernel-manager-agent-proposal-passed.png)
+The passed proposal in the euler~Foundation DAO:
+![foundation-congress-agent-kernel-app-manager-proposal-passed](./screens2/foundation-congress-agent-kernel-app-manager-proposal-passed.png)
 
 List of kernel permissions in the Foundation DAO with the Congress Agent as apps manager:
-![foundation-kernel-permissions-agent-list](./screens/foundation-kernel-permissions-agent-list.png)
+![foundation-kernel-permissions-agent-list](./screens2/foundation-kernel-permissions-agent-list.png)
+
+
+
+
+
+
+
 
 #### Burn service account token in the Foundation DAO
 *Note:* The service account has successfully completed its mission of the Foundation, Auction and Vesting applications setup and permission installation. Finalization of the Auction will be completed by the Congress itself because the Congress Agent has the needed permissions (CREATOR_ROLE and BURNER_ROLE) for the Foundations Auction.
 
 Remove tokens from the service account:
-![foundation-remove-service-account-tx](./screens/foundation-remove-service-account-tx.png)
+![foundation-remove-service-account](./screens2/foundation-remove-service-account.png)
 
-Create a transaction and a proposal to remove 1 token from the service account:
-![foundation-remove-service-account-tx-info](./screens/foundation-remove-service-account-tx-info.png)
-
-[Transaction detail of removing 1 token from the service account in the Foundation DAO](https://rinkeby.etherscan.io/tx/0xb8dd1b1eb573a9ca912849ab58847cf1096e10a950a85eaf2d791263e3c16ba2)
+Transaction [details](https://etherscan.io/tx/0xc7f2f4aa3d06a846e34bc669508d69ca2f3a89acb259dc7e017d38c15cb78a84) on creating proposal of removing 1 token from the service account in the euler~Foundation DAO
 
 The created proposal to burn 1 token from the service account in the Foundation DAO:
-![foundation-remove-service-account-voting](./screens/foundation-remove-service-account-voting.png)
+![foundation-remove-service-account-proposal](./screens2/foundation-remove-service-account-proposal.png)
 
 We need to create a proposal in the Congress DAO, that we will vote `yes` on, to burn 1 token from the service account in the Foundation DAO:
 
 Command (cast tx):
 
 ```
-dao act 0x988fbf6ee7219c0672351605ccc16060ed31d703 0x7c2e8bec18dbe0d0fb1ba2920824444c164aaf7f "vote(uint256,bool,bool)" 10 true true  --environment aragon:rinkeby --use-frame
+dao act 0x3A1F860046249646E508C417a840755571bC4680 0x47cab484d85ff17c7849d0c198b5313db672f4ce "vote(uint256,bool,bool)" 13 true true  --environment aragon:mainnet --use-frame --gas-price 10
 ```
 
 Output:
 
 ```
-  ⠙ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
-  ✔ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
+  ⠧ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
+  ✔ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
 
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-[Transaction detail of creating the proposal in the Congress to vote on the proposal, to remove 1 token from the service account in the Foundation DAO](https://rinkeby.etherscan.io/tx/0xe4b6e724f9536834fbb05ff619f06db21c346efac12bf6e465772f0f441ac649)
+Transaction [details](https://etherscan.io/tx/0x14f0a38eb29974bf982f1c510f212ec5028536c9a25c3dff7696d53f75049032) on creating proposal in cyber~Congress DAO on voting on the proposal, to remove 1 token from the service account in the euler~Foundation DAO
 
 The created proposal in the Congress DAO:
-![congress-burn-service-account-foundation-voting](./screens/congress-burn-service-account-foundation-voting.png)
+![congress-burn-service-account-foundation-proposal](./screens2/congress-burn-service-account-foundation-proposal.png)
 
 The passsed proposal in the Congress DAO:
-![congress-burn-service-account-foundation-voting-passed](./screens/congress-burn-service-account-foundation-voting-passed.png)
+![congress-burn-service-account-foundation-proposal-passed](./screens2/congress-burn-service-account-foundation-proposal-passed.png)
 
-[Vote 1](https://rinkeby.etherscan.io/tx/0x069d0c7ed86846b765087b86b655cae7ed0d161fabb171eaf6cf1d05cb3026de) and
-[Vote 2](https://rinkeby.etherscan.io/tx/0xe7685fedd1ad6f2fffbc5999cbd6e4bd0acb4495630aaf1b4f99ec2c14be9861)
+Vote #1 transaction [details](https://etherscan.io/tx/0x949f2fe5331a216d5fdcfc23b1005f34867045ed1cef2d799fc6e6c0214194b2) and Vote #2 transaction [details](https://etherscan.io/tx/0x9d46082d744a363dcae98227004a336982b796264b89b352f51114ebf3594bf8)
 
 
 The passed proposal to burn 1 token from the service account in the Foundation DAO:
-![foundation-burn-service-account-voting-passed](./screens/foundation-burn-service-account-voting-passed.png)
+![foundation-remove-service-account-proposal-passed](./screens2/foundation-remove-service-account-proposal-passed.png)
 
 The supply of the Foundation DAO now follows the required distribution:
-![foundation-service-account-burned](./screens/foundation-service-account-burned.png)
+![foundation-service-account-burned](./screens2/foundation-service-account-burned.png)
+
 
 #### Transfer tokens from the Congress Agent to the Auction contract
 We can now transfer the needed amount of tokens to the Auction for further distribution.
  
-600 TGOL24 will be transferred from the balance of the Congress Agent to Foundations Auction. The Congress Agent has permission to transfer their own token which we prepared beforehand in Congress.
+7 TGOL will be transferred from the balance of the Congress Agent to Foundations Auction. The Congress Agent has permission to transfer their own token which we prepared beforehand in Congress.
 
 You can get familiar with the distribution in detail [here](https://github.com/cybercongress/congress/blob/master/ecosystem/Cyber%20Homestead%20doc.md#moneybag-section-subtitle-beep-beep-beep).
 
 Command template (cast tx):
 
 ```
-dao act <agentCongress> <agentCongress> "transfer(address,address,uint256)" <tokenFoundationAddress> <auctionApplicationAddress> <amount> --environment aragon:rinkeby
+dao act <agentCongress> <agentCongress> "transfer(address,address,uint256)" <tokenFoundationAddress> <auctionApplicationAddress> <amount> --environment aragon:<network>
 ```
 
 Command (cast tx):
 
 ```
-dao act 0x988fbf6ee7219c0672351605ccc16060ed31d703 0x988fbf6ee7219c0672351605ccc16060ed31d703 "transfer(address,address,uint256)" 0xf6e8E6730d8E3F48519f150215013d654d43a53B 0xc13926630c1afa229a0c4df8df2acbff03c4681e 600000000000000  --environment aragon:rinkeby --use-frame
+dao act 0x3a1f860046249646e508c417a840755571bc4680 0x3a1f860046249646e508c417a840755571bc4680 "transfer(address,address,uint256)" 0xF4ecdBa8ba4144Ff3a2d8792Cad9051431Aa4F64 0x0b1f54be915e77d9bf14268f94f8a26afab11296 7000000000000  --environment aragon:mainnet --use-frame
 ```
 
 Output:
 
 ```
-  ⠧ Executing execute on 0x9cE69C31F98827eE5B8602988E07F8A0Af787035
-  ✔ Executing execute on 0x9cE69C31F98827eE5B8602988E07F8A0Af787035
+  ⠋ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
+  ✔ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
 
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-[Transaction detail of proposal to transfer Congress Agent foundation tokens to the auction in the foundation](https://rinkeby.etherscan.io/tx/0x85eba5c5e59babda59829b437fc782d724c1e85670716b48d1de753b89dee9be)
+Transaction [details](https://etherscan.io/tx/0x6fae2776c6e07c0df0e57001998cc34c8813d3d904bc72f0ba695f7ac97a8fb6) on creating proposal to transfer cyber~Congress DAO Agent GOL tokens to the Auction application in the euler~Foundation
 
-The created proposal to transfer a certain supply from the Congress Agent to the Auction in the Congress DAO:
-![congress-agent-tokens-auction-proposal](./screens/congress-agent-tokens-auction-proposal.png)
+The created proposal to transfer a 7TGOL from the cyber~Congress Agent to the Auction in the cyber~Congress DAO:
+![congress-agent-transfer-tokens-auction-proposal](./screens2/congress-agent-transfer-tokens-auction-proposal.png)
 
 The passed proposal to transfer a certain supply from the Congress Agent to the Auction in the Congress DAO:
-![congress-agent-tokens-auction-proposal-passed](./screens/congress-agent-tokens-auction-proposal.png)
+![congress-agent-transfer-tokens-auction-proposal-passed](./screens2/congress-agent-transfer-tokens-auction-proposal-passed.png)
 
-[Vote 1](https://rinkeby.etherscan.io/tx/0x17e743014d548ccd5944a4199c3d3646607c40e1bc7db265b54e4cc06c1e2764) and
-[Vote 2](https://rinkeby.etherscan.io/tx/0x5224d0479557016e12694756b2c022a5e7952e622640680cba94bcc2042a9cbf)
+Vote #1 transaction [details](https://etherscan.io/tx/0x2f268d726cb2a9ba0ed06603aafb277e993b574cc0c92f941c8c825b2d6896ad) and Vote #2 transaction [details](https://etherscan.io/tx/0x1fe1deaf4bb700c44629dceae93da489f2bad15ea0b2ef8d255f4456ab2cfbd7)
 
 The supply is transferred to the Auction in the Foundation DAO:
-![foundation-auction-tokens-applied](./screens/foundation-auction-tokens-applied.png)
+![foundation-auction-tokens-applied](./screens2/foundation-auction-tokens-applied.png)
 
 The Foundations distribution is now completed and the Auction has the supply for the required distribution. 
 
 The Congress team, the initial donors and the inventors of Cyber may participate in the governance of the Foundation with a proportion of tokens which they have following the numbers outlined in [Cybers whitepaper](https://ipfs.io/ipfs/QmceNpj6HfS81PcCaQXrFMQf7LR5FTLkdG9sbSRNy3UXoZ).
+
 
 #### Load the Auction
 The last step of the Auction setup. The supply has been already transferred and we may load the Auction with a given amount of Auction tokens to be distributed during round zero (ETH part of Game of Thrones). There will be 200 (tera) TGOL24 allocated for that part of the auction. The remaining amount will be equally split for other rounds (20 rounds of 23 hours + 1 sec).
@@ -1539,28 +1761,28 @@ dao act <agentCongress> <auctionApplicationAddress> "load(uint256)" <amount> --e
 Command (cast tx):
 
 ```
-dao act 0x988fbf6ee7219c0672351605ccc16060ed31d703 0xc13926630c1afa229a0c4df8df2acbff03c4681e "load(uint256)" 200000000000000 --environment aragon:rinkeby --use-frame
+dao act 0x3a1f860046249646e508c417a840755571bc4680 0x0b1f54be915e77d9bf14268f94f8a26afab11296 "load(uint256)" 1000000000000 --environment aragon:mainnet --use-frame
 ```
 
 Output:
 
 ```
-  ⠸ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
-  ✔ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
+  ⠇ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
+  ✔ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
 
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-[Transaction detail of the load of the auction by the Congress as the creator of the auction](https://rinkeby.etherscan.io/tx/0xc3af4f3039749c991d1b6c4888c063323103f0b2adcd03897d9a3f6430c8888e)
+Transaction [details](https://etherscan.io/tx/0x326a6a89e33f21860330e7febf1d89547c150def3f1440705cf28a0c0623fd50) of the load of the auction by the cyber~Congress Agent as the creator of the auction
 
 The created proposal to load the Foundation Auction in the Congress DAO:
-![congress-auction-foundation-load-proposal](./screens/congress-auction-foundation-load-proposal.png)
+![congress-auction-foundation-load-proposal](./screens2/congress-auction-foundation-load-proposal.png)
 
 The passed proposal to load the Foundations Auction in the Congress DAO:
-![congress-auction-foundation-load-proposal-passed](./screens/congress-auction-foundation-load-proposal.png)
+![congress-auction-foundation-load-proposal-passed](./screens2/congress-auction-foundation-load-proposal-passed.png)
 
-[Vote 1](https://rinkeby.etherscan.io/tx/0x6424742be1dbe15f69b9e065ff209c120f18d997c2726ef11adb564f7cb76aa7) and
-[Vote 2](https://rinkeby.etherscan.io/tx/0xa61ee7e126d1d190027774f71c03fcedd76bae14b26e865262802ed3472e5d92)
+Vote #1 transaction [details](https://etherscan.io/tx/0x82bcb68fea33f98d65327c364261996d0d816144c1d7437f0bc78d82ca3c831e) and Vote #2 transaction [details](https://etherscan.io/tx/0xbc8834700ce38a69af34d478df6edb7a547eda8fa1360552e051a07c3ce88195)
+
 
 #### Deploy and verify Auction Utils
 An extra step for the Auction. We deploy an additional contract, which will provide a robust API to query Auction data from the Auction Contract. 
@@ -1579,20 +1801,20 @@ contract AuctionUtils {
         sale = _sale;
     }
 
-    function dailyTotals() external view returns (uint[21] memory result) {
-        for (uint i = 0; i < 21; i++) {
+    function dailyTotals() external view returns (uint[50] memory result) {
+        for (uint i = 0; i < 50; i++) {
             result[i] = sale.dailyTotals(i);
         }
     }
 
-    function userBuys(address user) external view returns (uint[21] memory result) {
-        for (uint i = 0; i < 21; i++) {
+    function userBuys(address user) external view returns (uint[50] memory result) {
+        for (uint i = 0; i < 50; i++) {
             result[i] = sale.userBuys(i, user);
         }
     }
 
-    function userClaims(address user) external view returns (bool[21] memory result) {
-        for (uint i = 0; i < 21; i++) {
+    function userClaims(address user) external view returns (bool[50] memory result) {
+        for (uint i = 0; i < 50; i++) {
             result[i] = sale.claimed(i, user);
         }
     }
@@ -1601,28 +1823,29 @@ contract AuctionUtils {
 
 We will use Remix IDE for the deployemnt of `Auction Utils`:
 Compiled Auction Utils in Remix IDE:
-![auction-utils-compile](./screens/auction-utils-compile.png)
+![auction-utils-compile](./screens2/auction-utils-compile.png)
 
 Deployment of `Auction Utils`:
-![auction-utils-deploy](./screens/auction-utils-deploy.png)
+![auction-utils-deploy](./screens2/auction-utils-deploy.png)
 
-[Transaction detail of AuctionUtils deployment](https://rinkeby.etherscan.io/tx/0xe6da431baf335059e3e4847aebcad8045267dbcb297f4d78e570b90247ff7d3d)
+[Transaction detail of AuctionUtils deployment](https://etherscan.io/tx/0xce7730e3fe98f4266a50457c742c181c9fe085342d273ccfc4df34be8e32679e)
 
 `AuctionUtils` deployed with an initialized Auction address:
-![auction-utils-deployed](./screens/auction-utils-deployed.png)
+![auction-utils-deployed](./screens2/auction-utils-deployed.png)
 
-`AuctionUtils` contract: [0x5a9db7080db6c5b176795910343a74797dea1124](https://rinkeby.etherscan.io/address/0x5a9db7080db6c5b176795910343a74797dea1124)
+`AuctionUtils` contract: [0x1ccc8b1e7cb1999d370e1e277f021f054f0893a5](https://etherscan.io/address/0x1ccc8b1e7cb1999d370e1e277f021f054f0893a5)
 
 Let's verify the contract. We will use a single file provided by truffle-flattener. Compiler v0.4.24+commit.e67f0147 without optimization.
 
 Prepare the source code verification on Etherscan:
-![etherscan-auction-utils-prepare](./etherscan-auction-utils-prepare.png)
+![etherscan-auction-utils-prepare](./screens2/etherscan-auction-utils-prepare.png)
 
 Verification on Etherscan has passed:
-![etherscan-auction-utils-verification-passed](./etherscan-auction-utils-verification-passed.png)
+![etherscan-auction-utils-verification-passed](./screens2/etherscan-auction-utils-verification-passed.png)
 
 The verified contract:
-![etherscan-auction-utils-contract](./etherscan-auction-utils-contract.png)
+![etherscan-auction-utils-contract](./screens2/etherscan-auction-utils-contract.png)
+
 
 #### Add `AuctionUtils` address to the Auction
 Now, we add `AuctionUtils` address to the Auction. The Agent has direct access via the CREATOR_ROLE in Foundations Auction. The proposal for the Agents action will be created in Congress.
@@ -1630,32 +1853,29 @@ Now, we add `AuctionUtils` address to the Auction. The Agent has direct access v
 Command template (cast tx):
 
 ```
-dao act <agentCongress> <auctionApplicationAddress> "addUtils(address)" <auctionUtilsAddress> --environment aragon:rinkeby
+dao act <agentCongress> <auctionApplicationAddress> "addUtils(address)" <auctionUtilsAddress> --environment aragon:<network>
 ```
 
 ```
-dao act 0x988fbf6ee7219c0672351605ccc16060ed31d703 0xc13926630c1afa229a0c4df8df2acbff03c4681e "addUtils(address)" 0x5a9db7080db6c5b176795910343a74797dea1124 --environment aragon:rinkeby --use-frame
+dao act 0x3a1f860046249646e508c417a840755571bc4680 0x0b1f54be915e77d9bf14268f94f8a26afab11296 "addUtils(address)" 0x1ccc8b1e7cb1999d370e1e277f021f054f0893a5 --environment aragon:mainnet --use-frame
 ```
 
 Output:
 
 ```
-  ⠼ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
-  ✔ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
+  ⠇ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
+  ✔ Executing execute on 0x117d1F8CB4Bf6e74Bc5D667f15af7b810baCCCD6
 
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-[Transaction detail of creating the proposal in the Congress DAO for adding `AuctionUtils` address to the Auction in the Foundation](https://rinkeby.etherscan.io/tx/0x55aa09da12abc9130b5321af668a5d81825c276ac8d6328018c4755867b29871)
-
-Proposal to add the `AuctionUtils` contract address to the Foundation Auction from the Congress DAO:
-![congress-auction-utils-foundation-proposal](./screens/congress-auction-utils-foundation-proposal.png)
+Transaction [details](https://etherscan.io/tx/0x35046ab87ef5ad1156f8a5a5d27ce7ad90a5255726a54db86818eae3cac750a8) of creating the proposal in the cyber~Congress DAO for adding `AuctionUtils` address to the Auction in the euler~Foundation
 
 The passed proposal to add the `AuctionUtils` contract address to  the Foundation Auction from the Congress DAO:
-![congress-auction-utils-foundation-proposal-passed](./screens/congress-auction-utils-foundation-proposal-passed.png)
+![congress-auction-utils-foundation-proposal-passed](./screens2/congress-auction-utils-foundation-proposal-passed.png)
 
-[Vote 1](https://rinkeby.etherscan.io/tx/0xe9a669c63faa8e27e7935293d1307df76bedff8093bd434a511c59768afeace7) and
-[Vote 2](https://rinkeby.etherscan.io/tx/0x186fcbe03dda529336d8d296d8e676d6c55cd673ae9a6f3622f4131abf6f33b0)
+Vote #1 transaction [details](https://etherscan.io/tx/0x2c2bc4f93a5617740158a5232f68b8e9622f01fba1b2cb065e94f4451dc2b869) and Vote #2 transaction [details](https://etherscan.io/tx/0x9b4e5388cf13205b9079aeb25d72f1438b11957f549092ec4ba75a34eadf9ee4)
+
 
 ---------------------
 

@@ -205,11 +205,11 @@ Following the bootstrap process, the tokens from the Agent will be transferred t
 
 This requires us to create a new proposal from the permisisons tab of the Congress DAO and vote on it. After the voting is over, we will go to the permissions tab and makes sure that in the Agents permisisons tab, under `Transfer Agent’s tokens` a new entity (the Agent) appears:
 
-![congress-agent-token-create-permisson](./screens2/congress-agent-token-create-permission.png)
-![congress-agent-token-create-permisson-tx](./screens2/congress-agent-token-create-permission-request.png)
-![congress-agent-token-create-permisson-voting](./screens2/congress-agent-token-created-permission-voting.png)
-![congress-agent-token-create-permisson-voting-passed](./screens2/congress-agent-token-created-permission-voting-passed.png)
-![congress-agent-token-created-permission](./screens2/congress-agent-token-created-permission.png)
+![congress-agent-token-create-permisson](./screens/congress-agent-token-create-permission.png)
+![congress-agent-token-create-permisson-tx](./screens/congress-agent-token-create-permission-request.png)
+![congress-agent-token-create-permisson-voting](./screens/congress-agent-token-created-permission-voting.png)
+![congress-agent-token-create-permisson-voting-passed](./screens/congress-agent-token-created-permission-voting-passed.png)
+![congress-agent-token-created-permission](./screens/congress-agent-token-created-permission.png)
 
 _________
 
@@ -754,21 +754,21 @@ Output:
 Transaction [detail](https://etherscan.io/tx/0x10a71dbd401008e5da1eb71ae19b3d496731ffc592222c3df332682b29fb0b3c) of the deployment of the euler~Foundation DAO proposal in the cyber ~Congress DAO
 
 #### Vote for token and DAO deployment by Cyber Congressmen
-![congress-create-foundation-voting](./screens2/congress-create-foundation-voting.png)
+![congress-create-foundation-voting](./screens/congress-create-foundation-voting.png)
 
 #### Votes for token deployemnt
 [Vote #1](https://etherscan.io/tx/0xe97866d789f9fd37807d6e015c685dda67be14de7a58b7319149bacca655213e) and [Vote #2](https://etherscan.io/tx/0x5e990fa43ea5d4e82fcf6f3445abb3efcc3903a3700e894d6a2edad51b9c15ce)
 
-![congress-create-foundation-token-vote](./screens2/congress-create-foundation-token-vote.png)
+![congress-create-foundation-token-vote](./screens/congress-create-foundation-token-vote.png)
 
 #### Votes for foundation deployemnt
 [Vote #1](https://rinkeby.etherscan.io/tx/0xd2b8b5ecc123fd5c01fba0ca9d6c70c8db096d60cf84d79092fca77828d51064) and [Vote #2](https://rinkeby.etherscan.io/tx/0x46351e06a03b33f257b2f01592e5b9ff67ccd457e8720fd6261c3ffab086f618)
 
-![congress-create-foundation-dao-vote](./screens2/congress-create-foundation-dao-vote.png)
-![congress-create-foundation-voting-passed](./screens2/congress-create-foundation-voting-passed.png)
+![congress-create-foundation-dao-vote](./screens/congress-create-foundation-dao-vote.png)
+![congress-create-foundation-voting-passed](./screens/congress-create-foundation-voting-passed.png)
 
 After the proposal has passed the new DAO becomes [available](https://mainnet.aragon.org/#/eulerfoundation/organization/)
-![foundation-created](./screens2/foundation-created.png)
+![foundation-created](./screens/foundation-created.png)
 
 The initial and the major token holder right now is the Congress Agent and the second one is a service account which was described previously.
 
@@ -874,7 +874,7 @@ Output:
 Transaction [details](https://etherscan.io/tx/0x38d8f7528df483df272b51f8165c2a5d4f712af6613437080ada9d84d6f4b55c) of the proposal to install the Evangelism application to euler~Foundation.
 
 Proposal to install the Evangelism application, created in the euler~Foundation DAO:
-![foundation-install-evangelism-voting](./screens2/foundation-install-evangelism-voting.png)
+![foundation-install-evangelism-voting](./screens/foundation-install-evangelism-voting.png)
 
 We need to vote on this proposal using the Agent of the Congress. Anyone from the Cogress DAO creates a proposal and votes `yes` on this proposal in the Congress DAO.
 
@@ -902,14 +902,14 @@ Output:
 Transaction [detail](https://etherscan.io/tx/0xb3a1a31e0deee3202b62f620d4caf4366a59fff3bf7afc71937644c7dbc2f662) of creating the proposal in the cyber~Congress DAO to install the Evangelism application in the Foundation DAO.
 
 The created proposal in the cyber~Congress DAO:
-![congress-install-evangelism-foundation-voting](./screens2/congress-install-evangelism-foundation-voting.png)
+![congress-install-evangelism-foundation-voting](./screens/congress-install-evangelism-foundation-voting.png)
 
-![congress-install-evangelism-foundation-voting-passed](./screens2/congress-install-evangelism-foundation-voting-passed.png)
+![congress-install-evangelism-foundation-voting-passed](./screens/congress-install-evangelism-foundation-voting-passed.png)
 
 Vote #1 transaction [detail](https://etherscan.io/tx/0xac3001eaf48be6706394a46ebb945b123fe49f5c30eb6d15c36bcd52ec3c0750) and Vote #2 transaction [detail](https://etherscan.io/tx/0x9601b7970f8f2bf24e3243a5661eeca7744bb56c00424cf7ff602739b97c076a).
 
 The passed proposal in the euler~Foundation DAO:
-![foundation-install-evangelism-voting-passed](./screens2/foundation-install-evangelism-voting-passed.png)
+![foundation-install-evangelism-voting-passed](./screens/foundation-install-evangelism-voting-passed.png)
 
 *Note:* The Evangelism application is still permissionless at this stage. To complete the installation process, we need to assign permissions for the Evangelism application.
 
@@ -971,7 +971,7 @@ Output:
 Transaction [detail](https://etherscan.io/tx/0x8081014ed5c7c3b2cc76b532017a38a812b7f34bb0f227c441c68fd478418ce0) of the proposal in euler~Foundation to install the `FOUNDER_ROLE` for the Evangelism application
 
 The created proposal in euler~Foundation:
-![foundation-install-founder-evangelism-proposal](./screens2/foundation-install-founder-evangelism-proposal.png)
+![foundation-install-founder-evangelism-proposal](./screens/foundation-install-founder-evangelism-proposal.png)
 
 Create a proposal in the cyber~Congress DAO to vote on:
 
@@ -993,15 +993,15 @@ Output:
 Transaction [detail](https://etherscan.io/tx/0x625b579bc657cdc232fd079dbcec632d3b92eace67514f3744a20cecdbf32cb1) of creating a proposal to vote for in the Congress DAO, on the proposal to assign the `FOUNDER_ROLE` to the Congress Agent for the Evangelism appication in the Foundation DAO
 
 The created proposal:
-![congress-vote-install-founder-evangelism-foundation-proposal](./screens2/congress-vote-install-founder-evangelism-foundation-voting.png)
+![congress-vote-install-founder-evangelism-foundation-proposal](./screens/congress-vote-install-founder-evangelism-foundation-voting.png)
 
 Vote #1 transaction [detail](https://etherscan.io/tx/0x542d57a72c24c54b663ceff66045d8d87eb6db1ae4fe926628e42946bba21880) and Vote #2 transaction [detail](https://etherscan.io/tx/0x53adfe0acddbe7745d592dec121a837681906860888bfa19c8ae4adb5526362f).
 
 The passed proposal in cyber~Congress:
-![congress-vote-install-founder-evangelism-foundation-proposal-passed](./screens2/congress-vote-install-founder-evangelism-foundation-proposal-passed.png)
+![congress-vote-install-founder-evangelism-foundation-proposal-passed](./screens/congress-vote-install-founder-evangelism-foundation-proposal-passed.png)
 
 The passed proposal in euler~Foundation DAO:
-![foundation-install-founder-evangelism-proposal-passed](./screens2/foundation-install-founder-evangelism-proposal-passed.png)
+![foundation-install-founder-evangelism-proposal-passed](./screens/foundation-install-founder-evangelism-proposal-passed.png)
 
 ### Install the Vesting application for the Foundation DAO
 
@@ -1059,7 +1059,7 @@ Output:
 Transaction [detail](https://etherscan.io/tx/0xbe5a64296d7a3b8f1f039a0809df8263b51b8a7c62e5f2001e9e8553428ca7a7) of the proposal to install the Vesting application in the Foundation.
 
 The proposal to install the Vesting application, created in the Foundation DAO:
-![foundation-install-vesting-proposal](./screens2/foundation-install-vesting-proposal.png)
+![foundation-install-vesting-proposal](./screens/foundation-install-vesting-proposal.png)
 
 We may vote for this proposal using the Agent of the Congress. Anyone from the Cogress DAO creates a proposal and votes `yes` for this proposal, of the Foundation DAO, in the Congress DAO.
 
@@ -1087,15 +1087,15 @@ Output:
 Transaction [detail](https://etherscan.io/tx/0xb357de4d61514bf0e1a22c077b321bb2dfd7d6948e9f68948a67cd4cbdde2cb0) of creating the proposal in the cyber~Congress DAO, to vote on installing the Vesting application for the Foundation DAO.
 
 Any of the congressmen votes `yes` to the proposal in the cyber~Congress DAO for the vesting app to be installed within the Foundation DAO:
-![congress-install-vesting-foundation-voting](./screens2/congress-install-vesting-foundation-voting.png)
+![congress-install-vesting-foundation-voting](./screens/congress-install-vesting-foundation-voting.png)
 
 Vote #1 transaction [detail](https://etherscan.io/tx/0x3cf2bd68d0d1a2e79ba2ad464b258a095a81eb9f11c2199d0ab591161ca1057e) and Vote #2 transaction [detail](https://etherscan.io/tx/0x5533c392491c9bc0ed2d7ecc90b9104f89f6059b9e8b3bfeebd49d23f89d599f).
 
 The passed proposal in the Congress DAO:
-![congress-install-vesting-foundation-voting-passed](./screens2/congress-install-vesting-foundation-voting-passed.png)
+![congress-install-vesting-foundation-voting-passed](./screens/congress-install-vesting-foundation-voting-passed.png)
 
 The passed proposal in the Foundation DAO:
-![foundation-install-vesting-proposal-passed](./screens2/foundation-install-vesting-proposal-passed.png)
+![foundation-install-vesting-proposal-passed](./screens/foundation-install-vesting-proposal-passed.png)
 
 *Note:* The Vesting application is still permissionless at this stage. To complete the installation process we need to assign permissions to the Vesting application.
 
@@ -1189,7 +1189,7 @@ Output:
 Transaction [detail](https://etherscan.io/tx/0xf14543dbb21ebad7680caea0146188cdcf7f58301c46e86b5533b7589c74c63b) of creating the proposal to install the `PROOF_ROLE` for the Vesting application in euler~Foundation. 
 
 The created proposals in the Foundation DAO:
-![foundaiton-vesting-permissions-proposals](./screens2/foundaiton-vesting-permissions-proposals.png)
+![foundaiton-vesting-permissions-proposals](./screens/foundaiton-vesting-permissions-proposals.png)
 
 Create a proposal to vote on:
 
@@ -1222,24 +1222,24 @@ dao act 0x3A1F860046249646E508C417a840755571bC4680 0x47cab484d85ff17c7849d0c198b
 Transaction [detail](https://etherscan.io/tx/0x7bc1e658dd4810ee2eef8349363a9853d23fe5c9db091573a0e2d9beb20fc3c2) of creating the proposal in the Congress DAO to vote on, setting the `PROOF_ROLE` for the Vesting application in the euler~Foundation DAO.
 
 The created proposals in the Congress DAO:
-![congress-install-vesting-permissions-foundation-voting](./screens2/congress-install-vesting-permissions-foundation-voting.png)
+![congress-install-vesting-permissions-foundation-voting](./screens/congress-install-vesting-permissions-foundation-voting.png)
 
 The passed proposals, which forward the `yes` votes to the Fondation DAO:
-![congress-install-pause-vesting-foundation-passed](./screens2/congress-install-pause-vesting-foundation-passed.png)
+![congress-install-pause-vesting-foundation-passed](./screens/congress-install-pause-vesting-foundation-passed.png)
 
 Vote #1 transaction [detail](https://etherscan.io/tx/0xe9d2443154523200643f33ed2744eff8097c2f8a082a318e64141e8fe484f52d) and Vote #2 transaction [detail](https://etherscan.io/tx/0x7bd934f94876c93ba24b733daaaa8cef6df226eb219c47be495543e12747ab9a).
 
-![congress-install-proof-vesting-foundation-passed](./screens2/congress-install-proof-vesting-foundation-passed.png)
+![congress-install-proof-vesting-foundation-passed](./screens/congress-install-proof-vesting-foundation-passed.png)
 
 Vote #1 transaction [detail](https://etherscan.io/tx/0x4682c60699a5eb6129ce326bf58f78286fd2d9e105deb7669d9c1516f2908244) and Vote #2 transaction [detail](https://etherscan.io/tx/0x63751a5ebb5feab2d125e6ccb1b352206a48e7343405bd39d3105f27f8edd2d4).
 
 The passed proposals in the Foundation DAO:
 (we can see that the cyber~Vesting application is available)
-![foundation-install-pause-vesting-permission-proposal-passed](./screens2/foundation-install-pause-vesting-permission-proposal-passed.png)
-![foundation-install-pause-vesting-permission-proposal-passed](./screens2/foundation-install-proof-vesting-permission-proposal-passed.png)
+![foundation-install-pause-vesting-permission-proposal-passed](./screens/foundation-install-pause-vesting-permission-proposal-passed.png)
+![foundation-install-pause-vesting-permission-proposal-passed](./screens/foundation-install-proof-vesting-permission-proposal-passed.png)
 
 Permissions for the Auction in the Foundation DAO are now installed:
-![foundation-vesting-permissions-list](./screens2/foundation-vesting-permissions-list.png)
+![foundation-vesting-permissions-list](./screens/foundation-vesting-permissions-list.png)
 
 #### Grant the app permissions to Issue/Assign/Burn as Token Manager
 We need to grant the needed permissions to the Vesting application so it can perform the needed functions as Token Manager in the Foundation DAO (you may view different roles in `token permissions`).
@@ -1254,18 +1254,18 @@ We need to grant the needed permissions to the Vesting application so it can per
 
 When someone wants to lock the tokens (vest them), under the hood, we must first burn thee tokens and then release the same amount in the token manager. And only then, give him those tokens with a vesting key. 
 
-![foundation-tokens-manager-permissions-list](./screens2/foundation-tokens-manager-permissions-list.png)
+![foundation-tokens-manager-permissions-list](./screens/foundation-tokens-manager-permissions-list.png)
 
-![foundation-token-manager-issue-add-vesting](./screens2/foundation-token-manager-issue-add-vesting.png)
+![foundation-token-manager-issue-add-vesting](./screens/foundation-token-manager-issue-add-vesting.png)
 - Transaction [details](https://etherscan.io/tx/0xe6f56461c3a18f456242db3a4d8bb29ba4b732183c0c7617d97f2bacd703437a) on creating proposal in euler~Foundation to grant Issue Tokens to Vesting application
 
-![foundation-token-manager-assign-add-vesting](./screens2/foundation-token-manager-assign-add-vesting.png)
+![foundation-token-manager-assign-add-vesting](./screens/foundation-token-manager-assign-add-vesting.png)
 - Transaction [details](https://etherscan.io/tx/0x5c821278156b41a55029fc95896db7670b31d7f92c2386338394c7ff92e7b1c5) on creating proposal in euler~Foundation to grant Assig Tokens to Vesting application
 
-![foundation-token-manager-burn-add-vesting](./screens2/foundation-token-manager-burn-add-vesting.png)
+![foundation-token-manager-burn-add-vesting](./screens/foundation-token-manager-burn-add-vesting.png)
 - Transaction [details](https://etherscan.io/tx/0x2ca183cb9413c5cffee40d10005243c92d197dc2d0cd1f0da63e4e18ed00f99e) on creating proposal in euler~Foundation to grant Burn Tokens to Vesting application
 
-![foundation-token-manager-vestings-proposals](./screens2/foundation-token-manager-vestings-proposals.png)
+![foundation-token-manager-vestings-proposals](./screens/foundation-token-manager-vestings-proposals.png)
 
 After this, create 3 votes:
 
@@ -1299,29 +1299,29 @@ Output:
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-![congress-install-vesting-permission-token-manager-foundation-voting](./screens2/congress-install-vesting-permission-token-manager-foundation-voting.png)
+![congress-install-vesting-permission-token-manager-foundation-voting](./screens/congress-install-vesting-permission-token-manager-foundation-voting.png)
 
 Members of the Congress DAO vote for these proposals and this forwards the `yes` votes, which then, set permissions as Token Manager in the Foundation DAO, granting the required permissions for the Vesting application.
 
-![congress-install-vesting-token-manager-foundation-issue-voting](./screens2/congress-install-vesting-token-manager-foundation-issue-voting.png)
+![congress-install-vesting-token-manager-foundation-issue-voting](./screens/congress-install-vesting-token-manager-foundation-issue-voting.png)
 
 Vote #1 transaction [details](https://etherscan.io/tx/0x480a235cca844530cb8ef6cc34dfc51266f2e52026a6b04f3491214dce2be829) and Vote #2 transaction [detail](https://etherscan.io/tx/0x3a815c4f0cb91dc6b59943fa78d0b7b8c4750cbef2c6166097c5e836b3f72706).
 
-![congress-install-vesting-token-manager-foundation-assign-voting](./screens2/congress-install-vesting-token-manager-foundation-assign-voting.png)
+![congress-install-vesting-token-manager-foundation-assign-voting](./screens/congress-install-vesting-token-manager-foundation-assign-voting.png)
 
 Vote #1 transaction [details](https://etherscan.io/tx/0x223cbe7c0d75d061e88dff5ce8f0ae9747e59ed3922d3c7eda23111c31e71917s) and Vote #2 transaction [details](https://etherscan.io/tx/0xeb057716a14216a642cba588d333e1fb72e5730f1255367ca0d1021d753ff25d)
 
-![congress-install-vesting-token-manager-foundation-burn-voting](./screens2/congress-install-vesting-token-manager-foundation-burn-voting.png)
+![congress-install-vesting-token-manager-foundation-burn-voting](./screens/congress-install-vesting-token-manager-foundation-burn-voting.png)
 
 Vote #1 transaction [detail](https://etherscan.io/tx/0xfed3cf6adc11b0d6e525b5d0fcda9628cd46c8326f311a0f4c841d39ccd84ec5) and Vote #2 transaction [detail](https://etherscan.io/tx/0x502b67642c8e173a5649bc0108bba8cbccfb6de935143bc60a5d3b8b629ceec8).
 
 The passed proposals in the Foundation DAO:
-![foundation-install-vesting-token-manager-issue-proposal-passed](./screens2/foundation-install-vesting-token-manager-issue-proposal-passed.png)
-![foundation-install-vesting-token-manager-assign-proposal-passed](./screens2/foundation-install-vesting-token-manager-assign-proposal-passed.png)
-![foundation-install-vesting-token-manager-burn-proposal-passed](./screens2/foundation-install-vesting-token-manager-issue-proposal-passed.png)
+![foundation-install-vesting-token-manager-issue-proposal-passed](./screens/foundation-install-vesting-token-manager-issue-proposal-passed.png)
+![foundation-install-vesting-token-manager-assign-proposal-passed](./screens/foundation-install-vesting-token-manager-assign-proposal-passed.png)
+![foundation-install-vesting-token-manager-burn-proposal-passed](./screens/foundation-install-vesting-token-manager-issue-proposal-passed.png)
 
 New permissions as Token Manager in the Foundation DAO:
-![foundation-token-manager-permissions-list-vesting](./screens2/foundation-token-manager-permissions-list-vesting.png)
+![foundation-token-manager-permissions-list-vesting](./screens/foundation-token-manager-permissions-list-vesting.png)
 
 Well done! The installation of the Vesting application for the Foundation DAO is completed! This application is now fully operational.
 
@@ -1387,7 +1387,7 @@ Output:
 Transaction [detail](https://etherscan.io/tx/0xc53ffb4d42aee02f4554c01888fe1d18d390970e9d02937e6d4713b2ce407d1b) of creating the proposal in the euler~Foundation DAO for installing the Auction application.
 
 The proposal to install the Auction app is created in the Foundation DAO:
-![foundation-install-auction-proposal](./screens2/foundation-install-auction-proposal.png)
+![foundation-install-auction-proposal](./screens/foundation-install-auction-proposal.png)
 
 Now, we can create the voting with the agent of the Congress and vote `yes` in the Congress DAO:
 
@@ -1407,15 +1407,15 @@ dao act 0x3A1F860046249646E508C417a840755571bC4680 0x47cab484d85ff17c7849d0c198b
 Transaction [detail](https://etherscan.io/tx/0xbe859e2d33fa2eda6cf60e98f876d6e5daf62471fbf363d8f0307c71f752462b) of creating the proposal in the Congress to vote on the proposal in the Foundation, for installing the Auction application.
 
 The created proposal in the Congress DAO:
-![congress-install-auction-foundation-voting](./screens2/congress-install-auction-foundation-voting.png)
+![congress-install-auction-foundation-voting](./screens/congress-install-auction-foundation-voting.png)
 
 The passed proposal in the Congress DAO:
-![congress-install-auction-foundation-voting-passed](./screens2/congress-install-auction-foundation-voting-passed.png)
+![congress-install-auction-foundation-voting-passed](./screens/congress-install-auction-foundation-voting-passed.png)
 
 Vote #1 transaction [detail](https://etherscan.io/tx/0x38267871ebb764534458a2247be66390722c30604fad8a8ecd0744e6c5645409) and Vote #2 transaction [detail](https://etherscan.io/tx/0xa202e891b2dac5418a76604cc8af52745651c15867def1b76672f6008db3c414).
 
 The passed proposal in the Foundation DAO to install the Auction application:
-![foundation-install-auction-proposal-passed](./screens2/foundation-install-auction-proposal-passed.png)
+![foundation-install-auction-proposal-passed](./screens/foundation-install-auction-proposal-passed.png)
 
 ```
 ➜  ~ npx dao apps 0x7eFA8E568a5fE91741f72A39b96f42EEdB67C419 --all --environment aragon:rinkeby
@@ -1477,7 +1477,7 @@ Output:
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-![foundation-install-creator-permission-auction-proposal](./screens2/foundation-install-creator-permission-auction-proposal.png)
+![foundation-install-creator-permission-auction-proposal](./screens/foundation-install-creator-permission-auction-proposal.png)
 
 Transaction [detail](https://etherscan.io/tx/0x130c930e5d259266fddf9d412b88a36933f0178fb8d86e5f43afc062bf559413) of creating the proposal to install the `CREATOR_ROLE` to the Auction application in the euler~Foundation DAO.
 
@@ -1507,7 +1507,7 @@ Output:
 ✔ Successfully executed: "Execute desired action as a token holder"
 ```
 
-![foundation-install-burner-permission-auction-proposal](./screens2/foundation-install-burner-permission-auction-proposal.png)
+![foundation-install-burner-permission-auction-proposal](./screens/foundation-install-burner-permission-auction-proposal.png)
 
 Transaction [detail](https://etherscan.io/tx/0x8df438c38b179fbef7ab6d6ac518a2ee9358d106ac1d0577fa7d6ed33f89c452) of creating the proposal to install the `BURNER_ROLE` to the Auction application in the euler~Foundation DAO.
 
@@ -1539,34 +1539,34 @@ Output:
 Transaction [detail](https://etherscan.io/tx/0x444fc667e29f954286d5efe7d1d17cb6c9b8505e9ffe5c8c3871c015ecb0d77d) of creating the proposal in the cyber~Congress DAO to vote on installing the` BURNER_ROLE` to the Auction application in the euler~Foundation DAO.
 
 The created proposals in the Congress DAO:
-![congress-voting-auction-foundation-roles-proposals](./screens2/congress-voting-auction-foundation-roles-proposals.png)
+![congress-voting-auction-foundation-roles-proposals](./screens/congress-voting-auction-foundation-roles-proposals.png)
 
 The passed proposal in the Congress DAO:
-![congress-install-auction-creator-permission-foundation-voting-passed](./screens2/congress-install-auction-creator-permission-foundation-voting-passed.png)
+![congress-install-auction-creator-permission-foundation-voting-passed](./screens/congress-install-auction-creator-permission-foundation-voting-passed.png)
 
 Vote #1 transaction [detail](https://etherscan.io/tx/0x542faf0a605fe15da3ecbfe8ab75a67ad91b4a4206257ebe75a56574df00f36e) and Vote #2 transaction [detail](https://etherscan.io/tx/0x4864894b262959e3a89d6c391d744915c002acb911053ca9a3cc6b810d922518).
 
-![congress-install-auction-creator-permission-foundation-voting-passed](./screens2/congress-install-auction-burner-permission-foundation-voting-passed.png)
+![congress-install-auction-creator-permission-foundation-voting-passed](./screens/congress-install-auction-burner-permission-foundation-voting-passed.png)
 
 Vote #1 transaction [detail](https://etherscan.io/tx/0x3273617c3368d3c919e7d01b3e36637be9083b70f6c05bd64cfaad2f35a1a509) and Vote #2 transaction [detail](https://etherscan.io/tx/0xd301bc3833de8f4f187ffb1ef540307a411ef0035994e4932e480236f1ed9a3b).
 
 The passed proposals and the Auction application installed in the euler~Foundation DAO:
-![foundation-install-auction-creator-permission-proposal-passed](./screens2/foundation-install-auction-creator-permission-proposal-passed.png)
-![foundation-install-auction-burner-permission-proposal-passed](./screens2/foundation-install-auction-burner-permission-proposal-passed.png)
+![foundation-install-auction-creator-permission-proposal-passed](./screens/foundation-install-auction-creator-permission-proposal-passed.png)
+![foundation-install-auction-burner-permission-proposal-passed](./screens/foundation-install-auction-burner-permission-proposal-passed.png)
 
 Permissions of the Auction in the Foundation DAO:
-![foundation-auction-permissions-list](./screens2/foundation-auction-permissions-list.png)
+![foundation-auction-permissions-list](./screens/foundation-auction-permissions-list.png)
 
 #### Grant permission for Burn rights as Token Manager
 The auction should be able to burn tokens (dust) after the end. This role is assigned to the Congress Agent, but we need to grant permission as the Token Manager for the Auction.
 
 Grant permission for Burn rights as Token Manager for the Auction application in the Foundation DAO:
-![foundation-token-manager-auction-burn-permission](./screens2/foundation-token-manager-auction-burn-permission.png)
+![foundation-token-manager-auction-burn-permission](./screens/foundation-token-manager-auction-burn-permission.png)
 
 Transaction [detail](https://etherscan.io/tx/0x9dcda75d339b17df545471d2a04c82ae6fc9c4a96ab14c072faad543a72400fd) of creating the proposal to assign burn permission as the Token Manager to the Auction application in the euler~Foundation.
 
 The created proposal to grant burn permission as the Token Manager to the Auction app in the Foundation DAO:
-![foundation-token-manager-burn-permission-auction-proposal ](./screens2/foundation-token-manager-burn-permission-auction-proposal.png)
+![foundation-token-manager-burn-permission-auction-proposal ](./screens/foundation-token-manager-burn-permission-auction-proposal.png)
 
 We need to create a proposal in the Congress DAO to vote `yes` on, following the proposal in the Foundation DAO:
 
@@ -1588,18 +1588,18 @@ Output:
 Transaction [detail](https://etherscan.io/tx/0x2343c4d1f3f6d79e1a821f3eb65ee2c69f2b54309f8e55d040490e3424ab11e5) of creating the proposal in the Congress DAO to vote on the proposal to assign burn permissions as Token Manager to the Auction Application in euler~Foundation.
 
 The created proposal in the Congress DAO:
-![congress-install-auction-token-manager-burn-permission-foundation-voting](./screens2/congress-install-auction-token-manager-burn-permission-foundation-voting.png)
+![congress-install-auction-token-manager-burn-permission-foundation-voting](./screens/congress-install-auction-token-manager-burn-permission-foundation-voting.png)
 
 The proposal passed in the Congress DAO and forwarded to the Foundation DAO:
-![congress-install-auction-token-manager-burn-permission-foundation-voting-passed](./screens2/congress-install-auction-token-manager-burn-permission-foundation-voting-passed.png)
+![congress-install-auction-token-manager-burn-permission-foundation-voting-passed](./screens/congress-install-auction-token-manager-burn-permission-foundation-voting-passed.png)
 
 Vote #1 transaction [detail](https://etherscan.io/tx/0xf8d51ddd7a4d51cbdfab227af518e2a252097e436c876e2b6b8df8d55d7dd026) and Vote #2 transaction [detail](https://etherscan.io/tx/0x77a77614ea68b53fbd1fdbd6c461f2004939af842d80c70fc079f89e6b85e517).
 
 The passed proposal in the Foundation DAO:
-![foundation-install-auction-burn-token-manager-permission-proposal-passed](./screens2/foundation-install-auction-burn-token-manager-permission-proposal-passed.png)
+![foundation-install-auction-burn-token-manager-permission-proposal-passed](./screens/foundation-install-auction-burn-token-manager-permission-proposal-passed.png)
 
 The auction has permissions to burn tokens as Token Manager in the Foundation DAO:
-![foundation-token-manager-permission-list-auction](./screens2/foundation-token-manager-permission-list-auction.png)
+![foundation-token-manager-permission-list-auction](./screens/foundation-token-manager-permission-list-auction.png)
 
 #### Set the congress agent as app manager in the Foundation DAO
 We need to assign a manager role to the Foundations kernel app. This is due to the fact that the governance threshold will not allow us to pass any proposals for a long time because of the long-term distribution process. There may be bugs in the contracts and it will not be possible for anyone to upgrade the applications.
@@ -1609,7 +1609,7 @@ We should allow the Congress to update the Auction or/and the Vesting applicatio
 We are aware that this is a point of failure for a decentralized setup, however, we do not wish to risk the possibility of having a contract failure which will lead to loss of users funds or the foundations' funds. 
 
 Creating a proposal to add permissions to manage the app in Foundations kernel:
-![foundation-congress-agent-kernel-app-manager-proposal](./screens2/foundation-congress-agent-kernel-app-manager-permission.png)
+![foundation-congress-agent-kernel-app-manager-proposal](./screens/foundation-congress-agent-kernel-app-manager-permission.png)
 
 Transaction [detail](https://etherscan.io/tx/0xcd4560363cbc803e9e434c1511f9126d1133ebeffe0ac9e72e8364a169efc400) of allowing the Congress Agent to manage the app in the euler~Foundation DAO.
 
@@ -1636,29 +1636,29 @@ Output:
 Transaction [detail](https://etherscan.io/tx/0x7725061feb407dd00b86512b848eeb851e9744010758e66b47e55d118124c62b) of creating the proposal in the Congress DAO to vote on, granting app manager the permissions for Kernel in the euler~Foundation DAO.
 
 The created proposal in the cyber~Congress DAO:
-![congress-kernle-foundation-agent-manager-proposal](./screens2/congress-kernel-foundation-agent-apps-manager-proposal.png)
+![congress-kernle-foundation-agent-manager-proposal](./screens/congress-kernel-foundation-agent-apps-manager-proposal.png)
 
 The passed proposal in the cyber~Congress DAO:
-![congress-kernel-foundation-agent-manager-proposal-passed](./screens2/congress-kernel-foundation-agent-apps-manager-proposal-passed.png)
+![congress-kernel-foundation-agent-manager-proposal-passed](./screens/congress-kernel-foundation-agent-apps-manager-proposal-passed.png)
 
 Vote #1 transaction [detail](https://etherscan.io/tx/0x7bfe2d1e0f9f0cc642cc153d12fee7c67126ab1ce26e7b896675c69de7859f00) and Vote #2 transaction [detail](https://etherscan.io/tx/0x328f54e066ffea1cb8f5df7110894c2d2fed5a217fe2bdf9120b42a2324caa45).
 
 The passed proposal in the euler~Foundation DAO:
-![foundation-congress-agent-kernel-app-manager-proposal-passed](./screens2/foundation-congress-agent-kernel-app-manager-proposal-passed.png)
+![foundation-congress-agent-kernel-app-manager-proposal-passed](./screens/foundation-congress-agent-kernel-app-manager-proposal-passed.png)
 
 List of kernel permissions in the Foundation DAO with the Congress Agent as apps manager:
-![foundation-kernel-permissions-agent-list](./screens2/foundation-kernel-permissions-agent-list.png)
+![foundation-kernel-permissions-agent-list](./screens/foundation-kernel-permissions-agent-list.png)
 
 #### Burn service account token in the Foundation DAO
 *Note:* The service account has successfully completed its mission for the Foundation DAO, applications setup and permission installation. Finalization of the Auction will be completed by the Congress itself, as the Congress Agent has the needed permissions (`CREATOR_ROLE` and `BURNER_ROLE`) for the Foundations Auction.
 
 Remove tokens from the service account:
-![foundation-remove-service-account](./screens2/foundation-remove-service-account.png)
+![foundation-remove-service-account](./screens/foundation-remove-service-account.png)
 
 Transaction [detail](https://etherscan.io/tx/0xc7f2f4aa3d06a846e34bc669508d69ca2f3a89acb259dc7e017d38c15cb78a84) of creating the proposal to remove 1 token from the service account in the euler~Foundation DAO.
 
 The created proposal to burn 1 token from the service account in the Foundation DAO:
-![foundation-remove-service-account-proposal](./screens2/foundation-remove-service-account-proposal.png)
+![foundation-remove-service-account-proposal](./screens/foundation-remove-service-account-proposal.png)
 
 We need to create a proposal in the Congress DAO, that we will vote `yes` on, to burn 1 token from the service account in the Foundation DAO:
 
@@ -1680,18 +1680,18 @@ Output:
 Transaction [detail](https://etherscan.io/tx/0x14f0a38eb29974bf982f1c510f212ec5028536c9a25c3dff7696d53f75049032) of creating the proposal in the Congress DAO to vote on the proposal to remove 1 token from the service account in the euler~Foundation DAO.
 
 The created proposal in the Congress DAO:
-![congress-burn-service-account-foundation-proposal](./screens2/congress-burn-service-account-foundation-proposal.png)
+![congress-burn-service-account-foundation-proposal](./screens/congress-burn-service-account-foundation-proposal.png)
 
 The passsed proposal in the Congress DAO:
-![congress-burn-service-account-foundation-proposal-passed](./screens2/congress-burn-service-account-foundation-proposal-passed.png)
+![congress-burn-service-account-foundation-proposal-passed](./screens/congress-burn-service-account-foundation-proposal-passed.png)
 
 Vote #1 transaction [detail](https://etherscan.io/tx/0x949f2fe5331a216d5fdcfc23b1005f34867045ed1cef2d799fc6e6c0214194b2) and Vote #2 transaction [detail](https://etherscan.io/tx/0x9d46082d744a363dcae98227004a336982b796264b89b352f51114ebf3594bf8).
 
 The passed proposal to burn 1 token from the service account in the Foundation DAO:
-![foundation-remove-service-account-proposal-passed](./screens2/foundation-remove-service-account-proposal-passed.png)
+![foundation-remove-service-account-proposal-passed](./screens/foundation-remove-service-account-proposal-passed.png)
 
 The supply of the Foundation DAO now follows the required distribution:
-![foundation-service-account-burned](./screens2/foundation-service-account-burned.png)
+![foundation-service-account-burned](./screens/foundation-service-account-burned.png)
 
 #### Transfer tokens from the Congress Agent to the Auction contract
 We can transfer the needed amount of tokens to the Auction for further distribution.
@@ -1724,15 +1724,15 @@ Output:
 Transaction [detail](https://etherscan.io/tx/0x6fae2776c6e07c0df0e57001998cc34c8813d3d904bc72f0ba695f7ac97a8fb6) of creating the proposal to transfer Congress DAO Agent GOL tokens, to the Auction application in the euler~Foundation DAO.
 
 The created proposal to transfer 7 TGOL from the cyber~Congress Agent to the Auction, in the Congress DAO:
-![congress-agent-transfer-tokens-auction-proposal](./screens2/congress-agent-transfer-tokens-auction-proposal.png)
+![congress-agent-transfer-tokens-auction-proposal](./screens/congress-agent-transfer-tokens-auction-proposal.png)
 
 The passed proposal to transfer a certain supply from the Congress Agent to the Auction, in the Congress DAO:
-![congress-agent-transfer-tokens-auction-proposal-passed](./screens2/congress-agent-transfer-tokens-auction-proposal-passed.png)
+![congress-agent-transfer-tokens-auction-proposal-passed](./screens/congress-agent-transfer-tokens-auction-proposal-passed.png)
 
 Vote #1 transaction [detail](https://etherscan.io/tx/0x2f268d726cb2a9ba0ed06603aafb277e993b574cc0c92f941c8c825b2d6896ad) and Vote #2 transaction [detail](https://etherscan.io/tx/0x1fe1deaf4bb700c44629dceae93da489f2bad15ea0b2ef8d255f4456ab2cfbd7).
 
 The supply is transferred to the Auction in the Foundation DAO:
-![foundation-auction-tokens-applied](./screens2/foundation-auction-tokens-applied.png)
+![foundation-auction-tokens-applied](./screens/foundation-auction-tokens-applied.png)
 
 The distribution of the Foundations is now completed and the Auction has the supply for the required distribution. 
 
@@ -1767,10 +1767,10 @@ Output:
 Transaction [detail](https://etherscan.io/tx/0x326a6a89e33f21860330e7febf1d89547c150def3f1440705cf28a0c0623fd50) of the load of the auction by the cyber~Congress Agent as the creator of the auction.
 
 The created proposal to load the Foundations Auction in the Congress DAO:
-![congress-auction-foundation-load-proposal](./screens2/congress-auction-foundation-load-proposal.png)
+![congress-auction-foundation-load-proposal](./screens/congress-auction-foundation-load-proposal.png)
 
 The passed proposal to load the Foundations Auction in the Congress DAO:
-![congress-auction-foundation-load-proposal-passed](./screens2/congress-auction-foundation-load-proposal-passed.png)
+![congress-auction-foundation-load-proposal-passed](./screens/congress-auction-foundation-load-proposal-passed.png)
 
 Vote #1 transaction [detail](https://etherscan.io/tx/0x82bcb68fea33f98d65327c364261996d0d816144c1d7437f0bc78d82ca3c831e) and Vote #2 transaction [detail](https://etherscan.io/tx/0xbc8834700ce38a69af34d478df6edb7a547eda8fa1360552e051a07c3ce88195).
 
@@ -1813,28 +1813,28 @@ contract AuctionUtils {
 
 We will use Remix IDE for the deployemnt of `Auction Utils`:
 Compiled Auction Utils in Remix IDE:
-![auction-utils-compile](./screens2/auction-utils-compile.png)
+![auction-utils-compile](./screens/auction-utils-compile.png)
 
 Deployment of `Auction Utils`:
-![auction-utils-deploy](./screens2/auction-utils-deploy.png)
+![auction-utils-deploy](./screens/auction-utils-deploy.png)
 
 [Transaction detail of AuctionUtils deployment](https://etherscan.io/tx/0xce7730e3fe98f4266a50457c742c181c9fe085342d273ccfc4df34be8e32679e)
 
 `AuctionUtils` deployed with an initialized Auction address:
-![auction-utils-deployed](./screens2/auction-utils-deployed.png)
+![auction-utils-deployed](./screens/auction-utils-deployed.png)
 
 `AuctionUtils` contract: [0x1ccc8b1e7cb1999d370e1e277f021f054f0893a5](https://etherscan.io/address/0x1ccc8b1e7cb1999d370e1e277f021f054f0893a5)
 
 Let's verify the contract. We will use a single file provided by truffle-flattener. Compiler v0.4.24+commit.e67f0147 without optimization.
 
 Prepare the source code verification on Etherscan:
-![etherscan-auction-utils-prepare](./screens2/etherscan-auction-utils-prepare.png)
+![etherscan-auction-utils-prepare](./screens/etherscan-auction-utils-prepare.png)
 
 Verification on Etherscan has passed:
-![etherscan-auction-utils-verification-passed](./screens2/etherscan-auction-utils-verification-passed.png)
+![etherscan-auction-utils-verification-passed](./screens/etherscan-auction-utils-verification-passed.png)
 
 The verified contract:
-![etherscan-auction-utils-contract](./screens2/etherscan-auction-utils-contract.png)
+![etherscan-auction-utils-contract](./screens/etherscan-auction-utils-contract.png)
 
 
 #### Add `AuctionUtils` address to the Auction
@@ -1864,7 +1864,7 @@ Output:
 Transaction [detail](https://etherscan.io/tx/0x35046ab87ef5ad1156f8a5a5d27ce7ad90a5255726a54db86818eae3cac750a8) of creating the proposal in the Congress DAO for adding `AuctionUtils` address to the Auction app in the euler~Foundation DAO.
 
 The passed proposal for adding the `AuctionUtils` contract address to the Foundation Auction app from the Congress DAO:
-![congress-auction-utils-foundation-proposal-passed](./screens2/congress-auction-utils-foundation-proposal-passed.png)
+![congress-auction-utils-foundation-proposal-passed](./screens/congress-auction-utils-foundation-proposal-passed.png)
 
 Vote #1 transaction [detail](https://etherscan.io/tx/0x2c2bc4f93a5617740158a5232f68b8e9622f01fba1b2cb065e94f4451dc2b869) and Vote #2 transaction [detail](https://etherscan.io/tx/0x9b4e5388cf13205b9079aeb25d72f1438b11957f549092ec4ba75a34eadf9ee4).
 
@@ -1873,44 +1873,34 @@ Vote #1 transaction [detail](https://etherscan.io/tx/0x2c2bc4f93a5617740158a5232
 ### Distribute tokens
 The Congress can now finish the distribution process and transfer the tokens to the inventors and to the initial donors of Cyber. The remaining amount of the tokens are the share of the Congress itself, following the distribution outlined in Cybers whitepaper.
 
-<<<<<<< HEAD
-Command template:
-
-```
-dao act <agentCongress> <agentCongress> "transfer(address,address,uint256)" <tokenFoundationAddress> <accountTo> <amountTokens> --environment aragon:rinkeby
-```
-=======
->>>>>>> Distribution in progress
-
 #### Inventors
 
-| transaction | address | amount |
-|---|---|---|
-| [](https://etherscan.io/) | 0x512f51AF284ff70077f8db08484D778C12bfEd4C | 800,000,000,000 |
-| [](https://etherscan.io/) | 0xe4B0e02E190A30C7dDA4cd68E9a6A281E883CbD7 | 800,000,000,000 |
-
+| Address | Amount, GOL | Proposal | Vote #1 | Vote #2 (transfer) |
+|---|---|---|---|---|
+| 0x512f51AF284ff70077f8db08484D778C12bfEd4C | 800,000,000,000 | [transaction](https://etherscan.io/tx/0xdafe18f06839c18cb3b2fb45b8634744b85aa412685ae59bb8b400b68d67c2d5) | [transaction](https://etherscan.io/tx/0xd76ad7a7f445a7dc328fa32e64201e93f67f02dc51a10852ed32f58f4bf47fe0) | [transaction](https://etherscan.io/tx/0x835d37739c54022553ddb9c237b8c36b53e55a614186770974a7b44166fcfd90) |
+| 0xe4B0e02E190A30C7dDA4cd68E9a6A281E883CbD7 | 800,000,000,000 | [transaction](https://etherscan.io/tx/0xbe902ab31e60c1b1ba66e767b9f9cd8253fb22672f1c9c4190197dfc7522bcaf) | [transaction](https://etherscan.io/tx/0x6a6d53ee360c7d317f35713439cf473ef10d4665c0ed2d30b1a525cb92358799) | [transaction](https://etherscan.io/tx/0x1e46383ec9440c2f950c55c2a69c129525c7164d79b3f7afa5e710234a882028) |
 
 #### Initial investors
 
-| transaction | address | amount |
-|---|---|---|
-| [](https://etherscan.io/) | 0x7C4401aE98F12eF6de39aE24cf9fc51f80EBa16B | 24,800,000,000  |
-| [](https://etherscan.io/) | 0xB2e19dd996848818d972DD3a60A1B7FAfFB82330 | 800,000,000,000 |
-| [](https://etherscan.io/) | 0x6c97E04Ae8CCb83a4D3c22803A397389f9a81b9E | 800,000,000,000 |
-| [](https://etherscan.io/) | 0xecc3A64eb2529aBB3ba42Bb3d03ED24388fb7930 | 80,000,000,000  |
-| [](https://etherscan.io/) | 0x6C4A1FbD3490Fb25C1578271b021660c220389DD | 80,000,000,000  |
-| [](https://etherscan.io/) | 0x3cf054438B6671039193253eA87873D42b6bF26c | 80,000,000,000  |
-| [](https://etherscan.io/) | 0x2850F1371FF98938f8461D9d0c91552b6F3e6C63 | 320,000,000,000 |
-| [](https://etherscan.io/) | 0x25d256790C88DC3edABfB06AE0134B220Ebf0fc9 | 320,000,000,000 |
-| [](https://etherscan.io/) | 0x200ceaa470cC10d096b5B5f99683974e3e358656 | 84,000,000,000  |
-| [](https://etherscan.io/) | 0xAb626F94C10cFc51985dC2a599F31a5228c69099 | 320,000,000,000 |
-| [](https://etherscan.io/) | 0xF9f5d5D4e36AF5868c9F635102BE2FbCf4A1Eed5 | 32,000,000,000  |
-| [](https://etherscan.io/) | 0x6bc8895c1902DcAe5e2a36C88Ae9203637d26434 | 32,000,000,000  |
-| [](https://etherscan.io/) | 0xf8E0B23b9e1B1e52c5Fc41099cd688F0Cc1B5f17 | 32,000,000,000  |
-| [](https://etherscan.io/) | 0x00725D89a2A2FB3B21Fd1035B579cbCDE4a0991b | 32,000,000,000  |
-| [](https://etherscan.io/) | 0xe15bda166042192119bE37f5c1675b67183051d3 | 80,000,000,000  |
-| [](https://etherscan.io/) | 0x63E65bC441334b27d2178f81F2d701e4e58c158a | 3,200,000,000   |
-| [](https://etherscan.io/) | 0x7aDEb6c5aBE64E1E4Bb561e1144E5D80B6dC6dD6 | 80,000,000,000  |
+| Address | Amount, GOL | Proposal | Vote #1 | Vote #2 (transfer) |
+|---|---|---|---|---|
+| 0x7C4401aE98F12eF6de39aE24cf9fc51f80EBa16B | 24,800,000,000  | [transaction](https://etherscan.io/tx/0x6b5b7e8324a1848c0ab97e3d0241504545c6995c91a685b2738353bc6bd84a7a) | [transaction](https://etherscan.io/tx/0xb98e756c7a87d1fcfb8c523eb49029486f6a3df52d1508fc905ca87dd5f25031) | [transaction](https://etherscan.io/tx/0xcbb6b843d0597f86eb92b9cedd769b5b3c14725dd206421e3839235aaf70f000) |
+| 0xB2e19dd996848818d972DD3a60A1B7FAfFB82330 | 800,000,000,000 | [transaction](https://etherscan.io/tx/0xd39969ef50591ef4a308f1d10a3a2bd691d7040bed6f54dfbd3a82285aba1c41) | [transaction](https://etherscan.io/tx/0x21303a1f042da9d0f8b7eee2a5295a7b5d69403d6bbf684287788e2d4596e891) | [transaction](https://etherscan.io/tx/0xa7cc1040c23a32288241d9ec13f0b971dd82748aa865353918bae21baada9c2c) |
+| 0x6c97E04Ae8CCb83a4D3c22803A397389f9a81b9E | 800,000,000,000 | [transaction](https://etherscan.io/tx/0x099618ce7d8465c3fbda9b02266a35d2790c6197516426f28813383e95688437) | [transaction](https://etherscan.io/tx/0xf7e9997dbf6ae218481742bc51b0cd2ad68045150fe58724edfbc8de480a5f7d) | [transaction](https://etherscan.io/tx/0x8c1761d52cbc4becc8e551324d734b1571c70ac5dfe86e7e7d254ed4352812c6) |
+| 0xecc3A64eb2529aBB3ba42Bb3d03ED24388fb7930 | 80,000,000,000  | [transaction](https://etherscan.io/tx/0x8cc90766152b1c10b9ffe2269e71c0975b0ea1b9b8283eff08a3148d5e9fe748) | [transaction](https://etherscan.io/tx/0x76d54cf1e7f34e3473f8c91269292f9d239c7fded579bc5319e5aa56740ca4ad) | [transaction](https://etherscan.io/tx/0xb4deb7cc7843654c6207871a30bccf2dbd93f910bbf78589272d259b12498fba) |
+| 0x6C4A1FbD3490Fb25C1578271b021660c220389DD | 80,000,000,000  | [transaction](https://etherscan.io/tx/0xb5436e3a4ef7d5f71ab4bc9c16aec6b157e2eda81730f08084e9fa355af5bd51) | [transaction](https://etherscan.io/tx/0xcd784e4ca3771bc55150b81ffbf860eecca4505093b18b2f6874a61de1e9e2d5) | [transaction](https://etherscan.io/tx/0x26454a5999f2d4a93965f0b9a02c9fbac47ea499d0800a3b35054f4d45075863) |
+| 0x3cf054438B6671039193253eA87873D42b6bF26c | 80,000,000,000  | [transaction](https://etherscan.io/tx/0x3e777a33f8ec6fc324da647ebde0708f7283820472935a0ff859662a399c8c60) | [transaction](https://etherscan.io/tx/0xe9f2dd567161b1e53807fa87d773a3c424ff0c8cc7110f7c7f47ed4f3e17438a) | [transaction](https://etherscan.io/tx/0x47df48a7f22a5952b367d41d4bd1d1d3c187cf5e9c03ce71f8f8ed5a5dd4e700) |
+| 0x2850F1371FF98938f8461D9d0c91552b6F3e6C63 | 320,000,000,000 | [transaction](https://etherscan.io/tx/0x32d43a0d27a1ec4305e9f934b5edadfb0897bf0f5293bd3115f13697d453aa60) | [transaction](https://etherscan.io/tx/0x4df496cce52bada552a624fb57b860ee67ce1a14036e9a208c4b8c17374d5daa) | [transaction](https://etherscan.io/tx/0xfb1081427faa8b4e25825c7b1116d1fe94297135511b6618ed1126cf0c2df796) |
+| 0x25d256790C88DC3edABfB06AE0134B220Ebf0fc9 | 320,000,000,000 | [transaction](https://etherscan.io/tx/0x71d9121e9a3277e47919fdad4e7fba8568398c0993a721d578f56ab868947674) | [transaction](https://etherscan.io/tx/0x416ac706bcee52fc17c3154581003109ad9250d37b5b9a6a66ef9a22534aea0c) | [transaction](https://etherscan.io/tx/0xb45807836c3ff5acf6a1c3fc95916e61ee57725bdbece89a6f82deae82723bd4) |
+| 0x200ceaa470cC10d096b5B5f99683974e3e358656 | 84,000,000,000  | [transaction](https://etherscan.io/tx/0x332a50669043bb5177e97f97bca976cdb0a83f7ac8b8a36915ad2ab1a16ab982) | [transaction](https://etherscan.io/tx/0x68c6e574b5791d00d1c492c03f0f15abfb47d6e872aedf7dd077e461723d4bc9) | [transaction](https://etherscan.io/tx/0x0c48d264bc7da24fb984df5c0f59256385b26dddecfa33feed322f63e28911bd) |
+| 0xAb626F94C10cFc51985dC2a599F31a5228c69099 | 320,000,000,000 | [transaction](https://etherscan.io/tx/0x1f7fcb3026afbea010d55d364eae74c58edc8e18311738c30cce245fd99d93a0) | [transaction](https://etherscan.io/tx/0x107ebf15eb6d527215ee136d0c376846c0fd86659ea10fb37176a21bab4b7d35) | [transaction](https://etherscan.io/tx/0x2f3fabb42c9c8471cea3154354d072548656df6ce967ad90d5a1409e43f13800) |
+| 0xF9f5d5D4e36AF5868c9F635102BE2FbCf4A1Eed5 | 32,000,000,000  | [transaction](https://etherscan.io/tx/0x4d1e412a7d7540422bbdc9e5c173617a03820a7f6c286d41bcff32483fdceffa) | [transaction](https://etherscan.io/tx/0xd36e1cf6186478ac1318629cef097cbce4b33667839e7e87f91812381413953d) | [transaction](https://etherscan.io/tx/0x6c30d50838a6d1f4b4d8f80c7680716248223987617dfc6912fef16c1e51f7bb) |
+| 0x6bc8895c1902DcAe5e2a36C88Ae9203637d26434 | 32,000,000,000  | [transaction](https://etherscan.io/tx/0x7fb72b1f3d43264950bb799050f7577f7df02c91a8aa62d394d20a3b0f8e8ef8) | [transaction](https://etherscan.io/tx/0xbfee9dd94e3c07c3c4755bf0a711dda6cd6dba161fc8bdc43196def7ca0a849b) | [transaction](https://etherscan.io/tx/0x8f05357cfa34e9c22b4681c5ebb9fed605b99b5189537d383b19b66a68eab7fa) |
+| 0xf8E0B23b9e1B1e52c5Fc41099cd688F0Cc1B5f17 | 32,000,000,000  | [transaction](https://etherscan.io/tx/0x070851c016cd85b755656ebf2731ca3fd4e1845bdcfd89c9af71f35e7d9cad02) | [transaction](https://etherscan.io/tx/0x73a347e87f8c822cd8ff1fc7232278fff35441ae07b6f2516342aaa7b3c01906) | [transaction](https://etherscan.io/tx/0x51d3d0e9601a53c2b677e6d28d96d47ccbaab719c89eab403d0698b8768ec6af) |
+| 0x00725D89a2A2FB3B21Fd1035B579cbCDE4a0991b | 32,000,000,000  | [transaction](https://etherscan.io/tx/0x476ffb92084f6965ddd942722c265be23d06f6e084426221d163979f252da632) | [transaction](https://etherscan.io/tx/0xda9402f173e2c027ac388ae46e60c8a10f59daebe4d3f57fc1fa0b9b7ef6438d) | [transaction](https://etherscan.io/tx/0xbc405079d0bf4c44c45437ee000fbda5e8f3c20408dffd2e541c955b11986ec8) |
+| 0xe15bda166042192119bE37f5c1675b67183051d3 | 80,000,000,000  | [transaction](https://etherscan.io/tx/0x5c5b3bdb78e34e4468286f2033227717170b33bbcfd9e85267932730e81801fe) | [transaction](https://etherscan.io/tx/0x6c19256ce59f232777cba5f23d82436441ca43a472d09cc8b4ea37a3b50a40c2) | [transaction](https://etherscan.io/tx/0xda1181382a8a2648101d32db34e7f2133b184b0fc4eda9b940f4aee0fda155b2) |
+| 0x63E65bC441334b27d2178f81F2d701e4e58c158a | 3,200,000,000   | [transaction](https://etherscan.io/tx/0x686098413e3f320da655be0e4ee89b4db8b25bb38a3d5b7eb28d76919d2881d4) | [transaction](https://etherscan.io/tx/0x3924781b5595a2891ea9b2dd90c20844b8e93aa35fc9bafeda053abb88b00a29) | [transaction](https://etherscan.io/tx/0xee82e2100fe45230725ecec19837a121dc47286fcf7adbe87335d4093803fbcb) |
+| 0x7aDEb6c5aBE64E1E4Bb561e1144E5D80B6dC6dD6 | 80,000,000,000  | [transaction](https://etherscan.io/tx/0x7780c2dba7fac0f91ba7a9383d18c2c1d84c4271bed74b254b2fca31ba75ae86) | [transaction](https://etherscan.io/tx/0x10adb89050d977766853c43b4acaa5a8620f09d5cc15fc6e9342050e23945f19) | [transaction](https://etherscan.io/tx/0xb7876f17ca97d5c69bb4bb245164aa61257a13c42e976c1ed5bf42b18df42db3) |
 
 ---------------------
 
@@ -1918,43 +1908,122 @@ dao act <agentCongress> <agentCongress> "transfer(address,address,uint256)" <tok
 
 #### euler~Foundation DAO
 1. The euler~Foundation DAO is deployed by the agent of cyber~Congress Aragon DAO 
-2. The euler~Foundation Aragon DAO name is GOL
-3. Supply of GOL is 15000000000000
-3. An installed and prepared Evangelism Aragon application developed by cyber~Congress
-4. An installed and prepared Auction Aragon application developed by cyber~Congress
-5. An installed and prepared Vesting Aragon application developed by cyber~Congress
-6. The permission manager on issuing tokens as Token Manager is set to Foundations Voting application
-7. The permission manager on assigning tokens as Token Manager is set to Foundations Voting application
-8. The Congress Agent has permission to manage apps in Kernel in a case when applications will require upgrades due to bugs
+2. The euler~Foundation Aragon DAO name is eulerfoundation
+3. Supply of GOL is 15000000000000 (15TGOL)
+3. An installed and prepared cyber~Evangelism Aragon application developed by cyber~Congress
+4. An installed and prepared cyber~Auction Aragon application developed by cyber~Congress
+5. An installed and prepared cyber~Vesting Aragon application developed by cyber~Congress
+6. The permission manager on issuing tokens as Token Manager is set to euler~Foundations Voting application
+7. The permission manager on assigning tokens as Token Manager is set to euler~Foundations Voting application
+8. The cyber~Congress DAO Agent has permission to manage apps in Kernel in a case when applications will require upgrades due to crisis protocol
 
 #### cyber~Evangelism application
-TODO
+0. Deployed to cyberevangelism.open.aragonpm.eth, version 1.0.0. Upgrade access: 0x97975Ed1aAb49b8C5d30E6856DdFE20b4896490f
+1. The Evangelism application FOUNDER_ROLE is set to the cyber~Congress DAO Agent. The role manager is the cyber~Congress DAO Agent
 
-
-#### cyber~Vesting application
-1. Vesting end period is set to 1592650849 Saturday, June 20, 2020 11:00:49 AM GMT
-2. The Vesting application PAUSE_ROLE is set to the Congress Agent. The role manager is the Congress Agent
-3. The Vesting application PROOF_ROLE is set to the Congress Vesting, Companion Proofer external address. The role manager is the Congress Agent
-4. The vesting app has permission to issue tokens as Foundations Token Manager
-5. The vesting app has permission to assign tokens as Foundations Token Manager
-6. The vesting app has permission to burn tokens as Foundations Token Manager
+#### cyber~Vesting application  
+0. Deployed to cybervesting.open.aragonpm.eth, version 1.0.0. Upgrade access: 0x97975Ed1aAb49b8C5d30E6856DdFE20b4896490f
+1. Vesting end period is set to 1592650849 - Saturday, June 20, 2020 11:00:49 AM GMT
+2. The cyber~Vesting application PAUSE_ROLE is set to the cyber~Congress DAO Agent. The role manager is the cyber~Congress DAO Agent
+3. The cyber~Vesting application PROOF_ROLE is set to the cyber~Congress Companion' Proofer external address. The role manager is the cyber~Congress DAO Agent
+4. The cyber~Vesting application has permission to issue tokens as euler~Foundations Token Manager
+5. The cyber~Vesting application has permission to assign tokens as euler~Foundations Token Manager
+6. The cyber~Vesting application has permission to burn tokens as euler~Foundations Token Manager
 
 #### cyber~Auction application
-1. Round zero of the Auction zero (Ethereum's Game of Thrones) is set to 11586865600 Tuesday, April 14, 2020 12:00:00 PM GMT
-2. Auction rounds start on 1587729600 Friday, April 24, 2020 12:00:00 PM
-3. Amount of rounds is set to 49+1 (window zero)
+0. Deployed to cyberauction.open.aragonpm.eth, version 1.0.0. Upgrade access: 0x97975Ed1aAb49b8C5d30E6856DdFE20b4896490f
+1. Round zero of the cyber~Auction zero is set to 11586865600 - Tuesday, April 14, 2020 12:00:00 PM GMT
+2. Auction rounds start on 1587729600 - Friday, April 24, 2020 12:00:00 PM
+3. Amount of rounds is set to 49 + 1 (window zero)
 4. The duration of a round is 23 hours + 1 sec
-5. The collector of funds is the Foundation DAO (Foundations Agent address)
-6. The vesting app has permission to burn tokens as Foundations Token Manager
-7. The Auction application CREATOR_ROLE is set to the Congress Agent. The manager of the role is the Congress Agent
-7. The Auction application BURNER_ROLE is set to the Congress Agent. The manager of the  is the Congress Agent
+5. The collector of funds is the euler~Foundation DAO Agent
+6. The cyber~Auction application has permission to burn tokens as euler~Foundations Token Manager
+7. The cyber~Auction application CREATOR_ROLE is set to the cyber~Congress DAO Agent. The manager of the role is the cyber~Congress DAO Agent
+7. The cyber~Auction application BURNER_ROLE is set to the cyber~Congress DAO Agent. The manager of the  is the cyber~Congress DAO Agent
+8. The Auction will end at 1591786849 - Wednesday, June 10, 2020 11:00:49 AM
+9. All remained (not claimed + dust) tokens on cyber~Auction will be burned after 7 days after the auction end
 
-#### Final thoughts
+#### Stats
+1. euler~Foundation setup: 72 transaction - 20,712,079 gas burned
+2. euler~Foundation distribution: 57 transaction - 15,865,890 gas burned
+
+#### Final thoughts [TODO]
 1. Aragon is an amazing project with endless features for the creation of DAOs and their operations
 2. Use your own node, not Infura. This can boost the process 10x
 3. Prepare yourself for this process. Take a rest before. You should be fully concentrated because there is no room for error
 
-
-
-
-
+#### Transaction list
+| Id | Transaction | Gas | Description |
+|---|---|---|---|
+| 1 | [transaction](https://etherscan.io/tx/0xb2708c8ce9050081ab2303d660fac4b9b7ce961eb2a73a56f309e0158881a5ba) | 413,957 | proposal to token deploy in congress |
+| 2 | [transaction](https://etherscan.io/tx/0x10a71dbd401008e5da1eb71ae19b3d496731ffc592222c3df332682b29fb0b3c) | 622,008 | proposal to foundation deploy in congress |
+| 3 | [transaction](https://etherscan.io/tx/0xe97866d789f9fd37807d6e015c685dda67be14de7a58b7319149bacca655213e) | 109,447 | votes for token deploy in congress |
+| 4 | [transaction](https://etherscan.io/tx/0x5e990fa43ea5d4e82fcf6f3445abb3efcc3903a3700e894d6a2edad51b9c15ce) | 1,872,542 | votes for token deploy in congress |
+| 5 | [transaction](https://etherscan.io/tx/0x51df53cff1450142cce58ea996b965fd059c7b2f5afb49d70c1f2d50b9ea6347) | 109,447 | votes for foundation deploy in congress |
+| 6 | [transaction](https://etherscan.io/tx/0x9a74a16ba4b12a344c43a22cbe73c753683b72820945f87219d791bee6c077ce) | 5,540,209 | votes for foundation deploy in congress |
+| 7 | [transaction](https://etherscan.io/tx/0x38d8f7528df483df272b51f8165c2a5d4f712af6613437080ada9d84d6f4b55c) | 384,979 | proposal to deploy evangelism application to foundation in foundation |
+| 8 | [transaction](https://etherscan.io/tx/0xb3a1a31e0deee3202b62f620d4caf4366a59fff3bf7afc71937644c7dbc2f662) | 370,908 | created proposal in congress to vote on proposal on deployment of evangelism application in foundation |
+| 9 | [transaction](https://etherscan.io/tx/0xac3001eaf48be6706394a46ebb945b123fe49f5c30eb6d15c36bcd52ec3c0750) | 109,447 | votes in congress |
+| 10 | [transaction](https://etherscan.io/tx/0x9601b7970f8f2bf24e3243a5661eeca7744bb56c00424cf7ff602739b97c076a) | 1,128,104 | votes in congress |
+| 11 | [transaction](https://etherscan.io/tx/0x8081014ed5c7c3b2cc76b532017a38a812b7f34bb0f227c441c68fd478418ce0) | 327,127 | created proposal in foundation to assign founder role on evangelism application in foundation |
+| 12 | [transaction](https://etherscan.io/tx/0x625b579bc657cdc232fd079dbcec632d3b92eace67514f3744a20cecdbf32cb1) | 390,120 | created proposal in congress to vote on assign founder role on evangelism application in foundation |
+| 13 | [transaction](https://etherscan.io/tx/0x542d57a72c24c54b663ceff66045d8d87eb6db1ae4fe926628e42946bba21880) | 178,044 | votes in congress |
+| 14 | [transaction](https://etherscan.io/tx/0x53adfe0acddbe7745d592dec121a837681906860888bfa19c8ae4adb5526362f) | 391,464 | votes in congress |
+| 15 | [transaction](https://etherscan.io/tx/0xbe5a64296d7a3b8f1f039a0809df8263b51b8a7c62e5f2001e9e8553428ca7a7) | 390,768 | created proposal in foundation to install vesting application in foundation |
+| 16 | [transaction](https://etherscan.io/tx/0xb357de4d61514bf0e1a22c077b321bb2dfd7d6948e9f68948a67cd4cbdde2cb0) | 390,120 | created proposal in congress to vote on install vesting application in foundation |
+| 17 | [transaction](https://etherscan.io/tx/0x3cf2bd68d0d1a2e79ba2ad464b258a095a81eb9f11c2199d0ab591161ca1057e) | 109,447 | votes in congress |
+| 18 | [transaction](https://etherscan.io/tx/0x5533c392491c9bc0ed2d7ecc90b9104f89f6059b9e8b3bfeebd49d23f89d599f) | 1,130,072 | votes in congress |
+| 19 | [transaction](https://etherscan.io/tx/0xef5aa27d0e1249eaaf555292df35c6a1697bff7a6d66a9b14bfe1c303fe4b085) | 327,127 | created proposal to install PAUSE_ROLE on Vesting application in foundation |
+| 20 | [transaction](https://etherscan.io/tx/0xf14543dbb21ebad7680caea0146188cdcf7f58301c46e86b5533b7589c74c63b) | 327,139 | created proposal to install PAUSE_ROLE on Vesting application in foundation |
+| 21 | [transaction](https://etherscan.io/tx/0xd9187609f1c56fb432752665e1a0ffc70499582fcbd7aab6490f60e6816e7ad0) | 390,120 | created proposal in congress to vote on proposal to install PAUSE_ROLE on Vesting application in euler~Foundation |
+| 22 | [transaction](https://etherscan.io/tx/0x7bc1e658dd4810ee2eef8349363a9853d23fe5c9db091573a0e2d9beb20fc3c2) | 390,120 | created proposal in congress to vote on proposal to install PROOF_ROLE on Vesting application in euler~Foundation |
+| 23 | [transaction](https://etherscan.io/tx/0xe9d2443154523200643f33ed2744eff8097c2f8a082a318e64141e8fe484f52d) | 109,447 | vote in congress on PAUSE |
+| 24 | [transaction](https://etherscan.io/tx/0x7bd934f94876c93ba24b733daaaa8cef6df226eb219c47be495543e12747ab9a) | 391,464 | vote in congress on PAUSE |
+| 25 | [transaction](https://etherscan.io/tx/0x4682c60699a5eb6129ce326bf58f78286fd2d9e105deb7669d9c1516f2908244) | 109,447 | votes in congress on PROOF |
+| 26 | [transaction](https://etherscan.io/tx/0x63751a5ebb5feab2d125e6ccb1b352206a48e7343405bd39d3105f27f8edd2d4) | 391,464 | votes in congress on PROOF |
+| 27 | [transaction](https://etherscan.io/tx/0xe6f56461c3a18f456242db3a4d8bb29ba4b732183c0c7617d97f2bacd703437a) | 327,151 | created proposal in euler~Foundation to grant Issue Role on Token Manager to Vesting application |
+| 28 | [transaction](https://etherscan.io/tx/0x5c821278156b41a55029fc95896db7670b31d7f92c2386338394c7ff92e7b1c5) | 327,151 | created proposal in euler~Foundation to grant Assign Role on Token Manager to Vesting application |
+| 29 | [transaction](https://etherscan.io/tx/0x2ca183cb9413c5cffee40d10005243c92d197dc2d0cd1f0da63e4e18ed00f99e) | 306,195 | created proposal in euler~Foundation to grant Burn Role on Token Manager to Vesting application |
+| 30 | [transaction](https://etherscan.io/tx/0x96e7866d1380694a48a820e14f0c9774ba9913d9e44389d7fd5126137dc32a97) | 390,120 | created voting in cyber~Congress to vote on grant Issue Role on Token Manager to Vesting application in euler~Foundation |
+| 31 | [transaction](https://etherscan.io/tx/0x7a722efe4710ee953f7868774166a4aaf631194f48e1bc1266c6d5530c311da1) | 390,120 | created voting in cyber~Congress to vote on grant Assign Role on Token Manager to Vesting application in euler~Foundation |
+| 32 | [transaction](https://etherscan.io/tx/0x55969023e3914d8c9a715a5fd51ca3bc58c740ef9eadbcc39d91f4d940389518) | 390,120 | created voting in cyber~Congress to vote on grant Burn Role on Token Manager to Vesting application in euler~Foundation |
+| 33 | [transaction](https://etherscan.io/tx/0x480a235cca844530cb8ef6cc34dfc51266f2e52026a6b04f3491214dce2be829) | 109,447 | votes in congress for issue |
+| 34 | [transaction](https://etherscan.io/tx/0x3a815c4f0cb91dc6b59943fa78d0b7b8c4750cbef2c6166097c5e836b3f72706) | 391,464 | votes in congress for issue |
+| 35 | [transaction](https://etherscan.io/tx/0x223cbe7c0d75d061e88dff5ce8f0ae9747e59ed3922d3c7eda23111c31e71917) | 109,447 | votes in congress for assign |
+| 36 | [transaction](https://etherscan.io/tx/0xeb057716a14216a642cba588d333e1fb72e5730f1255367ca0d1021d753ff25d) | 391,464 | votes in congress for assign |
+| 37 | [transaction](https://etherscan.io/tx/0xfed3cf6adc11b0d6e525b5d0fcda9628cd46c8326f311a0f4c841d39ccd84ec5) | 109,447 | votes in congress for burn |
+| 38 | [transaction](https://etherscan.io/tx/0x502b67642c8e173a5649bc0108bba8cbccfb6de935143bc60a5d3b8b629ceec8) | 342,781 | votes in congress for burn |
+| 39 | [transaction](https://etherscan.io/tx/0xc53ffb4d42aee02f4554c01888fe1d18d390970e9d02937e6d4713b2ce407d1b) | 474,166 | created proposal in euler~Foundation on installing Auction application |
+| 40 | [transaction](https://etherscan.io/tx/0xbe859e2d33fa2eda6cf60e98f876d6e5daf62471fbf363d8f0307c71f752462b) | 390,120 | created proposal in cyber~Congress to vote on installing Auction application in euler~Foundation DAO |
+| 41 | [transaction](https://etherscan.io/tx/0x38267871ebb764534458a2247be66390722c30604fad8a8ecd0744e6c5645409) | 109,447 | votes in congress |
+| 42 | [transaction](https://etherscan.io/tx/0xa202e891b2dac5418a76604cc8af52745651c15867def1b76672f6008db3c414) | 803,859 | votes in congress |
+| 43 | [transaction](https://etherscan.io/tx/0x130c930e5d259266fddf9d412b88a36933f0178fb8d86e5f43afc062bf559413) | 327,127 | created proposal to install CREATOR_ROLE on Auction application in euler~Foundation DAO |
+| 44 | [transaction](https://etherscan.io/tx/0x8df438c38b179fbef7ab6d6ac518a2ee9358d106ac1d0577fa7d6ed33f89c452) | 327,115 | created proposal to install BURNER_ROLE on Auction application in euler~Foundation DAO |
+| 45 | [transaction](https://etherscan.io/tx/0xd8a01b819e78a26ff21a8a52dceb98b3e74f977cf63b15605b86a9c299c2ec0f) | 390,120 | created proposal in cyber~Congress to vote on installing CREATOR_ROLE on Auction application in euler~Foundation DAO |
+| 46 | [transaction](https://etherscan.io/tx/0x444fc667e29f954286d5efe7d1d17cb6c9b8505e9ffe5c8c3871c015ecb0d77d) | 390,120 | created proposal in cyber~Congress to vote on installing BURNER_ROLE on Auction application in euler~Foundation DAO |
+| 47 | [transaction](https://etherscan.io/tx/0x542faf0a605fe15da3ecbfe8ab75a67ad91b4a4206257ebe75a56574df00f36e) | 109,447 | votes on CREATOR |
+| 48 | [transaction](https://etherscan.io/tx/0x4864894b262959e3a89d6c391d744915c002acb911053ca9a3cc6b810d922518) | 391,464 | votes on CREATOR |
+| 49 | [transaction](https://etherscan.io/tx/0x3273617c3368d3c919e7d01b3e36637be9083b70f6c05bd64cfaad2f35a1a509) | 109,447 | votes on BURNER |
+| 50 | [transaction](https://etherscan.io/tx/0xd301bc3833de8f4f187ffb1ef540307a411ef0035994e4932e480236f1ed9a3b) | 391,464 | votes on BURNER |
+| 51 | [transaction](https://etherscan.io/tx/0x9dcda75d339b17df545471d2a04c82ae6fc9c4a96ab14c072faad543a72400fd) | 306,195 | created proposal on grant burner permission on Token Manager to Auction applicatio in euler~Foundation |
+| 52 | [transaction](https://etherscan.io/tx/0x2343c4d1f3f6d79e1a821f3eb65ee2c69f2b54309f8e55d040490e3424ab11e5) | 390,120 | created proposal in cyber~Congress DAO to vote on grant burner permission on Token Manager to Auction applicatio in euler~Foundation |
+| 53 | [transaction](https://etherscan.io/tx/0xf8d51ddd7a4d51cbdfab227af518e2a252097e436c876e2b6b8df8d55d7dd026) | 109,447 | votes in congress |
+| 54 | [transaction](https://etherscan.io/tx/0x77a77614ea68b53fbd1fdbd6c461f2004939af842d80c70fc079f89e6b85e517) | 342,781 | votes in congress |
+| 55 | [transaction](https://etherscan.io/tx/0xcd4560363cbc803e9e434c1511f9126d1133ebeffe0ac9e72e8364a169efc400) | 306,171 | created proposal to grant congress agent apps manager permission on Kernel in euler~Foundation |
+| 56 | [transaction](https://etherscan.io/tx/0x7725061feb407dd00b86512b848eeb851e9744010758e66b47e55d118124c62b) | 390,120 | created proposal in cyber~Congress to vote on granting congress agent apps manager permission on Kernel in euler~Foundation |
+| 57 | [transaction](https://etherscan.io/tx/0x7bfe2d1e0f9f0cc642cc153d12fee7c67126ab1ce26e7b896675c69de7859f00) | 109,447 | votes in congress |
+| 58 | [transaction](https://etherscan.io/tx/0x328f54e066ffea1cb8f5df7110894c2d2fed5a217fe2bdf9120b42a2324caa45) | 342,781 | votes in congress |
+| 59 | [transaction](https://etherscan.io/tx/0xc7f2f4aa3d06a846e34bc669508d69ca2f3a89acb259dc7e017d38c15cb78a84) | 284,879 | created proposal on burning 1 token from service account in euler~Foundation |
+| 60 | [transaction](https://etherscan.io/tx/0x14f0a38eb29974bf982f1c510f212ec5028536c9a25c3dff7696d53f75049032) | 390,120 | created proposal in cyber~Congress DAO on voting on proposal on burning 1 token from service account in euler~Foundation |
+| 61 | [transaction](https://etherscan.io/tx/0x949f2fe5331a216d5fdcfc23b1005f34867045ed1cef2d799fc6e6c0214194b2) | 109,447 | votes in congress |
+| 62 | [transaction](https://etherscan.io/tx/0x9d46082d744a363dcae98227004a336982b796264b89b352f51114ebf3594bf8) | 423,310 | votes in congress |
+| 63 | [transaction](https://etherscan.io/tx/0x6fae2776c6e07c0df0e57001998cc34c8813d3d904bc72f0ba695f7ac97a8fb6) | 390,612 | created proposal in cyber~Congress DAO to transfer Agent tokens to Auction application in euler~Foundation |
+| 64 | [transaction](https://etherscan.io/tx/0x2f268d726cb2a9ba0ed06603aafb277e993b574cc0c92f941c8c825b2d6896ad) | 109,447 | votes in congress |
+| 65 | [transaction](https://etherscan.io/tx/0x1fe1deaf4bb700c44629dceae93da489f2bad15ea0b2ef8d255f4456ab2cfbd7) | 339,571 | votes in congress |
+| 66 | [transaction](https://etherscan.io/tx/0x326a6a89e33f21860330e7febf1d89547c150def3f1440705cf28a0c0623fd50) | 348,676 | created proposal in cyber~Congress DAO to load Auction application in euler~Foundation |
+| 67 | [transaction](https://etherscan.io/tx/0x82bcb68fea33f98d65327c364261996d0d816144c1d7437f0bc78d82ca3c831e) | 109,447 | votes in congress |
+| 68 | [transaction](https://etherscan.io/tx/0xbc8834700ce38a69af34d478df6edb7a547eda8fa1360552e051a07c3ce88195) | 268,213 | votes in congress |
+| 69 | [transaction](https://etherscan.io/tx/0xce7730e3fe98f4266a50457c742c181c9fe085342d273ccfc4df34be8e32679e) | 418,652 | deployed auction utils |
+| 70 | [transaction](https://etherscan.io/tx/0x35046ab87ef5ad1156f8a5a5d27ce7ad90a5255726a54db86818eae3cac750a8) | 348,868 | created proposal in cyber~Congress DAO to add AuctionUtils to Auction application in euler~Foundation |
+| 71 | [transaction](https://etherscan.io/tx/0x2c2bc4f93a5617740158a5232f68b8e9622f01fba1b2cb065e94f4451dc2b869) | 109,447 | voting in congress |
+| 72 | [transaction](https://etherscan.io/tx/0x9b4e5388cf13205b9079aeb25d72f1438b11957f549092ec4ba75a34eadf9ee4) | 231,914 | voting in congress |

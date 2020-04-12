@@ -48,10 +48,10 @@ created proposal to install PAUSE_ROLE on Vesting application in foundation \
 327,139 https://etherscan.io/tx/0xf14543dbb21ebad7680caea0146188cdcf7f58301c46e86b5533b7589c74c63b
 
 created proposal in congress to vote on proposal to install PAUSE_ROLE on Vesting application in euler~Foundation \
-https://etherscan.io/tx/0xd9187609f1c56fb432752665e1a0ffc70499582fcbd7aab6490f60e6816e7ad0
+390,120 https://etherscan.io/tx/0xd9187609f1c56fb432752665e1a0ffc70499582fcbd7aab6490f60e6816e7ad0
 
 created proposal in congress to vote on proposal to install PROOF_ROLE on Vesting application in euler~Foundation \
-https://etherscan.io/tx/0x7bc1e658dd4810ee2eef8349363a9853d23fe5c9db091573a0e2d9beb20fc3c2
+390,120 https://etherscan.io/tx/0x7bc1e658dd4810ee2eef8349363a9853d23fe5c9db091573a0e2d9beb20fc3c2
 
 vote in congress on PAUSE \
 109,447 https://etherscan.io/tx/0xe9d2443154523200643f33ed2744eff8097c2f8a082a318e64141e8fe484f52d

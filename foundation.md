@@ -5,10 +5,9 @@ The guide will walk you through the setup process of an Aragon-based DAO, by an 
 
 ### Content
 - [Introduction](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#introduction)
-  * [For whom and for what is this guide?](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#what-for-and-for-whom-is-this-guide)
+  * [For whom and for what is this guide?](https://github.com/litvintech/foundation-ceremony/blob/master/foundation.md#for-whom-and-for-what-is-this-guide)
   * [About euler&cyber\~Foundation(s)](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#about-eulercyberfoundations)
   * [Process flow](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#process-flow)
-  * [The process in numbers](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#the-process-in-numbers)
   * [Prepare your setup background](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#prepare-your-setup-background)
 -------------------------------------------------------
 - [cyber\~Congress DAO](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#cybercongress-dao)
@@ -22,10 +21,16 @@ The guide will walk you through the setup process of an Aragon-based DAO, by an 
   * [Deploy](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#deploy)
   * [Verify on Etherscan](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#verify-on-etherscan)
 ---------------------------------- 
-- [Vesting & Auction Aragon applications](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#vesting--auction-aragon-applications)
+- [Evangelism, Vesting & Auction Aragon applications](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#vesting--auction-aragon-applications)
+  * [Evangelism application](https://github.com/litvintech/foundation-ceremony/blob/master/foundation.md#evangelism-application)
   * [Vesting application](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#vesting-application)
   * [Auction application](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#auction-application)
   * [Deploy to Aragon Package Manager (APM)](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#deploy-to-aragon-package-manager-apm)
+    * [Evangelism deploy](https://github.com/litvintech/foundation-ceremony/blob/master/foundation.md#evangelism-deploy)
+    * [Vesting deploy](https://github.com/litvintech/foundation-ceremony/blob/master/foundation.md#vesting-deploy)
+    * [Auction deploy](https://github.com/litvintech/foundation-ceremony/blob/master/foundation.md#auction-deploy)
+    * [Deployment information](https://github.com/litvintech/foundation-ceremony/blob/master/foundation.md#deployment-information)
+  * [Grant permissions to update packages to additional accounts](https://github.com/litvintech/foundation-ceremony/blob/master/foundation.md#grant-permissions-to-update-packages-to-additional-accounts-to-do)
   * [Propagate application to IPFS](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#propagate-application-to-ipfs)
 ------------------------------------- 
 - [Cyber Foundation DAO](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#cyber-foundation-dao)
@@ -36,6 +41,11 @@ The guide will walk you through the setup process of an Aragon-based DAO, by an 
   * [Check the Foundation DAO](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#check-the-foundation-dao)
   * [Voting by the Congress Agent in the Foundation](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#voting-by-the-congress-agent-in-the-foundation)
 ----------------------------------------- 
+- [Install the Evangelism application to the Foundation DAO](https://github.com/litvintech/foundation-ceremony/blob/master/foundation.md#install-the-evangelism-application-to-the-foundation-dao)
+  * [Parameters](https://github.com/litvintech/foundation-ceremony/blob/master/foundation.md#parameters)
+  * [Install the application](https://github.com/litvintech/foundation-ceremony/blob/master/foundation.md#install-the-application)
+  * [Initialize founder role](https://github.com/litvintech/foundation-ceremony/blob/master/foundation.md#initialize-founder-role)
+-----------------------------------------
 - [Install the Vesting application for the Foundation DAO](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#install-the-vesting-application-for-the-foundation-dao)
   * [Parameters](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#parameters)
   * [Install the application](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#install-the-application)
@@ -46,7 +56,8 @@ The guide will walk you through the setup process of an Aragon-based DAO, by an 
   * [Parameters](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#parameters-1)
   * [Install](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#install)
   * [Initialize the Creator Role](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#initialize-the-creator-role)
-  * [Grant permission for Burn rights as Token Manager](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#grant-permission-for-burn-rights-as-token-manager)
+  * [Initialize Burner Role](https://github.com/litvintech/foundation-ceremony/blob/master/foundation.md#initialize-burner-role)
+  * [Grant permission for Burn rights as Token Manager](https://github.com/litvintech/foundation-ceremony/blob/master/foundation.md#grant-permission-for-burn-rights-as-token-manager)
   * [Set the congress agent as app manager in the Foundation DAO](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#set-the-congress-agent-as-app-manager-in-the-foundation-dao)
   * [Burn service account token in the Foundation DAO](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#burn-service-account-token-in-the-foundation-dao)
   * [Transfer tokens from the Congress Agent to the Auction contract](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#transfer-tokens-from-the-congress-agent-to-the-auction-contract)
@@ -60,9 +71,13 @@ The guide will walk you through the setup process of an Aragon-based DAO, by an 
 ------------------------------- 
 - [Final state](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#final-state)
   * [Foundation DAO](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#foundation-dao)
-  * [Vesting application](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#vesting-application-1)
-  * [Auction application](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#auction-application-1)
+  * [cyber~Evangelism application](https://github.com/litvintech/foundation-ceremony/blob/master/foundation.md#cyberevangelism-application)
+  * [cyber~Vesting application](https://github.com/litvintech/foundation-ceremony/blob/master/foundation.md#cybervesting-application)
+  * [cyber~Auction application](https://github.com/litvintech/foundation-ceremony/blob/master/foundation.md#cyberauction-application)
+  * [Statistics](https://github.com/litvintech/foundation-ceremony/blob/master/foundation.md#statistics)
   * [Final thoughts](https://github.com/litvintech/foundation-ceremony/blob/5128ad34a8d0135597f6a3a071edd5e19f180f7c/foundation.md#final-thoughts)
+  * [Transaction list](https://github.com/litvintech/foundation-ceremony/blob/master/foundation.md#transaction-list)
+  
 --------------------------------
 
 ### Introduction
@@ -146,15 +161,6 @@ Detailed information about the tasks of both DAOs can be found in either our [WP
 11. Final thoughts
 12. Transaction list
 
-#### The process in numbers
-*Total transactions:*
-70 transactions
-
-*Total gas burned:* 
-28,377,834 (with the price of gas equals to 10Gwei, this accounts for 0.2838 ETH)
-
-*Note:* this only includes the setup of the Foundation and the distribution (does not include the preparation of the Congress Agent and publishing the applications in APM. It also does not include the setup of the evangelism DAO)
-
 #### Prepare your setup background
 - NodeJS v.10.18.0 is recommended 
 - Aragon / CLI v.7.0.3/6.4.4 are recommended 
@@ -201,7 +207,7 @@ The Agent app (or the Aragon Agent) is an Aragon app that can be installed in an
 
 We strongly recommend to read the Aragons Agent guide: [How to use an Aragon Agent](https://hack.aragon.org/docs/guides-use-agent)
 
-### Grant Permission to the Agent to transfer their own tokens
+#### Grant Permission to the Agent to transfer their own tokens
 We need to grant access to the Agent to transfer tokens from their own account. During the setup of the Foundation DAO we will issue the initial supply to the DAO. Essentially, this means that the actors behind the initiation of the Congress DAO will govern the setup process of the Foundation DAO. 
 
 Following the bootstrap process, the tokens from the Agent will be transferred to the auction and then, will be distributed to donors and inventors. The donors that vest and participate in the auction need to be able to transfer these tokens onwards. This means, that the Agent needs permission for transfers, which is not `on` by default. Some donors will just continue to hold the tokens following the distribution process. 
@@ -1874,7 +1880,7 @@ Vote #1 transaction [detail](https://etherscan.io/tx/0x2c2bc4f93a5617740158a5232
 ---------------------
 
 ### Distribute tokens
-The Congress can now finish the distribution process and transfer the tokens to the inventors and to the initial donors of Cyber. The remaining amount of the tokens are the share of the Congress itself, following the distribution outlined in Cybers whitepaper.
+The Congress may finish the distribution process and transfer the tokens to the inventors and to the initial donors of Cyber. The remaining amount of the tokens belongs to the Congress itself, following the distribution outlined in Cybers whitepaper.
 
 #### Inventors
 
@@ -1883,7 +1889,7 @@ The Congress can now finish the distribution process and transfer the tokens to 
 | 0x512f51AF284ff70077f8db08484D778C12bfEd4C | 800,000,000,000 | [transaction](https://etherscan.io/tx/0xdafe18f06839c18cb3b2fb45b8634744b85aa412685ae59bb8b400b68d67c2d5) | [transaction](https://etherscan.io/tx/0xd76ad7a7f445a7dc328fa32e64201e93f67f02dc51a10852ed32f58f4bf47fe0) | [transaction](https://etherscan.io/tx/0x835d37739c54022553ddb9c237b8c36b53e55a614186770974a7b44166fcfd90) |
 | 0xe4B0e02E190A30C7dDA4cd68E9a6A281E883CbD7 | 800,000,000,000 | [transaction](https://etherscan.io/tx/0xbe902ab31e60c1b1ba66e767b9f9cd8253fb22672f1c9c4190197dfc7522bcaf) | [transaction](https://etherscan.io/tx/0x6a6d53ee360c7d317f35713439cf473ef10d4665c0ed2d30b1a525cb92358799) | [transaction](https://etherscan.io/tx/0x1e46383ec9440c2f950c55c2a69c129525c7164d79b3f7afa5e710234a882028) |
 
-#### Initial investors
+#### Initial donors
 
 | Address | Amount, GOL | Proposal | Vote #1 | Vote #2 (transfer) |
 |---|---|---|---|---|
@@ -1947,10 +1953,10 @@ The Congress can now finish the distribution process and transfer the tokens to 
 9. All remained (not claimed + dust) tokens on cyber\~Auction will be burned after 7 days after the auction end
 
 #### Statistics
-1. euler\~Foundation setup: 72 transaction - 20,712,079 gas burned
-2. euler\~Foundation distribution: 57 transaction - 15,865,890 gas burned
+1. euler\~Foundation setup: 72 transaction: 20,712,079 gas burned
+2. euler\~Foundation distribution: 57 transaction: 15,865,890 gas burned
 
-#### Final thoughts [TODO]
+#### Final thoughts
 1. Aragon is an amazing project with endless features for the creation of DAOs and their operations
 2. Use your own node, not Infura. This can boost the process 10x
 3. Prepare yourself for this process. Take a rest before. You should be fully concentrated because there is no room for error
@@ -1958,19 +1964,19 @@ The Congress can now finish the distribution process and transfer the tokens to 
 #### Transaction list
 | Id | Transaction | Gas | Description |
 |---|---|---|---|
-| 1 | [transaction](https://etherscan.io/tx/0xb2708c8ce9050081ab2303d660fac4b9b7ce961eb2a73a56f309e0158881a5ba) | 413,957 | Proposal to GOL token deploy in cyber\~Congress DAO |
-| 2 | [transaction](https://etherscan.io/tx/0x10a71dbd401008e5da1eb71ae19b3d496731ffc592222c3df332682b29fb0b3c) | 622,008 | Proposal to euler\~Foundation deploy in cyber\~Congress DAO |
-| 3 | [transaction](https://etherscan.io/tx/0xe97866d789f9fd37807d6e015c685dda67be14de7a58b7319149bacca655213e) | 109,447 | Vote #1 for GOL token deploy in cyber\~Congress DAO |
-| 4 | [transaction](https://etherscan.io/tx/0x5e990fa43ea5d4e82fcf6f3445abb3efcc3903a3700e894d6a2edad51b9c15ce) | 1,872,542 | Vote #2 for GOL token deploy in cyber\~Congress DAO, GOL token deployed |
-| 5 | [transaction](https://etherscan.io/tx/0x51df53cff1450142cce58ea996b965fd059c7b2f5afb49d70c1f2d50b9ea6347) | 109,447 | Vote #1 for euler\~Foundation deploy in cyber\~Congress DAO |
-| 6 | [transaction](https://etherscan.io/tx/0x9a74a16ba4b12a344c43a22cbe73c753683b72820945f87219d791bee6c077ce) | 5,540,209 | Vote #2 for euler\~Foundation deploy in cyber\~Congress DAO, euler\~Foundation DAO deployed |
+| 1 | [transaction](https://etherscan.io/tx/0xb2708c8ce9050081ab2303d660fac4b9b7ce961eb2a73a56f309e0158881a5ba) | 413,957 | Proposal for GOL token deployment in cyber\~Congress DAO |
+| 2 | [transaction](https://etherscan.io/tx/0x10a71dbd401008e5da1eb71ae19b3d496731ffc592222c3df332682b29fb0b3c) | 622,008 | Proposal for euler\~Foundation deployment in cyber\~Congress DAO |
+| 3 | [transaction](https://etherscan.io/tx/0xe97866d789f9fd37807d6e015c685dda67be14de7a58b7319149bacca655213e) | 109,447 | Vote #1 for GOL token deployment in cyber\~Congress DAO |
+| 4 | [transaction](https://etherscan.io/tx/0x5e990fa43ea5d4e82fcf6f3445abb3efcc3903a3700e894d6a2edad51b9c15ce) | 1,872,542 | Vote #2 for GOL token deployment in cyber\~Congress DAO, GOL token deployed |
+| 5 | [transaction](https://etherscan.io/tx/0x51df53cff1450142cce58ea996b965fd059c7b2f5afb49d70c1f2d50b9ea6347) | 109,447 | Vote #1 for euler\~Foundation deploymemnt in cyber\~Congress DAO |
+| 6 | [transaction](https://etherscan.io/tx/0x9a74a16ba4b12a344c43a22cbe73c753683b72820945f87219d791bee6c077ce) | 5,540,209 | Vote #2 for euler\~Foundation deploymemnt in cyber\~Congress DAO, euler\~Foundation DAO deployed |
 | 7 | [transaction](https://etherscan.io/tx/0x38d8f7528df483df272b51f8165c2a5d4f712af6613437080ada9d84d6f4b55c) | 384,979 | Proposal to install cyber\~Evangelism application to euler\~Foundation in euler\~Foundation DAO |
-| 8 | [transaction](https://etherscan.io/tx/0xb3a1a31e0deee3202b62f620d4caf4366a59fff3bf7afc71937644c7dbc2f662) | 370,908 | Proposal in cyber\~Congress DAO to vote on proposal on install of cyber\~Evangelism application in euler\~Foundation DAO |
-| 9 | [transaction](https://etherscan.io/tx/0xac3001eaf48be6706394a46ebb945b123fe49f5c30eb6d15c36bcd52ec3c0750) | 109,447 | Vote #1 for cyber\~Evanlism install in cyber\~Congress DAO |
-| 10 | [transaction](https://etherscan.io/tx/0x9601b7970f8f2bf24e3243a5661eeca7744bb56c00424cf7ff602739b97c076a) | 1,128,104 | Vote #2 for cyber\~Evangelism install in euler\~Foundation DAO in cyber\~Congress DAO, application installed |
-| 11 | [transaction](https://etherscan.io/tx/0x8081014ed5c7c3b2cc76b532017a38a812b7f34bb0f227c441c68fd478418ce0) | 327,127 | Proposal in euler\~Foundation DAO to assign FOUNDER_ROLE on cyber\~Evangelism application in euler\~Foundation to cyber\~Congress DAO Agent (and role manager to cyber\~Congress DAO Agent) |
+| 8 | [transaction](https://etherscan.io/tx/0xb3a1a31e0deee3202b62f620d4caf4366a59fff3bf7afc71937644c7dbc2f662) | 370,908 | Proposal in cyber\~Congress DAO to vote on the proposal on install the cyber\~Evangelism application in euler\~Foundation DAO |
+| 9 | [transaction](https://etherscan.io/tx/0xac3001eaf48be6706394a46ebb945b123fe49f5c30eb6d15c36bcd52ec3c0750) | 109,447 | Vote #1 for cyber\~Evanlism installation in cyber\~Congress DAO |
+| 10 | [transaction](https://etherscan.io/tx/0x9601b7970f8f2bf24e3243a5661eeca7744bb56c00424cf7ff602739b97c076a) | 1,128,104 | Vote #2 for cyber\~Evangelism installation in euler\~Foundation DAO in cyber\~Congress DAO, application installed |
+| 11 | [transaction](https://etherscan.io/tx/0x8081014ed5c7c3b2cc76b532017a38a812b7f34bb0f227c441c68fd478418ce0) | 327,127 | Proposal in euler\~Foundation DAO to assign FOUNDER_ROLE to cyber\~Evangelism application in euler\~Foundation to cyber\~Congress DAO Agent (and role manager to cyber\~Congress DAO Agent) |
 | 12 | [transaction](https://etherscan.io/tx/0x625b579bc657cdc232fd079dbcec632d3b92eace67514f3744a20cecdbf32cb1) | 390,120 | Proposal in cyber\~Congress DAO to vote on assign FOUNDER_ROLE on cyber\~Evangelism application in euler\~Foundation DAO (and role manager to cyber\~Congress DAO Agent)  |
-| 13 | [transaction](https://etherscan.io/tx/0x542d57a72c24c54b663ceff66045d8d87eb6db1ae4fe926628e42946bba21880) | 178,044 | Vote #1 in cyber\~Congress DAO for initalize FOUNDER_ROLE |
+| 13 | [transaction](https://etherscan.io/tx/0x542d57a72c24c54b663ceff66045d8d87eb6db1ae4fe926628e42946bba21880) | 178,044 | Vote #1 in cyber\~Congress DAO for initating FOUNDER_ROLE |
 | 14 | [transaction](https://etherscan.io/tx/0x53adfe0acddbe7745d592dec121a837681906860888bfa19c8ae4adb5526362f) | 391,464 | Vote #1 in cyber\~Congress DAO for initalize FOUNDER_ROLE, role applied |
 | 15 | [transaction](https://etherscan.io/tx/0xbe5a64296d7a3b8f1f039a0809df8263b51b8a7c62e5f2001e9e8553428ca7a7) | 390,768 | Proposal in euler\~Foundation DAO to install cyber\~Vesting application in euler\~Foundation |
 | 16 | [transaction](https://etherscan.io/tx/0xb357de4d61514bf0e1a22c077b321bb2dfd7d6948e9f68948a67cd4cbdde2cb0) | 390,120 | Proposal in cyber\~Congress DAO to vote on install cyber\~Vesting application in euler\~Foundation DAO |

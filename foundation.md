@@ -1873,68 +1873,45 @@ Vote #1 transaction [detail](https://etherscan.io/tx/0x2c2bc4f93a5617740158a5232
 ### Distribute tokens
 The Congress can now finish the distribution process and transfer the tokens to the inventors and to the initial donors of Cyber. The remaining amount of the tokens are the share of the Congress itself, following the distribution outlined in Cybers whitepaper.
 
+<<<<<<< HEAD
 Command template:
 
 ```
 dao act <agentCongress> <agentCongress> "transfer(address,address,uint256)" <tokenFoundationAddress> <accountTo> <amountTokens> --environment aragon:rinkeby
 ```
+=======
+>>>>>>> Distribution in progress
 
 #### Inventors
-Command (cast tx):
 
-```
-dao act 0x988fbf6ee7219c0672351605ccc16060ed31d703 0x988fbf6ee7219c0672351605ccc16060ed31d703 "transfer(address,address,uint256)" 0xf6e8E6730d8E3F48519f150215013d654d43a53B 0xC41394F95FDd40193a2bf7Cb035f800CE1Edd908 10000000000000  --environment aragon:rinkeby --use-frame
-```
+| transaction | address | amount |
+|---|---|---|
+| [](https://etherscan.io/) | 0x512f51AF284ff70077f8db08484D778C12bfEd4C | 800,000,000,000 |
+| [](https://etherscan.io/) | 0xe4B0e02E190A30C7dDA4cd68E9a6A281E883CbD7 | 800,000,000,000 |
 
-Output:
 
-```
-  ⠸ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
-  ✔ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
+#### Initial investors
 
-✔ Successfully executed: "Execute desired action as a token holder"
-```
+| transaction | address | amount |
+|---|---|---|
+| [](https://etherscan.io/) | 0x7C4401aE98F12eF6de39aE24cf9fc51f80EBa16B | 24,800,000,000  |
+| [](https://etherscan.io/) | 0xB2e19dd996848818d972DD3a60A1B7FAfFB82330 | 800,000,000,000 |
+| [](https://etherscan.io/) | 0x6c97E04Ae8CCb83a4D3c22803A397389f9a81b9E | 800,000,000,000 |
+| [](https://etherscan.io/) | 0xecc3A64eb2529aBB3ba42Bb3d03ED24388fb7930 | 80,000,000,000  |
+| [](https://etherscan.io/) | 0x6C4A1FbD3490Fb25C1578271b021660c220389DD | 80,000,000,000  |
+| [](https://etherscan.io/) | 0x3cf054438B6671039193253eA87873D42b6bF26c | 80,000,000,000  |
+| [](https://etherscan.io/) | 0x2850F1371FF98938f8461D9d0c91552b6F3e6C63 | 320,000,000,000 |
+| [](https://etherscan.io/) | 0x25d256790C88DC3edABfB06AE0134B220Ebf0fc9 | 320,000,000,000 |
+| [](https://etherscan.io/) | 0x200ceaa470cC10d096b5B5f99683974e3e358656 | 84,000,000,000  |
+| [](https://etherscan.io/) | 0xAb626F94C10cFc51985dC2a599F31a5228c69099 | 320,000,000,000 |
+| [](https://etherscan.io/) | 0xF9f5d5D4e36AF5868c9F635102BE2FbCf4A1Eed5 | 32,000,000,000  |
+| [](https://etherscan.io/) | 0x6bc8895c1902DcAe5e2a36C88Ae9203637d26434 | 32,000,000,000  |
+| [](https://etherscan.io/) | 0xf8E0B23b9e1B1e52c5Fc41099cd688F0Cc1B5f17 | 32,000,000,000  |
+| [](https://etherscan.io/) | 0x00725D89a2A2FB3B21Fd1035B579cbCDE4a0991b | 32,000,000,000  |
+| [](https://etherscan.io/) | 0xe15bda166042192119bE37f5c1675b67183051d3 | 80,000,000,000  |
+| [](https://etherscan.io/) | 0x63E65bC441334b27d2178f81F2d701e4e58c158a | 3,200,000,000   |
+| [](https://etherscan.io/) | 0x7aDEb6c5aBE64E1E4Bb561e1144E5D80B6dC6dD6 | 80,000,000,000  |
 
-[Transaction detail of the transfer of tokens to the inventors 1](https://rinkeby.etherscan.io/tx/0xb941d08e1905f86f12387b192862d2d0000c978ba57bcf87f192977a0d2e7457)
-
-Command (cast tx):
-
-```
-dao act 0x988fbf6ee7219c0672351605ccc16060ed31d703 0x988fbf6ee7219c0672351605ccc16060ed31d703 "transfer(address,address,uint256)" 0xf6e8E6730d8E3F48519f150215013d654d43a53B 0x47452dd11238f8db91e42d0b579d3fFF046Af499 10000000000000  --environment aragon:rinkeby --use-frame
-```
-
-Output:
-
-```
-  ⠸ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
-  ✔ Executing execute on 0xaAe1456bDEDaa40E2ecf20777Fab7Ec2f676477f
-
-✔ Successfully executed: "Execute desired action as a token holder"
-```
-
-[Transaction detail of the transfer of tokens to the inventors 2](https://rinkeby.etherscan.io/tx/0xc06a338aaffad697a139cc0c047dae4cfd067d3ad1b6cd0d1623b554e3122a8b)
-
-Congress members vote on transfer proposals in the Congress DAO.
-
-Congressmen vote for transfers:
-![congress-investors-transfer-1](./screens/congress-investors-transfer-1.png)
-
-[Vote 1](https://rinkeby.etherscan.io/tx/0x26d00a6d8b183bf09d2223fffe547a722d2044f236f04157dcc81d4c5a785855) and
-[Vote 2](https://rinkeby.etherscan.io/tx/0x5663a6d565c0f540ae40c3a2a537e400ccc2b574388304e28060f692b94d95b4)
-
-![congress-investors-transfer-2](./screens/congress-investors-transfer-2.png)
-
-[Vote 1](https://rinkeby.etherscan.io/tx/0x1993c8ac94c122b41862e891528e5df0fc5528f7e849df45a5761c5817ce5be9) and
-[Vote 2](https://rinkeby.etherscan.io/tx/0xcb6d97120b04eb3c8aedcbac1223ffc9ee8e564a8209e79ad6375869a48ac754)
-
-Foundation DAO and inventors have their tokens:
-![foundation-investors-transferred](./screens/foundation-investors-transferred.png)
-
-#### Initial donors
-
-```
-To be done in mainnet only
-```
 ---------------------
 
 ### Final state

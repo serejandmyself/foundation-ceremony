@@ -373,13 +373,13 @@ The Vesting app is used to vest your cyber\~Foundation tokens (GOL, THC)  until 
 
 GOL tokens are the testing equivalent of THC. THC is the main governing token of Cyber. THC is an ERC-20 token and lives in the Ehereum mainnet. 
 
-Your tokens will be locked for transfer for the duration of the auction. But, are available to be used for participating in the governance of the DAO. The auction is part of Cybers distribution process, where for a period of a certain time, donors that wish to become stakeholders in the governance of Cyber, donate ETH to cyber\~Fundation, the community governed DAO. You are welcome to read and explore more information about cyber \~Autcion [here](https://github.com/cybercongress/congress/blob/master/ecosystem/Cyber%20Homestead%20doc.md#cyberauction-or-auction).
+Your tokens will be locked for transfer, if and when vested(!), for the duration of the auction + for a set amount of days after its end (for euler~Foundation this is set to 10 days after the end of the auction). But, are available to be used for participating in the governance of the DAO. The auction is part of Cybers distribution process, where for a period of a certain time, donors that wish to become stakeholders in the governance of Cyber, donate ETH to cyber\~Fundation, the community governed DAO. You are welcome to read and explore more information about cyber \~Autcion [here](https://github.com/cybercongress/congress/blob/master/ecosystem/Cyber%20Homestead%20doc.md#cyberauction-or-auction).
 
 After the end of the auction and the finalization of the distribution, the tokens will be unlocked for transfer. From this point onwards, cyber\~Congress will no longer be responsible for their transfer.
 
 If you don't vest your tokens during the auction, they will become available for transfers, and for example, for trading on Uniswap or OTC. In both cases, the value of the Foundation tokens is determined by market demand and comes from the ability to participate in the governance of the Foundation and from their ability to claim CYB tokens (Cybers mainnet tokens) on 1-1 basis (if vested!). If you transfer non-vested tokens to another account, you are also transferring vesting rights. Each token can only be vested once! 
 
-It should be noted that the vesting companion will be turned off for everyone at the same time. This will also impose the burning of the unclaimed CYB tokens. Users who participate at the end of the auction will face a larger inflation washdown of their share, as there will be more tokens available on the market for the same price.  
+It should be noted that the vesting companion will be turned off for everyone at the same time, which is determined by the end time of the vesting, that is determiend by the end time of the autcion + 10 days. This will also impose the burning of the unclaimed CYB tokens. Users who participate at the end of the auction will face a larger inflation washdown of their share, as there will be more tokens available on the market for the same price.  
 
 The vesting can be stopped by the Congress Agent at any time due to activation of a crisis protocol (for example, a hack of the hot wallet).
 
@@ -388,24 +388,27 @@ Features:
 - Claim creation
 - Process user claims state
 
-Under the hood, we need proof that the tokens go to the desired destination. The flow is fairly simple: 
-- The companion is a program that knows for which events to look out for
-- It is a daemon with a cyber key and an ETH key that can add proofs and send transactions 
-- It can also make proofs about these transfers and claim vesting 
-- A hot wallet tracks claim events
-- It sends tokens to a cyber address
-- It then takes the hash of a successful transfer, which you can see it the app
+Under the hood, we need proof that the tokens go to the desired destination. The flow is fairly simple:
+- The companion is a program that knows for which events to look out for (listens to the vesting contract)
+- It has a cyber key and an ETH key that can add proofs 
+- when a claim event arrives, it looks for the address that sent the tokens
+- Recieves the transaction
+- Adds proof
+- Send the transaction, along with the proof, to the vesting contract 
+- You can see the hash of a successful transfer in the app
 
 #### Auction application
 By using the Auction application, users may acquire tokens that are allocated for distribution within the Foundation.
+
+Please note, that for the set of euler~Foundation we use GOL tokens, which are the eqivalent of THC tokens for cyber ~Foundation, which will be deployed to cybers mainnet. The lasting times of the rounds will also vary from euler to cyber Foundation.
 
 The auction consists of rounds. A so-called `zero` window, which is longer than the other windows and with more tokens for distribution. The subsequent rounds (windows) have equal length and an equal amount of tokens for distribution. This is done purely for traction and allows certain economic mechanisms to work to their full efficiency.
 
 Donors may send ETH to the auction and choose the round or the rounds they want to participate in beforehand. They may also send ETH on each round separately. The actioned tokens will become available for transfer after a given round has passed. I.E. if I send ETH to window 5 of the auction, my THC will become available for transfer (and hence, vesting) after window 5 is over. 
 
-Each round a certain amount of THC tokens is auctioned. The amount of THC the donors receive is proportional to the donated amount in that round. I.E. if 10 tokens are available for auction at round 5, and 10 ETH from 10 people were donated, each person will receive 1 token after the end of the round. 
+Each round a certain amount of GOL (THC) tokens is auctioned. The amount of GOL (THC) the donors receive is proportional to the donated amount in that round. I.E. if 10 tokens are available for auction at round 5, and 10 ETH from 10 people were donated, each person will receive 1 token after the end of the round. 
 
-Window 0 or Game of Thrones is a 21-day round in the mainnet. During testing, the round will last for 10 days. Subsequent rounds of the auction, in both testnets and mainnet, will last for 23 hours + 1 second. Overall, there are 479 rounds in the mainnet (and 20 fo the testing). Which totals to just over \~480 days of the auction with round 0 in the mainnet. We strongly recommend reading more information about the auction and the distribution games [here](https://github.com/cybercongress/congress/blob/master/ecosystem/Cyber%20Homestead%20doc.md#the-distribution-games-in-detail).
+Window 0 is a 10-day round (during euler testing). Subsequent rounds of the auction, in both testnets and mainnet, will last for 23 hours + 1 second. Overall, there are 479 rounds in the mainnet (and 49 fo the testing). Which totals to just over \~480 days of the auction with round 0 in the mainnet (roughly 47 days for euler testing). We strongly recommend reading more information about the auction and the distribution games [here](https://github.com/cybercongress/congress/blob/master/ecosystem/Cyber%20Homestead%20doc.md#the-distribution-games-in-detail).
 
 The accumulated ETH is available for transfer at any time to the Foundations DAO agent by any participant of the auction (not a front end function for now). Of course, from this point onwards, those ETH’s are controlled via the governance mechanisms of cyber\~Foundation.
 
@@ -423,7 +426,7 @@ Under the hood the process is also fairly simple:
 - And claim after a certain round has finished and the price has been calculated
 - After the claim, the user may use the vesting app to vest the received THC until the end of the auction and receive CYB. They may also transfer their THC and use them
 
-The Agent can initialize the auction and stop it. The app needs permissions to interact with other apps.
+The app needs permissions to interact with other apps.
 
 #### Deploy to Aragon Package Manager (APM)
 APM is a DAO that can deploy packets. It has different rights, for example, it lets you configure who can start, update or use the application.
@@ -1149,7 +1152,7 @@ __Pause Role__ : assigning this to the Congress Agent will allow the Congress to
 
 __Proof Role__ : assigning this to the Congress driven external address, will allow the Congress to send tokens and then write transactions as proofs to any given vesting operations created by users
 
-We are also setting manager rights for these roles to the Congress Agent. **(To Do - why?)**
+We are also setting manager rights for these roles to the Congress Agent. This is done to prevent byzantine changes from malicicous actors for the period of the auction.
 
 Command template:
 
